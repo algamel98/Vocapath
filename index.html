@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VocaPath – Your structured path to English mastery</title>
+<meta name="description" content="Master the Oxford 3000 with a structured learning path. Learn English vocabulary through CEFR levels, smart filters, and real pronunciation.">
+<base href="./">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Cairo:wght@300;400;600;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <img src="images/logo.png" alt="VocaPath Logo">
+      <div class="logo-text">
+        <div class="logo-name">VocaPath</div>
+        <div class="logo-sub">English Mastery</div>
+      </div>
+    </a>
+
+    <nav id="mainNav">
+      <a class="nav-link active" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="goals.html">Goals</a>
+      <a class="nav-link" href="privacy.html">Privacy</a>
+    </nav>
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle dark mode" aria-label="Toggle dark mode">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+
+    <a class="btn-dl" href="BOOK/ENGLISH_CORE (2).pdf" download="VocaPath_English_Grammar_Guide.pdf" data-tooltip="A comprehensive summary of English grammar rules and essential fundamentals, leading to mastery in a focused and concise way">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Book
+    </a>
+
+    <button class="hamburger" id="ham" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════ HERO SECTION ═══════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>Master the Oxford 3000 with a Structured Learning Path</h1>
+      <p>Learn English vocabulary through CEFR levels, smart filters, and real pronunciation. Your journey to English mastery starts here.</p>
+      <div class="hero-buttons">
+        <button class="btn-hero primary" onclick="startLearning()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Start Learning
+        </button>
+        <button class="btn-hero secondary" onclick="viewProgress()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          View My Progress
+        </button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <video autoplay loop muted playsinline>
+        <source src="videos/HERO.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MAIN CONTENT ═══════════ -->
+<main>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <div class="search-wrap">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="searchInput" type="text" placeholder="Search in English or Arabic…" oninput="applyFilters()">
+    </div>
+    <button class="btn-search" onclick="applyFilters()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      Search
+    </button>
+    <button class="btn-filter" id="filterBtn" onclick="toggleFilter()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+      Filters
+      <span class="filter-dot" id="filterDot"></span>
+    </button>
+    <button class="btn-alphabet" onclick="openAlphabetModal()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+      Alphabet
+    </button>
+    <button class="btn-fullmode" onclick="openFullMode()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      Full Mode
+    </button>
+    <div class="results-info" id="resultsInfo">Showing <strong>100</strong> words</div>
+  </div>
+
+  <!-- FILTER PANEL -->
+  <div class="filter-panel" id="filterPanel">
+    <!-- Scroll Buttons Inside Filter Panel -->
+    <div class="filter-scroll-controls">
+      <button class="filter-scroll-btn filter-scroll-up" onclick="scrollFilterUp()" title="Scroll up" aria-label="Scroll up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="18 15 12 9 6 15"/>
+        </svg>
+      </button>
+      <button class="filter-scroll-btn filter-scroll-down" onclick="scrollFilterDown()" title="Scroll down" aria-label="Scroll down">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="filter-grid">
+
+      <div class="filter-section">
+        <h4>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Oxford CEFR Level
+        </h4>
+        <div class="chip-row" id="levelChips">
+          <div class="chip" data-level="A1" onclick="toggleChip(this,'level')"><span class="ck">✓</span> A1 – Beginner</div>
+          <div class="chip" data-level="A2" onclick="toggleChip(this,'level')"><span class="ck">✓</span> A2 – Elementary</div>
+          <div class="chip" data-level="B1" onclick="toggleChip(this,'level')"><span class="ck">✓</span> B1 – Intermediate</div>
+          <div class="chip" data-level="B2" onclick="toggleChip(this,'level')"><span class="ck">✓</span> B2 – Upper-Int.</div>
+          <div class="chip" data-level="C1" onclick="toggleChip(this,'level')"><span class="ck">✓</span> C1 – Advanced</div>
+        </div>
+        <div class="chip-controls">
+          <button class="btn-xs" onclick="allLevels(true)">Enable All</button>
+          <button class="btn-xs red" onclick="allLevels(false)">Disable All</button>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h4>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+          Word Type
+        </h4>
+        <div class="chip-row" id="typeChips">
+          <div class="chip" data-type="noun"        onclick="toggleChip(this,'type')"><span class="ck">✓</span> Noun</div>
+          <div class="chip" data-type="verb"        onclick="toggleChip(this,'type')"><span class="ck">✓</span> Verb</div>
+          <div class="chip" data-type="adjective"   onclick="toggleChip(this,'type')"><span class="ck">✓</span> Adjective</div>
+          <div class="chip" data-type="adverb"      onclick="toggleChip(this,'type')"><span class="ck">✓</span> Adverb</div>
+          <div class="chip" data-type="preposition" onclick="toggleChip(this,'type')"><span class="ck">✓</span> Preposition</div>
+          <div class="chip" data-type="conjunction" onclick="toggleChip(this,'type')"><span class="ck">✓</span> Conjunction</div>
+          <div class="chip" data-type="other"       onclick="toggleChip(this,'type')"><span class="ck">✓</span> Other</div>
+        </div>
+        <div class="chip-controls">
+          <button class="btn-xs" onclick="allTypes(true)">Enable All</button>
+          <button class="btn-xs red" onclick="allTypes(false)">Disable All</button>
+        </div>
+      </div>
+
+      <!-- NUMBERING MODE SETTING -->
+      <div class="filter-section">
+        <h4>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M9 9h6v6H9z"/></svg>
+          Numbering Mode
+        </h4>
+        <div class="numbering-mode-setting">
+          <label class="checkbox-label">
+            <input type="checkbox" id="sequentialNumbering" onchange="toggleNumberingMode(this.checked)">
+            <span class="checkbox-custom"></span>
+            <span class="checkbox-text">
+              <strong>Sequential Numbering</strong><br>
+              <small>Number words 1, 2, 3... based on current filters (default: Oxford order)</small>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-footer">
+        <button class="btn-xs" onclick="resetAll()">↩ Reset All</button>
+        <button class="btn-save-settings" onclick="saveSettings()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+            <polyline points="17 21 17 13 7 13 7 21"/>
+            <polyline points="7 3 7 8 15 8"/>
+          </svg>
+          Save Settings
+        </button>
+        <button class="btn-xs" style="margin-left:auto" onclick="toggleFilter()">Close ✕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORD LIST -->
+  <div class="list-container">
+    <div class="list-header">
+      <div class="word-num-col">#</div>
+      <div>English Word</div>
+      <div style="text-align: right; direction: rtl;">المعنى بالعربية</div>
+      <div style="text-align:center">Level</div>
+      <div style="text-align:right">Actions</div>
+    </div>
+    <div class="word-list" id="wordList">
+      <!-- Words will be dynamically loaded here -->
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══════════ PROGRESS SECTION (MOVED TO BOTTOM) ═══════════ -->
+<div class="progress-section">
+  <div class="progress-header">
+    <h3>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Your Learning Progress
+    </h3>
+    <button class="btn-reset-progress" onclick="openResetProgressModal()" title="Reset all progress">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1 4 1 10 7 10"/>
+        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+      </svg>
+      Reset Progress
+    </button>
+  </div>
+  <div class="progress-stats">You have learned <strong id="progressCount">0 / 0</strong> words</div>
+  <div class="progress-bar-container">
+    <div class="progress-bar-fill" style="width: 0%"></div>
+  </div>
+  <div class="progress-percentage">0% Completed</div>
+</div>
+
+<!-- ═══════════ RESET PROGRESS MODAL ═══════════ -->
+<div class="modal-overlay" id="resetProgressModal">
+  <div class="modal modal-confirm">
+    <div class="modal-header">
+      <img src="images/logo.png" alt="VocaPath" class="modal-logo" onerror="this.style.display='none'">
+      <h3>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        Reset Learning Progress
+      </h3>
+      <button class="modal-close" onclick="closeResetProgressModal()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="confirm-message">
+        <p><strong>Are you sure you want to reset all your learning progress?</strong></p>
+        <p>This action will:</p>
+        <ul class="confirm-list">
+          <li>Clear all marked/learned words</li>
+          <li>Reset all word counters to zero</li>
+          <li>Remove all red X marks (return to grey)</li>
+          <li>Reset progress in both Home and Full Mode</li>
+        </ul>
+        <p class="confirm-warning">⚠️ This action cannot be undone!</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-modal secondary" onclick="closeResetProgressModal()">Cancel</button>
+      <button class="btn-modal danger" onclick="confirmResetProgress()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="1 4 1 10 7 10"/>
+          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+        </svg>
+        Yes, Reset All Progress
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ ALPHABET MODAL ═══════════ -->
+<div class="modal-overlay" id="alphabetModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+        Filter by Alphabet
+      </h3>
+      <button class="modal-close" onclick="closeAlphabetModal()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="alphabet-grid" id="alphabetGrid">
+        <!-- Letters A-Z will be dynamically loaded here -->
+      </div>
+      <div class="chip-controls">
+        <button class="btn-xs" onclick="selectAllLetters()">Select All</button>
+        <button class="btn-xs red" onclick="deselectAllLetters()">Deselect All</button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-modal secondary" onclick="closeAlphabetModal()">Cancel</button>
+      <button class="btn-modal primary" onclick="applyAlphabetFilter()">Apply Filter</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-top">
+
+    <div class="footer-brand">
+    <a class="logo" href="index.html">
+      <img src="images/logo.png" alt="VocaPath Logo">
+      <div class="logo-text">
+        <div class="logo-name">VocaPath</div>
+        <div class="logo-sub">English Mastery</div>
+      </div>
+    </a>
+      <p>A free vocabulary learning tool designed for all learners. Master English through structured, level-based learning.</p>
+      <div class="footer-reference">
+        <strong>Main reference:</strong> The Oxford 3000™
+        <a class="btn-oxford-dl" href="BOOK/OXFORD.pdf" download="Oxford_3000_Word_List.pdf" title="Download Oxford 3000™ word list">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download
+        </a>
+      </div>
+      
+      <div class="footer-resources">
+        <h5>Useful English Resources</h5>
+        <div class="resource-buttons">
+          <a href="data/The_Oxford_5000.pdf" download="Oxford_5000_C1_Word_List.pdf" class="resource-btn oxford-5000" data-tooltip="Oxford 3000–5000 word list for C1 level – download PDF">
+            <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+            <span class="resource-title">Oxford 5K · C1</span>
+          </a>
+          <a href="https://engnovate.com/" target="_blank" rel="noopener noreferrer" class="resource-btn engnovate" data-tooltip="Innovative English learning platform with modern teaching methods">
+            <div class="resource-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+            <div class="resource-text">
+              <span class="resource-title">EngNovate</span>
+              <span class="resource-url">engnovate.com</span>
+            </div>
+          </a>
+          
+          <a href="https://www.ielts.org/" target="_blank" rel="noopener noreferrer" class="resource-btn ielts" data-tooltip="Official IELTS website - International English Language Testing System">
+            <div class="resource-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <div class="resource-text">
+              <span class="resource-title">IELTS</span>
+              <span class="resource-url">ielts.org</span>
+            </div>
+          </a>
+          
+          <a href="https://ieltsregistration.britishcouncil.org/" target="_blank" rel="noopener noreferrer" class="resource-btn british-council" data-tooltip="Register for IELTS exam through British Council">
+            <div class="resource-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="8.5" cy="7" r="4"/>
+                <polyline points="17 11 19 13 23 9"/>
+              </svg>
+            </div>
+            <div class="resource-text">
+              <span class="resource-title">IELTS Registration</span>
+              <span class="resource-url">britishcouncil.org</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="f-nav">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Home
+        </a></li>
+        <li><a href="about.html">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+          About
+        </a></li>
+        <li><a href="goals.html">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+          Goals
+        </a></li>
+        <li><a href="privacy.html">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Privacy
+        </a></li>
+      </ul>
+    </div>
+
+    <div class="f-contact">
+      <h5>Contact Us</h5>
+      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="2aa8c8eb-d824-43bc-a78b-27d08a3e32c0">
+        <input type="hidden" name="subject" value="New Contact from VocaPath">
+        <input type="hidden" name="from_name" value="VocaPath Contact Form">
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+        <input type="email" name="email" value="vocapath@partnership.org.ly" style="display:none;">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="user_email" placeholder="Your email address" required />
+        <textarea name="message" placeholder="Write your message here…" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="copyright">
+      © 2026 All rights reserved — <strong>A. Algamel</strong>
+    </div>
+    <div class="social-links">
+      <a class="social-btn fb" href="https://www.facebook.com/vocaapath" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a class="social-btn ig" href="https://www.instagram.com/vocaapath" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a class="social-btn li" href="#" aria-label="LinkedIn" title="LinkedIn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a class="social-btn em" href="mailto:vocapath@partnership.org.ly" aria-label="Email" title="Email">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast"></div>
+
+<!-- Floating Scroll Buttons -->
+<div class="scroll-controls">
+  <button class="scroll-btn scroll-up" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+  <button class="scroll-btn scroll-down" onclick="scrollToBottom()" title="Scroll to bottom" aria-label="Scroll to bottom">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </button>
+</div>
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script src="js/progressStore.js"></script>
+<script src="js/wordmodal.js"></script>
+<script src="js/app.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/alphabet.js"></script>
+<script src="js/audio.js"></script>
+
+</body>
+</html>
