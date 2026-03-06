@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 12 English Tenses – VocaPath</title>
+<meta name="description" content="Master all 12 English tenses with formulas, examples, common mistakes, and signal words. Your structured grammar guide on VocaPath.">
+<base href="./">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Cairo:wght@300;400;600;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <img src="images/logo.png" alt="VocaPath Logo">
+      <div class="logo-text">
+        <div class="logo-name">VocaPath</div>
+        <div class="logo-sub">English Mastery</div>
+      </div>
+    </a>
+
+    <nav id="mainNav">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link active" href="tenses.html">Tenses</a>
+      <a class="nav-link" href="modal-verbs.html">Modal Verbs</a>
+      <a class="nav-link" href="goals.html">Goals</a>
+      <a class="nav-link" href="privacy.html">Privacy</a>
+    </nav>
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle dark mode" aria-label="Toggle dark mode">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+
+    <a class="btn-dl" href="BOOK/ENGLISH_CORE (2).pdf" download="VocaPath_English_Grammar_Guide.pdf" data-tooltip="A comprehensive summary of English grammar rules and essential fundamentals, leading to mastery in a focused and concise way">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Book
+    </a>
+
+    <button class="hamburger" id="ham" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+<div class="page-hero">
+  <div class="hero-badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+    Grammar Reference
+  </div>
+  <h1>The <span>12 English</span> Tenses</h1>
+  <p>Master every tense with clear formulas, rich examples, common mistakes, and signal words — all in one place.</p>
+  <div class="tense-progress" id="progressDots"></div>
+</div>
+
+<!-- ═══════════ MAIN LAYOUT ═══════════ -->
+<div class="tenses-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-title">12 Tenses</div>
+      <!-- nav buttons injected by JS -->
+    </div>
+  </aside>
+
+  <!-- MOBILE SELECT -->
+  <div style="width:100%">
+  <select class="mobile-tense-select" onchange="switchTense(parseInt(this.value))">
+    <!-- options injected by JS -->
+  </select>
+
+  <!-- CONTENT PANELS (injected by JS) -->
+  <div class="content-area" id="contentArea"></div>
+  </div>
+
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="logo" href="index.html">
+        <img src="images/logo.png" alt="VocaPath Logo">
+        <div class="logo-text">
+          <div class="logo-name">VocaPath</div>
+          <div class="logo-sub">English Mastery</div>
+        </div>
+      </a>
+      <p>A free vocabulary learning tool designed for all learners. Master English through structured, level-based learning.</p>
+      <div class="footer-reference">
+        <strong>Main reference:</strong> The Oxford 3000™
+        <a class="btn-oxford-dl" href="BOOK/OXFORD.pdf" download="Oxford_3000_Word_List.pdf" title="Download Oxford 3000™ word list">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </a>
+      </div>
+      <div class="footer-resources">
+        <h5>Useful English Resources</h5>
+        <div class="resource-buttons">
+          <a href="data/The_Oxford_5000.pdf" download="Oxford_5000_C1_Word_List.pdf" class="resource-btn oxford-5000" data-tooltip="Oxford 3000–5000 word list for C1 level – download PDF">
+            <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+            <span class="resource-title">Oxford 5K · C1</span>
+          </a>
+          <a href="https://engnovate.com/" target="_blank" rel="noopener noreferrer" class="resource-btn engnovate" data-tooltip="Innovative English learning platform with modern teaching methods">
+            <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+            <div class="resource-text"><span class="resource-title">EngNovate</span><span class="resource-url">engnovate.com</span></div>
+          </a>
+          <a href="https://www.ielts.org/" target="_blank" rel="noopener noreferrer" class="resource-btn ielts" data-tooltip="Official IELTS website - International English Language Testing System">
+            <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+            <div class="resource-text"><span class="resource-title">IELTS</span><span class="resource-url">ielts.org</span></div>
+          </a>
+          <a href="https://ieltsregistration.britishcouncil.org/" target="_blank" rel="noopener noreferrer" class="resource-btn british-council" data-tooltip="Register for IELTS exam through British Council">
+            <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
+            <div class="resource-text"><span class="resource-title">IELTS Registration</span><span class="resource-url">britishcouncil.org</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="f-nav">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a></li>
+        <li><a href="about.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>About</a></li>
+        <li><a href="tenses.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>Tenses</a></li>
+        <li><a href="modal-verbs.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Modal Verbs</a></li>
+        <li><a href="goals.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>Goals</a></li>
+        <li><a href="privacy.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="f-contact">
+      <h5>Contact Us</h5>
+      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="2aa8c8eb-d824-43bc-a78b-27d08a3e32c0">
+        <input type="hidden" name="subject" value="New Contact from VocaPath">
+        <input type="hidden" name="from_name" value="VocaPath Contact Form">
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+        <input type="email" name="email" value="vocapath@partnership.org.ly" style="display:none;">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="user_email" placeholder="Your email address" required />
+        <textarea name="message" placeholder="Write your message here…" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="copyright">© 2026 All rights reserved — <strong>A. Algamel</strong></div>
+    <div class="social-links">
+      <a class="social-btn fb" href="https://www.facebook.com/vocaapath" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a class="social-btn ig" href="https://www.instagram.com/vocaapath" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a class="social-btn li" href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a class="social-btn em" href="mailto:vocapath@partnership.org.ly" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- SCROLL BUTTONS -->
+<div class="scroll-controls">
+  <button class="scroll-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Top" aria-label="Scroll to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <button class="scroll-btn" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})" title="Bottom" aria-label="Scroll to bottom">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+</div>
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script src="js/app.js"></script>
+<script>
+/* ─── MOBILE MENU ─── */
+function toggleMenu() {
+  document.getElementById('mainNav').classList.toggle('open');
+}
+
+/* ════════════════════════════════════════
+   TENSE DATA
+════════════════════════════════════════ */
+const TENSES = [
+  {
+    id: 'pres-simple',
+    name: 'Present Simple',
+    shortName: 'Pres. Simple',
+    group: 'present',
+    index: '01',
+    desc: 'Expresses habits, general truths, repeated actions, and permanent states.',
+    formulas: [
+      { label: 'Affirmative', f: '<strong>Subject</strong> + <em>base verb</em> <span class="opt">(+s/es for He/She/It)</span>' },
+      { label: 'Negative',    f: '<strong>Subject</strong> + <em>do/does not</em> + <em>base verb</em>' },
+      { label: 'Question',    f: '<em>Do/Does</em> + <strong>Subject</strong> + <em>base verb</em> ?' },
+    ],
+    examples: {
+      affirmative: ['She <strong>reads</strong> a book every evening.', 'They <strong>play</strong> football on weekends.'],
+      negative:    ['He <strong>does not eat</strong> meat.', 'We <strong>do not work</strong> on Sundays.'],
+      question:    ['<strong>Does</strong> she <strong>speak</strong> Arabic?', '<strong>Do</strong> they <strong>live</strong> near the school?'],
+      negQ:        ['<strong>Doesn\'t</strong> he <strong>know</strong> the answer?', '<strong>Don\'t</strong> you <strong>want</strong> to come?'],
+      special: [
+        'The sun <strong>rises</strong> in the east. <em>(general truth)</em>',
+        'Water <strong>boils</strong> at 100°C. <em>(scientific fact)</em>',
+        'The train <strong>leaves</strong> at 7 AM tomorrow. <em>(scheduled future)</em>',
+        'She <strong>teaches</strong> — not "She teach." <em>(⚠ 3rd-person -s)</em>',
+        'He <strong>does not have</strong> — not "He don\'t have." <em>(⚠ common mistake)</em>',
+        'I <strong>always</strong> drink coffee in the morning. <em>(adverb of frequency)</em>',
+        'If it <strong>rains</strong>, we stay inside. <em>(zero conditional)</em>',
+      ]
+    },
+    mistakes: [
+      'Adding <strong>-s</strong> with I/You/We/They: <em>"He go"</em> → should be <em>"He goes"</em>.',
+      'Using <strong>don\'t</strong> with He/She/It: <em>"She don\'t like it"</em> → <em>"She doesn\'t like it"</em>.',
+      'Using Present Simple for actions happening right now: use <strong>Present Continuous</strong> instead.',
+      'Forgetting -es after -sh, -ch, -x, -o, -s: <em>"He watchs"</em> → <em>"He watches"</em>.',
+    ],
+    exceptions: [
+      'Stative verbs (know, love, believe, want) rarely use continuous form — use Present Simple: <em>"I know him."</em>',
+      'Irregular verbs: <em>be → am/is/are</em>, <em>have → has</em> for 3rd person.',
+      'In formal schedules or timetables, Present Simple replaces Future: <em>"The flight departs at 9."</em>',
+    ],
+    signals: ['always', 'usually', 'often', 'sometimes', 'rarely', 'never', 'every day', 'on Mondays', 'in general', 'as a rule'],
+  },
+
+  {
+    id: 'pres-continuous',
+    name: 'Present Continuous',
+    shortName: 'Pres. Continuous',
+    group: 'present',
+    index: '02',
+    desc: 'Expresses actions happening now, temporary situations, and planned future arrangements.',
+    formulas: [
+      { label: 'Affirmative', f: '<strong>Subject</strong> + <em>am/is/are</em> + <em>verb-ing</em>' },
+      { label: 'Negative',    f: '<strong>Subject</strong> + <em>am/is/are not</em> + <em>verb-ing</em>' },
+      { label: 'Question',    f: '<em>Am/Is/Are</em> + <strong>Subject</strong> + <em>verb-ing</em> ?' },
+    ],
+    examples: {
+      affirmative: ['She <strong>is studying</strong> right now.', 'They <strong>are building</strong> a new house.'],
+      negative:    ['He <strong>is not sleeping</strong>.', 'We <strong>are not watching</strong> TV.'],
+      question:    ['<strong>Is</strong> she <strong>coming</strong> to the party?', '<strong>Are</strong> they <strong>working</strong> today?'],
+      negQ:        ['<strong>Isn\'t</strong> he <strong>studying</strong>?', '<strong>Aren\'t</strong> you <strong>listening</strong>?'],
+      special: [
+        'I <strong>am meeting</strong> the manager tomorrow. <em>(future arrangement)</em>',
+        'You <strong>are always losing</strong> your keys! <em>(annoying habit with "always")</em>',
+        'The economy <strong>is growing</strong> slowly. <em>(changing trend)</em>',
+        '"She <strong>is knowing</strong> him" ❌ → "She <strong>knows</strong> him" ✓ <em>(stative verb)</em>',
+        'He <strong>is being</strong> rude today. <em>("be" used for temporary behaviour)</em>',
+        'I <strong>am currently</strong> working on a new project.',
+        'They <strong>are leaving</strong> for Paris next Monday.',
+      ]
+    },
+    mistakes: [
+      '<strong>Stative verbs</strong> (know, like, want, see) cannot take -ing form: <em>"I am knowing"</em> is wrong.',
+      'Forgetting the auxiliary verb: <em>"She going"</em> → <em>"She is going."</em>',
+      'Double -ing: <em>"He is beeing"</em> → <em>"He is being."</em>',
+      'Confusing Present Simple with Present Continuous for habits vs. current actions.',
+    ],
+    exceptions: [
+      '"Always" with Present Continuous expresses annoyance or criticism, not routine.',
+      'Some verbs can be stative or dynamic: <em>"I think you are right"</em> (opinion) vs. <em>"I am thinking about it"</em> (process).',
+      '"Have" as a state = no -ing; "have" as an action = -ing allowed: <em>"I\'m having lunch."</em>',
+    ],
+    signals: ['now', 'right now', 'at the moment', 'currently', 'at present', 'look!', 'listen!', 'today', 'this week', 'these days'],
+  },
+
+  {
+    id: 'pres-perfect',
+    name: 'Present Perfect',
+    shortName: 'Pres. Perfect',
+    group: 'present',
+    index: '03',
+    desc: 'Connects a past action to the present. Focuses on result, experience, or an unfinished time period.',
+    formulas: [
+      { label: 'Affirmative', f: '<strong>Subject</strong> + <em>have/has</em> + <em>past participle</em>' },
+      { label: 'Negative',    f: '<strong>Subject</strong> + <em>have/has not</em> + <em>past participle</em>' },
+      { label: 'Question',    f: '<em>Have/Has</em> + <strong>Subject</strong> + <em>past participle</em> ?' },
+    ],
+    examples: {
+      affirmative: ['She <strong>has finished</strong> her homework.', 'I <strong>have visited</strong> London twice.'],
+      negative:    ['He <strong>hasn\'t eaten</strong> yet.', 'We <strong>haven\'t decided</strong> yet.'],
+      question:    ['<strong>Have</strong> you <strong>seen</strong> this film?', '<strong>Has</strong> she <strong>called</strong> you?'],
+      negQ:        ['<strong>Haven\'t</strong> you <strong>heard</strong> the news?', '<strong>Hasn\'t</strong> he <strong>arrived</strong> yet?'],
+      special: [
+        'I <strong>have just</strong> finished the report. <em>("just" = very recently)</em>',
+        'She <strong>has never been</strong> to Japan. <em>(life experience)</em>',
+        'It <strong>has been</strong> raining since morning. <em>(ongoing state)</em>',
+        '"I <strong>have seen</strong> him yesterday" ❌ → "I <strong>saw</strong> him yesterday" ✓ <em>(specific past time)</em>',
+        'This is the best book I <strong>have ever read</strong>.',
+        '<strong>Have</strong> you <strong>ever tried</strong> sushi? <em>(life experience question)</em>',
+        'He <strong>has lived</strong> here for ten years. <em>(continues to the present)</em>',
+      ]
+    },
+    mistakes: [
+      'Using Present Perfect with a specific past time: <em>"I have gone yesterday"</em> → use Past Simple.',
+      'Confusing <strong>for</strong> (duration) and <strong>since</strong> (starting point): <em>"since two hours"</em> ❌',
+      'Using Past Simple where Present Perfect is needed: <em>"Did you eat yet?"</em> → <em>"Have you eaten yet?"</em>',
+      'Using wrong past participle form: <em>"I have went"</em> → <em>"I have gone."</em>',
+    ],
+    exceptions: [
+      'In American English, Past Simple is sometimes used where British English prefers Present Perfect: <em>"I just ate"</em> (AmE) vs. <em>"I have just eaten"</em> (BrE).',
+      '"Been" vs. "gone": <em>"She has been to Paris"</em> (returned) vs. <em>"She has gone to Paris"</em> (still there).',
+    ],
+    signals: ['just', 'already', 'yet', 'ever', 'never', 'since', 'for', 'recently', 'so far', 'up to now', 'this week/month/year'],
+  },
+
+  {
+    id: 'pres-perfect-cont',
+    name: 'Present Perfect Continuous',
+    shortName: 'Pres. Perf. Cont.',
+    group: 'present',
+    index: '04',
+    desc: 'Emphasises the duration or ongoing nature of an action that started in the past and continues now.',
+    formulas: [
+      { label: 'Affirmative', f: '<strong>Subject</strong> + <em>have/has been</em> + <em>verb-ing</em>' },
+      { label: 'Negative',    f: '<strong>Subject</strong> + <em>have/has not been</em> + <em>verb-ing</em>' },
+      { label: 'Question',    f: '<em>Have/Has</em> + <strong>Subject</strong> + <em>been</em> + <em>verb-ing</em> ?' },
+    ],
+    examples: {
+      affirmative: ['I <strong>have been studying</strong> for three hours.', 'She <strong>has been working</strong> here since 2020.'],
+      negative:    ['He <strong>hasn\'t been feeling</strong> well lately.', 'They <strong>haven\'t been sleeping</strong> properly.'],
+      question:    ['<strong>Have</strong> you <strong>been waiting</strong> long?', '<strong>Has</strong> she <strong>been crying</strong>?'],
+      negQ:        ['<strong>Haven\'t</strong> you <strong>been listening</strong>?', '<strong>Hasn\'t</strong> he <strong>been practising</strong>?'],
+      special: [
+        'You look tired — <strong>have</strong> you <strong>been running</strong>? <em>(visible result)</em>',
+        'I <strong>have been learning</strong> Arabic for two years. <em>(ongoing activity)</em>',
+        'She <strong>has been living</strong> in Dubai since last year.',
+        '"I <strong>have been knowing</strong> him" ❌ — stative verb: <em>"I have known him for years."</em>',
+        'The road is wet. It <strong>has been raining</strong>. <em>(recent cause)</em>',
+        '<strong>How long have</strong> you <strong>been waiting</strong>? <em>(duration question)</em>',
+        'They <strong>have been arguing</strong> all morning. <em>(annoying ongoing action)</em>',
+      ]
+    },
+    mistakes: [
+      'Using stative verbs in this tense: <em>"I have been knowing"</em> → <em>"I have known."</em>',
+      'Confusing with Present Perfect Simple — Continuous stresses duration; Simple stresses completion.',
+      'Omitting "been": <em>"I have studying"</em> → <em>"I have been studying."</em>',
+    ],
+    exceptions: [
+      'Some verbs can be used in both: <em>"I have lived / have been living here for years"</em> — both correct.',
+      'With "always": <em>"I have always wanted to travel"</em> uses Simple, not Continuous.',
+    ],
+    signals: ['for', 'since', 'all day/morning/week', 'how long', 'lately', 'recently', 'all this time'],
+  },
+
+  {
+    id: 'past-simple',
+    name: 'Past Simple',
+    shortName: 'Past Simple',
+    group: 'past',
+    index: '05',
+    desc: 'Expresses completed actions at a specific time in the past.',
+    formulas: [
+      { label: 'Affirmative', f: '<strong>Subject</strong> + <em>past verb</em> <span class="opt">(regular: +ed / irregular)</span>' },
+      { label: 'Negative',    f: '<strong>Subject</strong> + <em>did not</em> + <em>base verb</em>' },
+      { label: 'Question',    f: '<em>Did</em> + <strong>Subject</strong> + <em>base verb</em> ?' },
+    ],
+    examples: {
+      affirmative: ['She <strong>visited</strong> Cairo last year.', 'They <strong>played</strong> football yesterday.'],
+      negative:    ['He <strong>did not come</strong> to class.', 'We <strong>didn\'t understand</strong> the lesson.'],
+      question:    ['<strong>Did</strong> you <strong>see</strong> the match?', '<strong>Did</strong> she <strong>call</strong> you?'],
+      negQ:        ['<strong>Didn\'t</strong> you <strong>hear</strong> me?', '<strong>Didn\'t</strong> he <strong>finish</strong> it?'],
+      special: [
+        'I <strong>woke up</strong>, <strong>had</strong> breakfast, and <strong>left</strong>. <em>(sequence of events)</em>',
+        'She <strong>used to live</strong> in London. <em>(past habit, no longer true)</em>',
+        '"She <strong>didn\'t went</strong>" ❌ → <em>"She didn\'t go"</em> — base verb after did.',
+        '"<strong>Did</strong> he <strong>went</strong>?" ❌ → <em>"Did he go?"</em>',
+        'When I <strong>arrived</strong>, he <strong>left</strong>. <em>(sequence vs. interrupted action)</em>',
+        'He <strong>studied</strong> hard and <strong>passed</strong> the exam.',
+        'I <strong>spoke</strong> to her two days ago. <em>(specific time = Past Simple)</em>',
+      ]
+    },
+    mistakes: [
+      'Using base verb in negatives: <em>"I didn\'t went"</em> → <em>"I didn\'t go."</em>',
+      'Adding -ed to irregular verbs: <em>"She goed"</em> → <em>"She went."</em>',
+      'Using Past Simple with no specific time when Present Perfect is needed.',
+      'Double past: <em>"He did said"</em> → <em>"He said."</em>',
+    ],
+    exceptions: [
+      'Irregular verbs must be memorised: go→went, buy→bought, write→wrote, etc.',
+      '"Cut, put, set, let, hit" — same form in past and present tense.',
+      '"Was/Were" is the past of "be" — not "did be."',
+    ],
+    signals: ['yesterday', 'last week/month/year', 'in 2010', 'ago', 'then', 'when', 'at that time', 'once', 'in the past'],
+  },
+
+  {
+    id: 'past-continuous',
+    name: 'Past Continuous',
+    shortName: 'Past Continuous',
+    group: 'past',
+    index: '06',
+    desc: 'Describes an ongoing action in the past, often interrupted by another event.',
+    formulas: [
+      { label: 'Affirmative', f: '<strong>Subject</strong> + <em>was/were</em> + <em>verb-ing</em>' },
+      { label: 'Negative',    f: '<strong>Subject</strong> + <em>was/were not</em> + <em>verb-ing</em>' },
+      { label: 'Question',    f: '<em>Was/Were</em> + <strong>Subject</strong> + <em>verb-ing</em> ?' },
+    ],
+    examples: {
+      affirmative: ['She <strong>was reading</strong> when I arrived.', 'They <strong>were playing</strong> all afternoon.'],
+      negative:    ['He <strong>wasn\'t listening</strong> to the teacher.', 'We <strong>weren\'t sleeping</strong> at midnight.'],
+      question:    ['<strong>Was</strong> she <strong>studying</strong> at 10 PM?', '<strong>Were</strong> they <strong>waiting</strong> for you?'],
+      negQ:        ['<strong>Wasn\'t</strong> he <strong>working</strong> that day?', '<strong>Weren\'t</strong> you <strong>living</strong> there then?'],
+      special: [
+        'I <strong>was walking</strong> home when it started to rain. <em>(interrupted action)</em>',
+        'While she <strong>was cooking</strong>, he <strong>was setting</strong> the table. <em>(parallel actions)</em>',
+        'At 8 PM last night, I <strong>was watching</strong> TV. <em>(specific past moment)</em>',
+        '"I <strong>was knowing</strong> her" ❌ → stative verb, use Past Simple.',
+        'He <strong>was always losing</strong> things. <em>(annoying past habit)</em>',
+        'They <strong>were discussing</strong> the project when the manager walked in.',
+        'What <strong>were</strong> you <strong>doing</strong> at noon yesterday?',
+      ]
+    },
+    mistakes: [
+      'Using "was" with You/We/They: <em>"You was"</em> → <em>"You were."</em>',
+      'Using stative verbs: <em>"He was wanting"</em> → <em>"He wanted."</em>',
+      'Confusing Past Continuous (ongoing) with Past Simple (completed).',
+    ],
+    exceptions: [
+      '"Was/Were going to" expresses an unfulfilled plan: <em>"I was going to call you."</em>',
+      'Past Continuous + "when" vs. Past Simple: <em>"I was eating when he arrived."</em> — eating was in progress.',
+    ],
+    signals: ['while', 'when', 'as', 'at that moment', 'all day', 'at 8 PM last night', 'this time yesterday'],
+  },
+
+  {
+    id: 'past-perfect',
+    name: 'Past Perfect',
+    shortName: 'Past Perfect',
+    group: 'past',
+    index: '07',
+    desc: 'Describes an action that was completed before another past action or point in time.',
+    formulas: [
+      { label: 'Affirmative', f: '<strong>Subject</strong> + <em>had</em> + <em>past participle</em>' },
+      { label: 'Negative',    f: '<strong>Subject</strong> + <em>had not</em> + <em>past participle</em>' },
+      { label: 'Question',    f: '<em>Had</em> + <strong>Subject</strong> + <em>past participle</em> ?' },
+    ],
+    examples: {
+      affirmative: ['She <strong>had left</strong> before I arrived.', 'They <strong>had finished</strong> dinner by 7 PM.'],
+      negative:    ['He <strong>hadn\'t studied</strong>, so he failed.', 'We <strong>hadn\'t met</strong> before that day.'],
+      question:    ['<strong>Had</strong> she <strong>eaten</strong> before she came?', '<strong>Had</strong> you <strong>seen</strong> him before?'],
+      negQ:        ['<strong>Hadn\'t</strong> you <strong>warned</strong> him?', '<strong>Hadn\'t</strong> she <strong>called</strong> already?'],
+      special: [
+        'By the time I got there, the film <strong>had already started</strong>.',
+        'He felt proud because he <strong>had never failed</strong> before.',
+        'If she <strong>had studied</strong>, she would have passed. <em>(3rd conditional)</em>',
+        '"I <strong>had went</strong>" ❌ → <em>"I had gone."</em>',
+        'When they arrived, we <strong>had already eaten</strong>.',
+        'She realised she <strong>had forgotten</strong> her keys.',
+        'It was the worst film he <strong>had ever seen</strong>.',
+      ]
+    },
+    mistakes: [
+      'Using wrong participle: <em>"had went"</em> → <em>"had gone."</em>',
+      'Overusing Past Perfect when Past Simple is enough — only use when showing which action came first.',
+      'Using "had had" incorrectly — though it can be correct: <em>"I had had lunch before she called."</em>',
+    ],
+    exceptions: [
+      'When the sequence of past events is clear (e.g., "after", "before"), Past Simple alone can be used.',
+      'Reported speech: <em>"She said she had finished"</em> — Past Perfect in reported speech.',
+    ],
+    signals: ['already', 'by the time', 'before', 'after', 'when', 'as soon as', 'no sooner … than', 'just', 'once'],
+  },
+
+  {
+    id: 'past-perfect-cont',
+    name: 'Past Perfect Continuous',
+    shortName: 'Past Perf. Cont.',
+    group: 'past',
+    index: '08',
+    desc: 'Emphasises the duration of an action that was in progress before another past event.',
+    formulas: [
+      { label: 'Affirmative', f: '<strong>Subject</strong> + <em>had been</em> + <em>verb-ing</em>' },
+      { label: 'Negative',    f: '<strong>Subject</strong> + <em>had not been</em> + <em>verb-ing</em>' },
+      { label: 'Question',    f: '<em>Had</em> + <strong>Subject</strong> + <em>been</em> + <em>verb-ing</em> ?' },
+    ],
+    examples: {
+      affirmative: ['She <strong>had been crying</strong> for hours.', 'They <strong>had been waiting</strong> since noon.'],
+      negative:    ['He <strong>hadn\'t been sleeping</strong> well before his exam.', 'I <strong>hadn\'t been feeling</strong> well.'],
+      question:    ['<strong>Had</strong> she <strong>been working</strong> all night?', '<strong>Had</strong> they <strong>been arguing</strong>?'],
+      negQ:        ['<strong>Hadn\'t</strong> you <strong>been expecting</strong> this?', '<strong>Hadn\'t</strong> he <strong>been practising</strong>?'],
+      special: [
+        'His eyes were red because he <strong>had been studying</strong> all night. <em>(visible cause)</em>',
+        'By 2010, she <strong>had been teaching</strong> for twenty years.',
+        'I was exhausted — I <strong>had been running</strong> all morning.',
+        '"He <strong>had been knowing</strong> her" ❌ — stative verb.',
+        '<strong>How long had</strong> you <strong>been waiting</strong> when she arrived?',
+        'They <strong>had been living</strong> in London before they moved to Dubai.',
+        'The ground was wet — it <strong>had been raining</strong>.',
+      ]
+    },
+    mistakes: [
+      'Using stative verbs in continuous: <em>"had been knowing"</em> → <em>"had known."</em>',
+      'Omitting "been": <em>"had studying"</em> → <em>"had been studying."</em>',
+    ],
+    exceptions: [
+      'Not always necessary — Past Perfect Simple can replace it when duration is not the focus.',
+      '"Live" and "work" can use either Past Perfect Simple or Continuous with little difference in meaning.',
+    ],
+    signals: ['for', 'since', 'all day', 'how long', 'before', 'by the time', 'when', 'until'],
+  },
+
+  {
+    id: 'future-simple',
+    name: 'Future Simple',
+    shortName: 'Future Simple',
+    group: 'future',
+    index: '09',
+    desc: 'Expresses spontaneous decisions, predictions, promises, threats, and offers.',
+    formulas: [
+      { label: 'Affirmative', f: '<strong>Subject</strong> + <em>will</em> + <em>base verb</em>' },
+      { label: 'Negative',    f: '<strong>Subject</strong> + <em>will not (won\'t)</em> + <em>base verb</em>' },
+      { label: 'Question',    f: '<em>Will</em> + <strong>Subject</strong> + <em>base verb</em> ?' },
+    ],
+    examples: {
+      affirmative: ['I <strong>will call</strong> you tonight.', 'She <strong>will finish</strong> the project by Friday.'],
+      negative:    ['He <strong>won\'t come</strong> to the meeting.', 'They <strong>will not accept</strong> the offer.'],
+      question:    ['<strong>Will</strong> you <strong>help</strong> me?', '<strong>Will</strong> she <strong>be</strong> there?'],
+      negQ:        ['<strong>Won\'t</strong> you <strong>join</strong> us?', '<strong>Won\'t</strong> they <strong>tell</strong> us?'],
+      special: [
+        'I <strong>will have</strong> the steak, please. <em>(spontaneous decision)</em>',
+        'I think it <strong>will rain</strong> tomorrow. <em>(prediction, no evidence)</em>',
+        'I <strong>promise</strong> I <strong>will</strong> never lie to you. <em>(promise)</em>',
+        '"I <strong>will to go</strong>" ❌ → <em>"I will go."</em>',
+        'Don\'t worry — I <strong>will help</strong> you. <em>(offer)</em>',
+        'If you touch that, you <strong>will regret</strong> it. <em>(threat/warning)</em>',
+        'In the future, robots <strong>will do</strong> most jobs.',
+      ]
+    },
+    mistakes: [
+      'Adding "to" after will: <em>"will to go"</em> → <em>"will go."</em>',
+      'Using will for planned future events — use "going to" or Present Continuous for plans.',
+      'Using <em>"won\'t"</em> → remember it\'s a contraction of "will not."',
+    ],
+    exceptions: [
+      '"Shall" can replace "will" for I/We in formal or British English.',
+      '"Will" can express habits in the present: <em>"He will often sit by the window."</em>',
+      'First conditional: <em>"If she calls, I will answer."</em> — will is in the result clause.',
+    ],
+    signals: ['tomorrow', 'next week/month/year', 'soon', 'in the future', 'one day', 'I think', 'I believe', 'probably', 'perhaps'],
+  },
+
+  {
+    id: 'future-continuous',
+    name: 'Future Continuous',
+    shortName: 'Future Continuous',
+    group: 'future',
+    index: '10',
+    desc: 'Describes an action that will be in progress at a specific future time.',
+    formulas: [
+      { label: 'Affirmative', f: '<strong>Subject</strong> + <em>will be</em> + <em>verb-ing</em>' },
+      { label: 'Negative',    f: '<strong>Subject</strong> + <em>won\'t be</em> + <em>verb-ing</em>' },
+      { label: 'Question',    f: '<em>Will</em> + <strong>Subject</strong> + <em>be</em> + <em>verb-ing</em> ?' },
+    ],
+    examples: {
+      affirmative: ['She <strong>will be studying</strong> at 8 PM.', 'I <strong>will be working</strong> from home tomorrow.'],
+      negative:    ['He <strong>won\'t be sleeping</strong> at midnight.', 'We <strong>won\'t be using</strong> that room.'],
+      question:    ['<strong>Will</strong> you <strong>be coming</strong> to the dinner?', '<strong>Will</strong> she <strong>be waiting</strong> for us?'],
+      negQ:        ['<strong>Won\'t</strong> you <strong>be attending</strong> the class?', '<strong>Won\'t</strong> they <strong>be travelling</strong>?'],
+      special: [
+        'This time next week, I <strong>will be relaxing</strong> on a beach.',
+        '<strong>Will</strong> you <strong>be passing</strong> the post office? <em>(polite indirect request)</em>',
+        'Don\'t call at 9 — she <strong>will be sleeping</strong>.',
+        '"Will you be needing" is a polite way to ask instead of a direct demand.',
+        'In 2030, we <strong>will be living</strong> in a very different world.',
+        'They <strong>will be renovating</strong> the school all summer.',
+        'At this time tomorrow, you <strong>will be flying</strong> to Paris.',
+      ]
+    },
+    mistakes: [
+      'Omitting "be": <em>"will studying"</em> → <em>"will be studying."</em>',
+      'Using Future Continuous for instant decisions — use Future Simple.',
+    ],
+    exceptions: [
+      'Future Continuous can express a natural or expected event: <em>"The president will be speaking at noon."</em>',
+      'Polite requests often use Future Continuous: <em>"Will you be needing a receipt?"</em>',
+    ],
+    signals: ['this time tomorrow', 'at this time next week', 'at 8 PM tomorrow', 'soon', 'in the future', 'all day tomorrow'],
+  },
+
+  {
+    id: 'future-perfect',
+    name: 'Future Perfect',
+    shortName: 'Future Perfect',
+    group: 'future',
+    index: '11',
+    desc: 'Describes an action that will be completed before a specific time or another event in the future.',
+    formulas: [
+      { label: 'Affirmative', f: '<strong>Subject</strong> + <em>will have</em> + <em>past participle</em>' },
+      { label: 'Negative',    f: '<strong>Subject</strong> + <em>won\'t have</em> + <em>past participle</em>' },
+      { label: 'Question',    f: '<em>Will</em> + <strong>Subject</strong> + <em>have</em> + <em>past participle</em> ?' },
+    ],
+    examples: {
+      affirmative: ['By Friday, she <strong>will have finished</strong> the report.', 'I <strong>will have eaten</strong> by the time you arrive.'],
+      negative:    ['He <strong>won\'t have completed</strong> it by tomorrow.', 'We <strong>won\'t have left</strong> by noon.'],
+      question:    ['<strong>Will</strong> you <strong>have graduated</strong> by June?', '<strong>Will</strong> she <strong>have arrived</strong> by then?'],
+      negQ:        ['<strong>Won\'t</strong> you <strong>have finished</strong> by 5 PM?', '<strong>Won\'t</strong> he <strong>have heard</strong> the news?'],
+      special: [
+        'By 2030, I <strong>will have lived</strong> here for ten years.',
+        'By the time he gets home, she <strong>will have cooked</strong> dinner.',
+        '"I will have went" ❌ → <em>"I will have gone."</em>',
+        'Don\'t call after 9 — she <strong>will have gone</strong> to sleep.',
+        'He <strong>will have read</strong> the whole book by tonight.',
+        'By the end of the year, we <strong>will have saved</strong> enough money.',
+        'The doctor <strong>will have reviewed</strong> your results by Monday.',
+      ]
+    },
+    mistakes: [
+      'Wrong past participle: <em>"will have went"</em> → <em>"will have gone."</em>',
+      'Omitting "have": <em>"will finished"</em> → <em>"will have finished."</em>',
+      'Confusing with Future Simple — Future Perfect stresses completion before a deadline.',
+    ],
+    exceptions: [
+      '"By the time" triggers Future Perfect in the main clause.',
+      'Can express an assumption: <em>"You will have heard the news by now."</em>',
+    ],
+    signals: ['by', 'by then', 'by the time', 'before', 'already', 'in X years', 'when you arrive'],
+  },
+
+  {
+    id: 'future-perfect-cont',
+    name: 'Future Perfect Continuous',
+    shortName: 'Fut. Perf. Cont.',
+    group: 'future',
+    index: '12',
+    desc: 'Emphasises the duration of an ongoing action up to a specific future point.',
+    formulas: [
+      { label: 'Affirmative', f: '<strong>Subject</strong> + <em>will have been</em> + <em>verb-ing</em>' },
+      { label: 'Negative',    f: '<strong>Subject</strong> + <em>won\'t have been</em> + <em>verb-ing</em>' },
+      { label: 'Question',    f: '<em>Will</em> + <strong>Subject</strong> + <em>have been</em> + <em>verb-ing</em> ?' },
+    ],
+    examples: {
+      affirmative: ['By May, she <strong>will have been studying</strong> English for five years.', 'They <strong>will have been building</strong> the road for two months by then.'],
+      negative:    ['He <strong>won\'t have been working</strong> there long.', 'I <strong>won\'t have been waiting</strong> that long.'],
+      question:    ['<strong>Will</strong> you <strong>have been living</strong> here for 10 years by then?', '<strong>Will</strong> she <strong>have been teaching</strong> long?'],
+      negQ:        ['<strong>Won\'t</strong> you <strong>have been driving</strong> for 6 hours by noon?', '<strong>Won\'t</strong> she <strong>have been working</strong> enough?'],
+      special: [
+        'By next year, I <strong>will have been teaching</strong> for a decade.',
+        'By the time the guests arrive, I <strong>will have been cooking</strong> for three hours.',
+        '"Will have been knowing" ❌ — stative verb.',
+        'He <strong>will have been running</strong> his company for 20 years by 2030.',
+        'This tense is rare in speech — often replaced by Future Perfect Simple.',
+        'You <strong>will have been waiting</strong> for two hours when she finally arrives.',
+        '<strong>Will have been travelling</strong> for 12 hours when we land.',
+      ]
+    },
+    mistakes: [
+      'Using stative verbs: <em>"will have been knowing"</em> → use <em>"will have known."</em>',
+      'Omitting "been": <em>"will have studying"</em> → <em>"will have been studying."</em>',
+      'Overusing this tense — it\'s mostly for emphasis on long duration before a future point.',
+    ],
+    exceptions: [
+      'Very rare in everyday speech; Future Perfect Simple is usually preferred unless duration is the explicit focus.',
+      'Stative verbs use Future Perfect Simple: <em>"By then, I will have known him for 20 years."</em>',
+    ],
+    signals: ['by', 'for', 'by the time', 'in X years/months', 'all day', 'how long will you have been...'],
+  },
+];
+
+/* ════════════════════════════════════════
+   RENDER ENGINE
+════════════════════════════════════════ */
+let current = 0;
+
+function buildSidebar() {
+  const inner = document.querySelector('.sidebar-inner');
+  TENSES.forEach((t, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'tense-nav-btn' + (i === 0 ? ' active' : '');
+    btn.onclick = () => switchTense(i);
+    btn.innerHTML = `
+      <span class="tnum">${t.index}</span>
+      <span class="tlabel">${t.shortName}</span>
+      <span class="ttag ${t.group}">${t.group}</span>
+    `;
+    inner.appendChild(btn);
+  });
+}
+
+function buildMobileSelect() {
+  const sel = document.querySelector('.mobile-tense-select');
+  TENSES.forEach((t, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = `${t.index}. ${t.name}`;
+    sel.appendChild(opt);
+  });
+}
+
+function buildDots() {
+  const dots = document.getElementById('progressDots');
+  TENSES.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'progress-dot' + (i === 0 ? ' active' : '');
+    d.title = TENSES[i].name;
+    d.onclick = () => switchTense(i);
+    dots.appendChild(d);
+  });
+}
+
+function buildPanels() {
+  const area = document.getElementById('contentArea');
+  TENSES.forEach((t, i) => {
+    const div = document.createElement('div');
+    div.className = 'tense-panel' + (i === 0 ? ' active' : '');
+    div.id = 'panel-' + i;
+    div.innerHTML = renderPanel(t);
+    area.appendChild(div);
+    // wire accordion buttons
+    div.querySelectorAll('.accordion-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const acc = btn.closest('.accordion');
+        acc.classList.toggle('open');
+      });
+    });
+  });
+}
+
+function renderPanel(t) {
+  // Formulas
+  const formulaHtml = t.formulas.map(f => `
+    <div class="formula-block">
+      <div class="formula-label">${f.label}</div>
+      <div class="formula">${f.f}</div>
+    </div>
+  `).join('');
+
+  // Examples
+  const ex = t.examples;
+  const specialHtml = ex.special.map(e => `<div class="example-item special">${e}</div>`).join('');
+
+  return `
+    <!-- TENSE HEADER -->
+    <div class="tense-header">
+      <div class="tense-meta">
+        <span class="tense-index">#${t.index}</span>
+        <span class="tense-tag-lg ${t.group}">${t.group}</span>
+      </div>
+      <div class="tense-title">${t.name}</div>
+      <div class="tense-desc">${t.desc}</div>
+    </div>
+
+    <!-- GRAMMAR RULE -->
+    <div class="grammar-rule">
+      <div class="grammar-rule-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+        Grammar Rule & Formula
+      </div>
+      ${formulaHtml}
+    </div>
+
+    <!-- EXAMPLES -->
+    <div class="examples-section">
+      <div class="section-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Examples (15 sentences)
+      </div>
+
+      <div class="examples-grid">
+        <div class="example-group">
+          <div class="example-group-title eg-affirmative">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Affirmative
+          </div>
+          ${ex.affirmative.map(e => `<div class="example-item affirm">${e}</div>`).join('')}
+        </div>
+
+        <div class="example-group">
+          <div class="example-group-title eg-negative">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Negative
+          </div>
+          ${ex.negative.map(e => `<div class="example-item neg">${e}</div>`).join('')}
+        </div>
+
+        <div class="example-group">
+          <div class="example-group-title eg-question">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Question
+          </div>
+          ${ex.question.map(e => `<div class="example-item quest">${e}</div>`).join('')}
+        </div>
+
+        <div class="example-group">
+          <div class="example-group-title eg-negq">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Negative Question
+          </div>
+          ${ex.negQ.map(e => `<div class="example-item negq">${e}</div>`).join('')}
+        </div>
+      </div>
+
+      <div class="examples-special">
+        <div class="example-group-title eg-special" style="margin-bottom:10px">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Tricky / Creative Cases
+        </div>
+        <div class="special-full-col">${specialHtml}</div>
+      </div>
+    </div>
+
+    <!-- ACCORDIONS -->
+    <div class="accordions">
+
+      <div class="accordion acc-mistakes">
+        <button class="accordion-trigger">
+          <span class="accordion-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </span>
+          Common Mistakes
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul class="acc-list">
+              ${t.mistakes.map(m => `<li><span>${m}</span></li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion acc-exceptions">
+        <button class="accordion-trigger">
+          <span class="accordion-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </span>
+          Exceptions & Special Cases
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul class="acc-list">
+              ${t.exceptions.map(e => `<li><span>${e}</span></li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion acc-signals">
+        <button class="accordion-trigger">
+          <span class="accordion-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </span>
+          Signal Words
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <p style="font-size:13px;color:var(--text2);margin-bottom:10px">These time expressions are strong indicators of this tense:</p>
+            <div class="signal-chips">
+              ${t.signals.map(s => `<span class="signal-chip">${s}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  `;
+}
+
+function switchTense(i) {
+  // panels
+  document.querySelectorAll('.tense-panel').forEach((p, idx) => {
+    p.classList.toggle('active', idx === i);
+  });
+  // sidebar
+  document.querySelectorAll('.tense-nav-btn').forEach((b, idx) => {
+    b.classList.toggle('active', idx === i);
+  });
+  // dots
+  document.querySelectorAll('.progress-dot').forEach((d, idx) => {
+    d.classList.toggle('active', idx === i);
+  });
+  // mobile select
+  document.querySelector('.mobile-tense-select').value = i;
+
+  current = i;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ─── INIT ─── */
+buildSidebar();
+buildMobileSelect();
+buildDots();
+buildPanels();
+</script>
+
+</body>
+</html>
