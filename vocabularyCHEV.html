@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vocabulary Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'IBM Plex Mono',monospace;
+  background:#ffffff;
+  color:#111;
+  padding:32px 28px 50px;
+  max-width:1200px;
+  margin:0 auto;
+}
+header{
+  border-bottom:2px solid #111;
+  padding-bottom:14px;
+  margin-bottom:28px;
+  display:flex;
+  align-items:baseline;
+  gap:16px;
+}
+header h1{font-size:1.4rem;font-weight:600;letter-spacing:0.05em}
+header p{font-size:0.68rem;color:#666;letter-spacing:0.12em;text-transform:uppercase}
+.badge{
+  margin-left:auto;
+  font-size:0.62rem;
+  padding:3px 10px;
+  border:1px solid #ccc;
+  border-radius:20px;
+  color:#555;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+}
+.sec-label{
+  font-size:0.6rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#888;
+  border-left:3px solid #111;
+  padding-left:8px;
+  margin-bottom:8px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:5px;
+  margin-bottom:22px;
+}
+.wc{
+  position:relative;
+  border:1px solid #ddd;
+  border-radius:4px;
+  padding:7px 8px;
+  cursor:default;
+  background:#fff;
+  transition:border-color .15s,background .15s,box-shadow .15s;
+  overflow:visible;
+}
+.wc:hover{
+  border-color:#111;
+  background:#f5f5f5;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  z-index:10;
+}
+.en{
+  font-size:0.7rem;
+  font-weight:600;
+  color:#111;
+  display:block;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.wc:hover .en{color:#000}
+.tt{
+  display:none;
+  position:absolute;
+  bottom:calc(100% + 7px);
+  left:50%;
+  transform:translateX(-50%);
+  background:#111;
+  color:#fff;
+  padding:5px 10px;
+  border-radius:4px;
+  font-family:'IBM Plex Sans Arabic',sans-serif;
+  font-size:0.72rem;
+  white-space:nowrap;
+  direction:rtl;
+  z-index:999;
+  pointer-events:none;
+  box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+.tt::after{
+  content:'';
+  position:absolute;top:100%;left:50%;
+  transform:translateX(-50%);
+  border:5px solid transparent;
+  border-top-color:#111;
+}
+.wc:hover .tt{
+  display:block;
+  animation:pop .12s ease;
+}
+@keyframes pop{
+  from{opacity:0;transform:translateX(-50%) translateY(3px)}
+  to{opacity:1;transform:translateX(-50%) translateY(0)}
+}
+footer{
+  margin-top:30px;
+  border-top:1px solid #ddd;
+  padding-top:10px;
+  font-size:0.6rem;
+  color:#999;
+  text-align:center;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+}
+.pwd-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#f8f9fa,#fff);z-index:9999;display:flex;align-items:center;justify-content:center;animation:fadeIn .5s}
+.pwd-overlay.hidden{display:none}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeOut{from{opacity:1}to{opacity:0}}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+.pwd-box{background:#fff;border:1px solid #ddd;border-radius:12px;padding:48px 40px;max-width:450px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,.15);text-align:center;animation:slideUp .6s}
+.pwd-logo{width:80px;height:80px;margin:0 auto 24px;animation:pulse 2s infinite}
+.pwd-logo img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(59,130,246,.3))}
+.pwd-icon{width:64px;height:64px;margin:0 auto 24px;background:linear-gradient(135deg,#3b82f6,#f4a261);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 24px rgba(59,130,246,.3);animation:pulse 2s infinite}
+.pwd-icon svg{width:32px;height:32px}
+.pwd-box h2{font-size:28px;font-weight:700;color:#111;margin:0 0 12px;background:linear-gradient(135deg,#3b82f6,#f4a261);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.pwd-box p{font-size:15px;color:#666;margin:0 0 32px;line-height:1.6}
+.pwd-input{width:100%;padding:16px 20px;font-size:16px;border:2px solid #ddd;border-radius:8px;background:#f8f9fa;color:#111;transition:all .3s;text-align:center;letter-spacing:.1em;font-weight:600;margin-bottom:20px}
+.pwd-input:focus{outline:none;border-color:#3b82f6;box-shadow:0 0 0 4px rgba(59,130,246,.1);transform:translateY(-2px)}
+.pwd-submit{width:100%;padding:16px 24px;font-size:15px;font-weight:700;background:linear-gradient(135deg,#3b82f6,#f4a261);color:#fff;border:none;border-radius:50px;cursor:pointer;transition:all .3s;letter-spacing:.05em;text-transform:uppercase;box-shadow:0 4px 16px rgba(59,130,246,.3)}
+.pwd-submit:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(244,162,97,.4)}
+.pwd-error{color:#c62828;font-size:14px;margin-top:16px;padding:12px;background:rgba(198,40,40,.1);border-radius:8px;display:none;animation:shake .5s}
+.pwd-error.show{display:block}
+.pwd-box.error{animation:shake .5s}
+</style>
+</head>
+<body>
+<div class="pwd-overlay" id="pwdOverlay">
+<div class="pwd-box" id="pwdBox">
+<div class="pwd-logo"><img src="images/logo.png" alt="VocaPath"></div>
+<div class="pwd-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+<path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+</svg>
+</div>
+<h2>Private Access Required</h2>
+<p>This is a protected page. Please enter your password to continue.</p>
+<input type="password" id="pwdInput" class="pwd-input" placeholder="••••" maxlength="4">
+<button class="pwd-submit" onclick="checkPwd()">Unlock Access</button>
+<div class="pwd-error" id="pwdError">Incorrect password. Please try again.</div>
+</div>
+</div>
+<script>
+function checkPwd(){const i=document.getElementById('pwdInput'),e=document.getElementById('pwdError'),o=document.getElementById('pwdOverlay'),b=document.getElementById('pwdBox');if(i.value==='99'){o.style.animation='fadeOut .5s';setTimeout(()=>{o.classList.add('hidden');sessionStorage.setItem('cheveningAuth','true')},400)}else{b.classList.add('error');e.classList.add('show');i.value='';i.focus();setTimeout(()=>{b.classList.remove('error');e.classList.remove('show')},3000)}}
+window.addEventListener('DOMContentLoaded',()=>{const a=sessionStorage.getItem('cheveningAuth');if(a==='true')document.getElementById('pwdOverlay').classList.add('hidden');const i=document.getElementById('pwdInput');i.addEventListener('keypress',e=>{if(e.key==='Enter')checkPwd()});if(!a)setTimeout(()=>i.focus(),500)});
+</script>
+<header>
+  <h1>Vocabulary Reference</h1>
+  <p>Hover · Arabic translation</p>
+  <span class="badge">308 words</span>
+</header>
+
+<p class="sec-label">A – G &nbsp;·&nbsp; 119 words</p>
+<div class="grid">
+<div class="wc"><span class="en">ability</span><span class="tt">قدرة | مقدرة</span></div>
+<div class="wc"><span class="en">academic</span><span class="tt">أكاديمي | علمي</span></div>
+<div class="wc"><span class="en">accept</span><span class="tt">يقبل | يوافق</span></div>
+<div class="wc"><span class="en">achieve</span><span class="tt">يحقق | ينجز</span></div>
+<div class="wc"><span class="en">additional</span><span class="tt">إضافي | زائد</span></div>
+<div class="wc"><span class="en">additionally</span><span class="tt">بالإضافة إلى ذلك</span></div>
+<div class="wc"><span class="en">address</span><span class="tt">يعالج | يتناول</span></div>
+<div class="wc"><span class="en">advanced</span><span class="tt">متقدم | عالي المستوى</span></div>
+<div class="wc"><span class="en">advice</span><span class="tt">نصيحة | مشورة</span></div>
+<div class="wc"><span class="en">ahead</span><span class="tt">قُدماً | في المستقبل</span></div>
+<div class="wc"><span class="en">aim</span><span class="tt">هدف | غاية</span></div>
+<div class="wc"><span class="en">align</span><span class="tt">يتماشى | يتوافق</span></div>
+<div class="wc"><span class="en">alignment</span><span class="tt">توافق | انسجام | تناسق</span></div>
+<div class="wc"><span class="en">alternative</span><span class="tt">بديل | خيار آخر</span></div>
+<div class="wc"><span class="en">analytical</span><span class="tt">تحليلي | قائم على التحليل</span></div>
+<div class="wc"><span class="en">appetite</span><span class="tt">شهيّة | رغبة قوية</span></div>
+<div class="wc"><span class="en">apply</span><span class="tt">يتقدم | يطبق</span></div>
+<div class="wc"><span class="en">approach</span><span class="tt">نهج | أسلوب</span></div>
+<div class="wc"><span class="en">appropriate</span><span class="tt">مناسب | ملائم</span></div>
+<div class="wc"><span class="en">assessment</span><span class="tt">تقييم | تقدير</span></div>
+<div class="wc"><span class="en">authority</span><span class="tt">سلطة | جهة رسمية</span></div>
+<div class="wc"><span class="en">background</span><span class="tt">خلفية | ماضٍ</span></div>
+<div class="wc"><span class="en">balance</span><span class="tt">يوازن | يعادل</span></div>
+<div class="wc"><span class="en">become</span><span class="tt">يصبح | يغدو</span></div>
+<div class="wc"><span class="en">benefit</span><span class="tt">يستفيد | ينتفع</span></div>
+<div class="wc"><span class="en">border</span><span class="tt">حدود | تخوم</span></div>
+<div class="wc"><span class="en">bridging</span><span class="tt">يَصِل | يُجسِّر الفجوة</span></div>
+<div class="wc"><span class="en">brilliance</span><span class="tt">تألق | براعة</span></div>
+<div class="wc"><span class="en">broader</span><span class="tt">أوسع | أشمل</span></div>
+<div class="wc"><span class="en">build</span><span class="tt">يبني | يشيّد</span></div>
+<div class="wc"><span class="en">building</span><span class="tt">بناء | تشييد</span></div>
+<div class="wc"><span class="en">candidacy</span><span class="tt">ترشُّح | حملة انتخابية</span></div>
+<div class="wc"><span class="en">candidate</span><span class="tt">مرشح | مُتقدِّم</span></div>
+<div class="wc"><span class="en">capability</span><span class="tt">قدرة | كفاءة</span></div>
+<div class="wc"><span class="en">capacity</span><span class="tt">قدرة | طاقة | كفاءة</span></div>
+<div class="wc"><span class="en">center</span><span class="tt">مركز | وسط</span></div>
+<div class="wc"><span class="en">challenge</span><span class="tt">تحدٍ | صعوبة</span></div>
+<div class="wc"><span class="en">choice</span><span class="tt">خيار | اختيار</span></div>
+<div class="wc"><span class="en">coalition</span><span class="tt">تحالف | ائتلاف</span></div>
+<div class="wc"><span class="en">collaboration</span><span class="tt">تعاون | عمل مشترك</span></div>
+<div class="wc"><span class="en">combine</span><span class="tt">يدمج | يجمع</span></div>
+<div class="wc"><span class="en">commitment</span><span class="tt">التزام | تعهُّد</span></div>
+<div class="wc"><span class="en">comparable</span><span class="tt">مماثل | قابل للمقارنة</span></div>
+<div class="wc"><span class="en">competitive</span><span class="tt">تنافسي | منافس</span></div>
+<div class="wc"><span class="en">comprehensive</span><span class="tt">شامل | مستوعِب لكل الجوانب</span></div>
+<div class="wc"><span class="en">conclude</span><span class="tt">يخلص إلى | يستنتج</span></div>
+<div class="wc"><span class="en">confidence</span><span class="tt">ثقة | اطمئنان</span></div>
+<div class="wc"><span class="en">conflict</span><span class="tt">نزاع | صراع | خلاف</span></div>
+<div class="wc"><span class="en">connect</span><span class="tt">يربط | يصل</span></div>
+<div class="wc"><span class="en">connection</span><span class="tt">علاقة | صلة | ارتباط</span></div>
+<div class="wc"><span class="en">considerable</span><span class="tt">كبير | معتبر</span></div>
+<div class="wc"><span class="en">considerably</span><span class="tt">بشكل كبير | إلى حد بعيد</span></div>
+<div class="wc"><span class="en">consistency</span><span class="tt">الاتساق | الثبات</span></div>
+<div class="wc"><span class="en">consult</span><span class="tt">يستشير | يراجع</span></div>
+<div class="wc"><span class="en">contact</span><span class="tt">اتصال | تواصل</span></div>
+<div class="wc"><span class="en">context</span><span class="tt">سياق | ظرف</span></div>
+<div class="wc"><span class="en">continue</span><span class="tt">يستمر | يواصل</span></div>
+<div class="wc"><span class="en">contribute</span><span class="tt">يساهم | يشارك</span></div>
+<div class="wc"><span class="en">contribution</span><span class="tt">مساهمة | إسهام</span></div>
+<div class="wc"><span class="en">cooperation</span><span class="tt">تعاون | تضامن</span></div>
+<div class="wc"><span class="en">coordinate</span><span class="tt">يُنسِّق | يُدير</span></div>
+<div class="wc"><span class="en">credentials</span><span class="tt">أوراق اعتماد | مؤهلات</span></div>
+<div class="wc"><span class="en">credibility</span><span class="tt">مصداقية | موثوقية</span></div>
+<div class="wc"><span class="en">culturally</span><span class="tt">ثقافياً | من الناحية الثقافية</span></div>
+<div class="wc"><span class="en">decision</span><span class="tt">قرار | حكم</span></div>
+<div class="wc"><span class="en">dedicated</span><span class="tt">مُتفانٍ | مُكرِّس جهده</span></div>
+<div class="wc"><span class="en">deepen</span><span class="tt">يُعمِّق | يُرسِّخ</span></div>
+<div class="wc"><span class="en">degree</span><span class="tt">درجة علمية | شهادة</span></div>
+<div class="wc"><span class="en">delivery</span><span class="tt">تقديم | توصيل</span></div>
+<div class="wc"><span class="en">demographic</span><span class="tt">ديموغرافي | سكاني</span></div>
+<div class="wc"><span class="en">department</span><span class="tt">قسم | إدارة</span></div>
+<div class="wc"><span class="en">depend</span><span class="tt">يعتمد | يتوقف</span></div>
+<div class="wc"><span class="en">design</span><span class="tt">يصمم | يخطط</span></div>
+<div class="wc"><span class="en">develop</span><span class="tt">يطور | ينمي</span></div>
+<div class="wc"><span class="en">developed</span><span class="tt">متطور | متقدم</span></div>
+<div class="wc"><span class="en">development</span><span class="tt">تنمية | تطوير</span></div>
+<div class="wc"><span class="en">direct</span><span class="tt">يوجه | يدير</span></div>
+<div class="wc"><span class="en">directly</span><span class="tt">مباشرة | بشكل مباشر</span></div>
+<div class="wc"><span class="en">draw</span><span class="tt">يستمد | يستخلص</span></div>
+<div class="wc"><span class="en">effective</span><span class="tt">فعال | مؤثر</span></div>
+<div class="wc"><span class="en">effectively</span><span class="tt">بفعالية | بكفاءة</span></div>
+<div class="wc"><span class="en">effectiveness</span><span class="tt">فعالية | كفاءة</span></div>
+<div class="wc"><span class="en">election</span><span class="tt">انتخابات | اقتراع</span></div>
+<div class="wc"><span class="en">enable</span><span class="tt">يمكّن | يتيح</span></div>
+<div class="wc"><span class="en">engage</span><span class="tt">ينخرط | يشارك</span></div>
+<div class="wc"><span class="en">engineer</span><span class="tt">مهندس</span></div>
+<div class="wc"><span class="en">enhance</span><span class="tt">يعزز | يحسّن</span></div>
+<div class="wc"><span class="en">enrollment</span><span class="tt">التسجيل | الالتحاق</span></div>
+<div class="wc"><span class="en">ensure</span><span class="tt">يضمن | يتأكد</span></div>
+<div class="wc"><span class="en">essential</span><span class="tt">ضروري | أساسي</span></div>
+<div class="wc"><span class="en">establish</span><span class="tt">يؤسس | يُنشئ</span></div>
+<div class="wc"><span class="en">established</span><span class="tt">راسخ | معروف | مُستقَر</span></div>
+<div class="wc"><span class="en">evaluation</span><span class="tt">تقييم | تقدير</span></div>
+<div class="wc"><span class="en">examine</span><span class="tt">يفحص | يدرس</span></div>
+<div class="wc"><span class="en">excellent</span><span class="tt">ممتاز | رائع</span></div>
+<div class="wc"><span class="en">exchange</span><span class="tt">تبادل | مقايضة</span></div>
+<div class="wc"><span class="en">expectation</span><span class="tt">توقع | انتظار</span></div>
+<div class="wc"><span class="en">experience</span><span class="tt">تجربة | خبرة</span></div>
+<div class="wc"><span class="en">expertise</span><span class="tt">خبرة متخصصة | كفاءة عالية</span></div>
+<div class="wc"><span class="en">faculty</span><span class="tt">هيئة تدريس | كلية</span></div>
+<div class="wc"><span class="en">figure</span><span class="tt">شخصية | رقم</span></div>
+<div class="wc"><span class="en">follow</span><span class="tt">يتبع | يلتزم</span></div>
+<div class="wc"><span class="en">forging</span><span class="tt">يبني | يُرسي | يُكوِّن</span></div>
+<div class="wc"><span class="en">former</span><span class="tt">سابق | أسبق</span></div>
+<div class="wc"><span class="en">foundation</span><span class="tt">أساس | قاعدة</span></div>
+<div class="wc"><span class="en">fragile</span><span class="tt">هشّ | قابل للكسر</span></div>
+<div class="wc"><span class="en">framework</span><span class="tt">إطار عمل | منظومة</span></div>
+<div class="wc"><span class="en">future</span><span class="tt">مستقبلي | قادم</span></div>
+<div class="wc"><span class="en">gain</span><span class="tt">يكتسب | يحصل على</span></div>
+<div class="wc"><span class="en">gap</span><span class="tt">فجوة | ثغرة</span></div>
+<div class="wc"><span class="en">genuine</span><span class="tt">حقيقي | صادق | أصيل</span></div>
+<div class="wc"><span class="en">globally</span><span class="tt">عالمياً | على مستوى العالم</span></div>
+<div class="wc"><span class="en">goal</span><span class="tt">هدف | غاية</span></div>
+<div class="wc"><span class="en">governance</span><span class="tt">الحوكمة | إدارة الشؤون العامة</span></div>
+<div class="wc"><span class="en">graduate</span><span class="tt">خريج | متخرج</span></div>
+<div class="wc"><span class="en">grow</span><span class="tt">ينمو | يتطور</span></div>
+<div class="wc"><span class="en">guarantee</span><span class="tt">يضمن | يكفل</span></div>
+<div class="wc"><span class="en">guidance</span><span class="tt">توجيه | إرشاد</span></div>
+<div class="wc"><span class="en">guide</span><span class="tt">يوجه | يرشد</span></div>
+</div>
+
+<p class="sec-label">H – P &nbsp;·&nbsp; 93 words</p>
+<div class="grid">
+<div class="wc"><span class="en">hesitant</span><span class="tt">مُتردِّد | متحسِّس</span></div>
+<div class="wc"><span class="en">historical</span><span class="tt">تاريخي | مُتعلِّق بالتاريخ</span></div>
+<div class="wc"><span class="en">humanitarian</span><span class="tt">إنساني | خيري</span></div>
+<div class="wc"><span class="en">immediately</span><span class="tt">فوراً | على الفور</span></div>
+<div class="wc"><span class="en">impact</span><span class="tt">تأثير | أثر</span></div>
+<div class="wc"><span class="en">implementation</span><span class="tt">تنفيذ | تطبيق</span></div>
+<div class="wc"><span class="en">improvement</span><span class="tt">تحسين | تطوير</span></div>
+<div class="wc"><span class="en">individual</span><span class="tt">فرد | شخص</span></div>
+<div class="wc"><span class="en">influence</span><span class="tt">تأثير | نفوذ</span></div>
+<div class="wc"><span class="en">initiative</span><span class="tt">مُبادَرة | خطوة أولى</span></div>
+<div class="wc"><span class="en">instability</span><span class="tt">عدم الاستقرار | اضطراب</span></div>
+<div class="wc"><span class="en">institution</span><span class="tt">مؤسسة | هيئة</span></div>
+<div class="wc"><span class="en">institutional</span><span class="tt">مؤسسي | مُتعلِّق بالمؤسسات</span></div>
+<div class="wc"><span class="en">intend</span><span class="tt">يعتزم | ينوي</span></div>
+<div class="wc"><span class="en">intensively</span><span class="tt">بشكل مكثَّف | بجِدّ وإصرار</span></div>
+<div class="wc"><span class="en">interaction</span><span class="tt">تفاعل | تواصل متبادل</span></div>
+<div class="wc"><span class="en">interactive</span><span class="tt">تفاعلي | مُتبادَل</span></div>
+<div class="wc"><span class="en">interest</span><span class="tt">اهتمام | ميول</span></div>
+<div class="wc"><span class="en">international</span><span class="tt">دولي | عالمي</span></div>
+<div class="wc"><span class="en">invite</span><span class="tt">يدعو | يستدعي</span></div>
+<div class="wc"><span class="en">join</span><span class="tt">ينضم | يلتحق</span></div>
+<div class="wc"><span class="en">knowledge</span><span class="tt">معرفة | علم</span></div>
+<div class="wc"><span class="en">lack</span><span class="tt">يفتقر إلى | ينقصه</span></div>
+<div class="wc"><span class="en">lead</span><span class="tt">يؤدي إلى | يقود</span></div>
+<div class="wc"><span class="en">leader</span><span class="tt">قائد | زعيم</span></div>
+<div class="wc"><span class="en">leadership</span><span class="tt">قيادة | زعامة</span></div>
+<div class="wc"><span class="en">learning</span><span class="tt">تعلّم | تعليم</span></div>
+<div class="wc"><span class="en">lesson</span><span class="tt">درس | عبرة</span></div>
+<div class="wc"><span class="en">livelihood</span><span class="tt">الرزق | مصدر الدخل</span></div>
+<div class="wc"><span class="en">locate</span><span class="tt">يقع | يتموضع</span></div>
+<div class="wc"><span class="en">logic</span><span class="tt">منطق | استدلال</span></div>
+<div class="wc"><span class="en">maintain</span><span class="tt">يحافظ على | يُبقي</span></div>
+<div class="wc"><span class="en">manageable</span><span class="tt">قابل للإدارة | يمكن التحكم به</span></div>
+<div class="wc"><span class="en">management</span><span class="tt">إدارة | تنظيم</span></div>
+<div class="wc"><span class="en">managerial</span><span class="tt">إداري | تنظيمي</span></div>
+<div class="wc"><span class="en">marginalization</span><span class="tt">التهميش | الإقصاء الاجتماعي</span></div>
+<div class="wc"><span class="en">matter</span><span class="tt">يهم | له أهمية</span></div>
+<div class="wc"><span class="en">mayoral</span><span class="tt">يتعلق برئاسة البلدية</span></div>
+<div class="wc"><span class="en">meaningful</span><span class="tt">ذو مغزى | هادف</span></div>
+<div class="wc"><span class="en">medium</span><span class="tt">متوسط | وسط</span></div>
+<div class="wc"><span class="en">member</span><span class="tt">عضو | فرد</span></div>
+<div class="wc"><span class="en">mentor</span><span class="tt">موجه | مُرشِد</span></div>
+<div class="wc"><span class="en">metropolitan</span><span class="tt">حضري كبير | متروبوليتاني</span></div>
+<div class="wc"><span class="en">microwave</span><span class="tt">موجات دقيقة | ميكروويف</span></div>
+<div class="wc"><span class="en">ministerial</span><span class="tt">وزاري | يتعلق بالوزارة</span></div>
+<div class="wc"><span class="en">modern</span><span class="tt">حديث | عصري</span></div>
+<div class="wc"><span class="en">municipality</span><span class="tt">بلدية | حكومة محلية</span></div>
+<div class="wc"><span class="en">mutual</span><span class="tt">متبادَل | مشترَك</span></div>
+<div class="wc"><span class="en">nation</span><span class="tt">أمة | دولة</span></div>
+<div class="wc"><span class="en">national</span><span class="tt">وطني | قومي</span></div>
+<div class="wc"><span class="en">native</span><span class="tt">مواطن أصلي | من المواليد</span></div>
+<div class="wc"><span class="en">need</span><span class="tt">حاجة | احتياج</span></div>
+<div class="wc"><span class="en">network</span><span class="tt">شبكة | شبكة علاقات</span></div>
+<div class="wc"><span class="en">nominate</span><span class="tt">يُرشِّح | يُزكّي</span></div>
+<div class="wc"><span class="en">nomination</span><span class="tt">ترشيح | تزكية</span></div>
+<div class="wc"><span class="en">objective</span><span class="tt">هدف | غاية</span></div>
+<div class="wc"><span class="en">offer</span><span class="tt">يوفر | يقدم</span></div>
+<div class="wc"><span class="en">official</span><span class="tt">مسؤول | موظف رسمي</span></div>
+<div class="wc"><span class="en">operation</span><span class="tt">عملية | تشغيل</span></div>
+<div class="wc"><span class="en">opportunity</span><span class="tt">فرصة | إمكانية</span></div>
+<div class="wc"><span class="en">oppose</span><span class="tt">يُعارِض | يَقِف ضد</span></div>
+<div class="wc"><span class="en">opposition</span><span class="tt">معارضة | مقاومة</span></div>
+<div class="wc"><span class="en">organize</span><span class="tt">يُنظِّم | يُرتِّب</span></div>
+<div class="wc"><span class="en">origin</span><span class="tt">أصل | منشأ</span></div>
+<div class="wc"><span class="en">outside</span><span class="tt">خارج | من خارج</span></div>
+<div class="wc"><span class="en">overcome</span><span class="tt">يتغلب على | يتجاوز</span></div>
+<div class="wc"><span class="en">oversee</span><span class="tt">يشرف على | يراقب</span></div>
+<div class="wc"><span class="en">oversight</span><span class="tt">إشراف | رقابة</span></div>
+<div class="wc"><span class="en">participant</span><span class="tt">مشارك | مُساهِم</span></div>
+<div class="wc"><span class="en">participate</span><span class="tt">يشارك | يساهم</span></div>
+<div class="wc"><span class="en">participation</span><span class="tt">مشاركة | مساهمة</span></div>
+<div class="wc"><span class="en">partnership</span><span class="tt">شراكة | تعاون</span></div>
+<div class="wc"><span class="en">patience</span><span class="tt">صبر | تحمّل</span></div>
+<div class="wc"><span class="en">peacebuilding</span><span class="tt">بناء السلام | تعزيز السلام</span></div>
+<div class="wc"><span class="en">peer</span><span class="tt">نظير | زميل في المستوى ذاته</span></div>
+<div class="wc"><span class="en">plan</span><span class="tt">يخطط | ينوي</span></div>
+<div class="wc"><span class="en">policy</span><span class="tt">سياسة | نهج</span></div>
+<div class="wc"><span class="en">population</span><span class="tt">سكان | تعداد سكاني</span></div>
+<div class="wc"><span class="en">position</span><span class="tt">منصب | موقع</span></div>
+<div class="wc"><span class="en">possess</span><span class="tt">يمتلك | يحوز</span></div>
+<div class="wc"><span class="en">practical</span><span class="tt">عملي | تطبيقي</span></div>
+<div class="wc"><span class="en">precede</span><span class="tt">يسبق | يتقدم</span></div>
+<div class="wc"><span class="en">prepare</span><span class="tt">يُحضِّر | يُعِد</span></div>
+<div class="wc"><span class="en">primary</span><span class="tt">أساسي | رئيسي</span></div>
+<div class="wc"><span class="en">priorities</span><span class="tt">أولويات | الأمور الأكثر أهمية</span></div>
+<div class="wc"><span class="en">program</span><span class="tt">برنامج | خطة</span></div>
+<div class="wc"><span class="en">prolonged</span><span class="tt">مطوَّل | ممتد لفترة طويلة</span></div>
+<div class="wc"><span class="en">properly</span><span class="tt">بشكل صحيح | بطريقة سليمة</span></div>
+<div class="wc"><span class="en">protocol</span><span class="tt">بروتوكول | قواعد رسمية</span></div>
+<div class="wc"><span class="en">provide</span><span class="tt">يقدم | يوفر</span></div>
+<div class="wc"><span class="en">public</span><span class="tt">عام | حكومي</span></div>
+<div class="wc"><span class="en">publication</span><span class="tt">منشور | نشر</span></div>
+<div class="wc"><span class="en">pursue</span><span class="tt">يتابع | يسعى وراء</span></div>
+</div>
+
+<p class="sec-label">Q – Z &nbsp;·&nbsp; 96 words</p>
+<div class="grid">
+<div class="wc"><span class="en">qualification</span><span class="tt">مؤهّل | شهادة دراسية</span></div>
+<div class="wc"><span class="en">quickly</span><span class="tt">بسرعة | بشكل سريع</span></div>
+<div class="wc"><span class="en">reality</span><span class="tt">واقع | حقيقة</span></div>
+<div class="wc"><span class="en">realize</span><span class="tt">يدرك | يفهم</span></div>
+<div class="wc"><span class="en">rebuild</span><span class="tt">يعيد بناء | يُعمّر</span></div>
+<div class="wc"><span class="en">recent</span><span class="tt">حديث | أخير</span></div>
+<div class="wc"><span class="en">recognition</span><span class="tt">اعتراف | تقدير | إقرار</span></div>
+<div class="wc"><span class="en">recognize</span><span class="tt">يدرك | يعترف</span></div>
+<div class="wc"><span class="en">reconciliation</span><span class="tt">مصالحة | تسوية الخلافات</span></div>
+<div class="wc"><span class="en">reconstruction</span><span class="tt">إعادة الإعمار | إعادة البناء</span></div>
+<div class="wc"><span class="en">recover</span><span class="tt">يتعافى | يستعيد</span></div>
+<div class="wc"><span class="en">reflect</span><span class="tt">يعكس | يُعبِّر عن</span></div>
+<div class="wc"><span class="en">regime</span><span class="tt">نظام حكم | سلطة | نظام سياسي</span></div>
+<div class="wc"><span class="en">region</span><span class="tt">منطقة | إقليم</span></div>
+<div class="wc"><span class="en">regular</span><span class="tt">منتظم | دوري</span></div>
+<div class="wc"><span class="en">reinforce</span><span class="tt">يُعزِّز | يُقوِّي</span></div>
+<div class="wc"><span class="en">relatively</span><span class="tt">نسبياً | بشكل نسبي</span></div>
+<div class="wc"><span class="en">relevant</span><span class="tt">ذو صلة | مُتعلِّق</span></div>
+<div class="wc"><span class="en">remain</span><span class="tt">يبقى | يظل</span></div>
+<div class="wc"><span class="en">represent</span><span class="tt">يمثل | يُجسِّد</span></div>
+<div class="wc"><span class="en">representative</span><span class="tt">ممثل | نائب</span></div>
+<div class="wc"><span class="en">reputation</span><span class="tt">سمعة | شهرة</span></div>
+<div class="wc"><span class="en">require</span><span class="tt">يتطلب | يحتاج</span></div>
+<div class="wc"><span class="en">research</span><span class="tt">بحث | دراسة</span></div>
+<div class="wc"><span class="en">resident</span><span class="tt">مقيم | ساكن</span></div>
+<div class="wc"><span class="en">resilience</span><span class="tt">صمود | قدرة على التعافي</span></div>
+<div class="wc"><span class="en">resistance</span><span class="tt">مقاومة | معارضة</span></div>
+<div class="wc"><span class="en">resource</span><span class="tt">مورد | مصدر</span></div>
+<div class="wc"><span class="en">respect</span><span class="tt">احترام | تقدير</span></div>
+<div class="wc"><span class="en">responsibility</span><span class="tt">مسؤولية | واجب</span></div>
+<div class="wc"><span class="en">restore</span><span class="tt">يستعيد | يُرجِع</span></div>
+<div class="wc"><span class="en">restriction</span><span class="tt">قيد | تقييد</span></div>
+<div class="wc"><span class="en">return</span><span class="tt">يعود | يرجع</span></div>
+<div class="wc"><span class="en">role</span><span class="tt">دور | وظيفة</span></div>
+<div class="wc"><span class="en">roughly</span><span class="tt">تقريباً | حوالي</span></div>
+<div class="wc"><span class="en">run</span><span class="tt">يترشح | يخوض</span></div>
+<div class="wc"><span class="en">scholar</span><span class="tt">باحث | عالم</span></div>
+<div class="wc"><span class="en">scholarship</span><span class="tt">منحة دراسية | بعثة</span></div>
+<div class="wc"><span class="en">sector</span><span class="tt">قطاع | مجال</span></div>
+<div class="wc"><span class="en">secure</span><span class="tt">يحصل على | يؤمّن</span></div>
+<div class="wc"><span class="en">seek</span><span class="tt">يسعى | يبحث</span></div>
+<div class="wc"><span class="en">select</span><span class="tt">يختار | ينتقي</span></div>
+<div class="wc"><span class="en">senior</span><span class="tt">رفيع | عالي المستوى</span></div>
+<div class="wc"><span class="en">sensitivity</span><span class="tt">حساسية | مراعاة المشاعر</span></div>
+<div class="wc"><span class="en">serve</span><span class="tt">يخدم | يعمل</span></div>
+<div class="wc"><span class="en">service</span><span class="tt">خدمة | عمل</span></div>
+<div class="wc"><span class="en">shapers</span><span class="tt">صانعو القرار | المُشكِّلون</span></div>
+<div class="wc"><span class="en">shared</span><span class="tt">مشترك | متقاسَم</span></div>
+<div class="wc"><span class="en">shift</span><span class="tt">يتحول | ينتقل</span></div>
+<div class="wc"><span class="en">significantly</span><span class="tt">بشكل كبير | بصورة ملحوظة</span></div>
+<div class="wc"><span class="en">skeptical</span><span class="tt">متشكِّك | غير مُقتنع</span></div>
+<div class="wc"><span class="en">skill</span><span class="tt">مهارة | قدرة</span></div>
+<div class="wc"><span class="en">solid</span><span class="tt">قوي | متين</span></div>
+<div class="wc"><span class="en">solve</span><span class="tt">يحل | يجد حلاً</span></div>
+<div class="wc"><span class="en">standard</span><span class="tt">معيار | مستوى</span></div>
+<div class="wc"><span class="en">standing</span><span class="tt">مكانة | وضع</span></div>
+<div class="wc"><span class="en">strategic</span><span class="tt">استراتيجي | مُحكَم التخطيط</span></div>
+<div class="wc"><span class="en">strengthen</span><span class="tt">يعزز | يقوي</span></div>
+<div class="wc"><span class="en">strongly</span><span class="tt">بشدة | بقوة</span></div>
+<div class="wc"><span class="en">struggle</span><span class="tt">يكافح | يعاني</span></div>
+<div class="wc"><span class="en">study</span><span class="tt">يدرس | يتعلم</span></div>
+<div class="wc"><span class="en">substantial</span><span class="tt">كبير | ذو شأن | جوهري</span></div>
+<div class="wc"><span class="en">substantially</span><span class="tt">بشكل كبير | بصورة جوهرية</span></div>
+<div class="wc"><span class="en">succeed</span><span class="tt">ينجح | يفلح</span></div>
+<div class="wc"><span class="en">suffer</span><span class="tt">يعاني | يتألم</span></div>
+<div class="wc"><span class="en">support</span><span class="tt">يدعم | يساند</span></div>
+<div class="wc"><span class="en">sustainable</span><span class="tt">مستدام | قابل للاستمرار</span></div>
+<div class="wc"><span class="en">tangible</span><span class="tt">مَلموس | واضح وحقيقي</span></div>
+<div class="wc"><span class="en">task</span><span class="tt">يُكلِّف | يُوكِل</span></div>
+<div class="wc"><span class="en">technical</span><span class="tt">تقني | فني</span></div>
+<div class="wc"><span class="en">telecommunications</span><span class="tt">الاتصالات | تقنية الاتصالات</span></div>
+<div class="wc"><span class="en">term</span><span class="tt">مدة | فترة</span></div>
+<div class="wc"><span class="en">thorough</span><span class="tt">شامل | دقيق</span></div>
+<div class="wc"><span class="en">thrive</span><span class="tt">يزدهر | ينجح</span></div>
+<div class="wc"><span class="en">tie</span><span class="tt">رابطة | صلة</span></div>
+<div class="wc"><span class="en">track record</span><span class="tt">سجل إنجازات | تاريخ أداء</span></div>
+<div class="wc"><span class="en">trainer</span><span class="tt">مدرب | مُدرِّب</span></div>
+<div class="wc"><span class="en">training</span><span class="tt">تدريب | تأهيل</span></div>
+<div class="wc"><span class="en">transactional</span><span class="tt">معاملاتي | قائم على المصلحة</span></div>
+<div class="wc"><span class="en">transform</span><span class="tt">يحول | يُغيّر جذرياً</span></div>
+<div class="wc"><span class="en">transparency</span><span class="tt">شفافية | وضوح</span></div>
+<div class="wc"><span class="en">tribe</span><span class="tt">قبيلة | عشيرة</span></div>
+<div class="wc"><span class="en">trust</span><span class="tt">ثقة | أمانة</span></div>
+<div class="wc"><span class="en">trusted</span><span class="tt">موثوق | موثوق به</span></div>
+<div class="wc"><span class="en">turn</span><span class="tt">يحول | يُغيّر</span></div>
+<div class="wc"><span class="en">ultimate</span><span class="tt">نهائي | أقصى</span></div>
+<div class="wc"><span class="en">university</span><span class="tt">جامعة</span></div>
+<div class="wc"><span class="en">unlike</span><span class="tt">على عكس | بخلاف</span></div>
+<div class="wc"><span class="en">valuable</span><span class="tt">قيّم | ثمين</span></div>
+<div class="wc"><span class="en">vocational</span><span class="tt">مهني | حِرَفي</span></div>
+<div class="wc"><span class="en">war</span><span class="tt">حرب | نزاع مسلح</span></div>
+<div class="wc"><span class="en">widen</span><span class="tt">يوسع | يُرحّب</span></div>
+<div class="wc"><span class="en">witness</span><span class="tt">يشهد | يرى</span></div>
+<div class="wc"><span class="en">work</span><span class="tt">يعمل | يشتغل</span></div>
+<div class="wc"><span class="en">younger</span><span class="tt">أصغر سناً | أحدث</span></div>
+<div class="wc"><span class="en">youth</span><span class="tt">شباب | شبيبة</span></div>
+</div>
+
+<footer>308 words · hover to reveal arabic · vocabulary reference</footer>
+</body>
+</html>
