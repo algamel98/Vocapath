@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Chevening Application – VocaPath</title>
+<meta name="description" content="Chevening Scholarship 2026-2027 Application – Abdelbary Algamel – Application country: Libya">
+<base href="./">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Cairo:wght@300;400;600;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+<style>
+/* ═══════════ CHEVENING PAGE — SCOPED STYLES (matches VocaPath design) ═══════════ */
+
+.chev-tabs-wrap {
+  width: 100%;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 68px;
+  z-index: 90;
+  overflow-x: auto;
+  scrollbar-width: none;
+  box-shadow: var(--shadow-sm);
+}
+.chev-tabs-wrap::-webkit-scrollbar { display: none; }
+
+.chev-tabs {
+  display: flex;
+  gap: 0;
+  min-width: max-content;
+  padding: 0 20px;
+}
+
+.chev-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 14px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text2);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+  letter-spacing: 0.01em;
+  margin-bottom: -1px;
+}
+.chev-tab:hover { color: var(--primary); }
+.chev-tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+.chev-tab svg { 
+  flex-shrink: 0; 
+  opacity: .75;
+  width: 13px;
+  height: 13px;
+}
+.chev-tab.active svg { opacity: 1; }
+
+.chev-tab-sep {
+  display: flex;
+  align-items: center;
+  padding: 0 12px 0 18px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-left: 1px solid var(--border);
+  margin-left: 6px;
+  white-space: nowrap;
+  user-select: none;
+}
+.chev-tab-sep:first-child { border-left: none; margin-left: 0; padding-left: 0; }
+
+.chev-panel { display: none; }
+.chev-panel.active { display: block; }
+
+.chev-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+}
+
+.chev-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+.chev-section-title svg { color: var(--primary); flex-shrink: 0; }
+
+.chev-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.chev-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.chev-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+}
+.chev-card-icon.icon-green {
+  background: var(--a1);
+}
+.chev-card-meta { flex: 1; }
+.chev-card-title {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 3px;
+}
+.chev-card-sub {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+  margin: 0;
+}
+.chev-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+}
+.chev-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 11px;
+  border-radius: var(--pill);
+  font-family: 'DM Mono', monospace;
+  font-size: 11.5px;
+  background: var(--accent-light);
+  color: var(--primary);
+  border: 1px solid var(--accent-mid);
+  font-weight: 500;
+}
+.chev-tag.green  { background: var(--a1-l); color: var(--a1); border-color: var(--a1); }
+.chev-tag.orange { background: var(--b2-l); color: var(--b2); border-color: var(--b2); }
+.chev-tag.purple { background: var(--b1-l); color: var(--b1); border-color: var(--b1); }
+
+.chev-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.chev-info-item {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.chev-info-item-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+.chev-info-item-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 3px;
+}
+.chev-info-item-value {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.chev-essay {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.chev-essay-header {
+  background: var(--primary);
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+}
+.chev-essay-header.essay-accent { background: var(--accent); }
+.chev-essay-header.essay-green { background: var(--a1); }
+.chev-essay-header.essay-purple { background: var(--b1); }
+.chev-essay-header.essay-red { background: var(--c1); }
+.chev-essay-header svg { flex-shrink: 0; opacity: .9; }
+.chev-essay-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 3px;
+  color: #fff;
+}
+.chev-essay-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  background: rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  padding: 2px 10px;
+  border-radius: var(--pill);
+  letter-spacing: 0.05em;
+}
+.chev-essay-body {
+  padding: 32px 34px;
+  font-family: var(--font-serif);
+  font-size: 15.5px;
+  line-height: 1.9;
+  color: var(--text);
+}
+.chev-essay-body p { margin: 0 0 18px; }
+.chev-essay-body p:last-child { margin-bottom: 0; }
+
+.chev-uni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.chev-uni-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.chev-uni-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+}
+.chev-uni-card.first::before  { background: var(--primary); }
+.chev-uni-card.second::before { background: var(--a1); }
+.chev-uni-card.third::before  { background: var(--b2); }
+.chev-uni-choice {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+.chev-uni-name {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+.chev-uni-course {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text2);
+}
+
+.chev-timeline {
+  position: relative;
+  padding-left: 28px;
+}
+.chev-timeline::before {
+  content: '';
+  position: absolute;
+  left: 9px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+.chev-timeline-item {
+  position: relative;
+  margin-bottom: 26px;
+}
+.chev-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -23px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid var(--surface);
+  box-shadow: 0 0 0 2px var(--border);
+}
+.chev-tl-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  box-shadow: var(--shadow-sm);
+}
+.chev-tl-role {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.chev-tl-org {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.chev-tl-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chev-refs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+.chev-ref-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+}
+.chev-ref-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.chev-ref-avatar.ref-accent { background: var(--a1); }
+.chev-ref-name {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.chev-ref-role {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text2);
+}
+
+/* Arabic Translation Toggle */
+.translate-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  background: var(--accent-light);
+  border: 1px solid var(--accent-mid);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.translate-toggle:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.1);
+}
+.translate-toggle svg {
+  width: 10px;
+  height: 10px;
+}
+
+.arabic-translation {
+  display: none;
+  margin-top: 12px;
+  padding: 16px 20px;
+  background: var(--accent-light);
+  border-right: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--text);
+  direction: rtl;
+  text-align: right;
+  position: relative;
+}
+.arabic-translation.show {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+.arabic-translation .close-translation {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 22px;
+  height: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text2);
+}
+.arabic-translation .close-translation:hover {
+  background: var(--c1);
+  color: #fff;
+  border-color: var(--c1);
+  transform: scale(1.1);
+}
+.arabic-translation .close-translation svg {
+  width: 10px;
+  height: 10px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.paragraph-wrapper {
+  position: relative;
+}
+
+/* Translation for section titles and info items */
+.section-title-wrapper {
+  position: relative;
+}
+.section-title-wrapper .translate-toggle {
+  margin-left: 12px;
+  vertical-align: middle;
+}
+.section-arabic {
+  display: none;
+  margin-top: 8px;
+  padding: 12px 16px;
+  background: var(--accent-light);
+  border-right: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text);
+  direction: rtl;
+  text-align: right;
+}
+.section-arabic.show {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+/* Explore Your Words Button */
+.explore-words-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--pill);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+.explore-words-btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 162, 97, 0.4);
+}
+.explore-words-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ─── PASSWORD PROTECTION OVERLAY ─── */
+.password-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--surface) 100%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.5s ease;
+}
+.password-overlay.hidden { 
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.password-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+  max-width: 450px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  text-align: center;
+  animation: slideUp 0.6s ease;
+}
+
+.password-logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.password-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.3));
+}
+
+.password-box-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: var(--pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.password-box-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.password-box h2 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 12px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.password-box p {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text2);
+  margin: 0 0 32px;
+  line-height: 1.6;
+}
+
+.password-input-wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.password-input {
+  width: 100%;
+  padding: 16px 20px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+.password-submit {
+  width: 100%;
+  padding: 16px 24px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  border: none;
+  border-radius: var(--pill);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+}
+
+.password-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(244, 162, 97, 0.4);
+}
+
+.password-submit:active {
+  transform: translateY(-1px);
+}
+
+.password-error {
+  color: var(--c1);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(198, 40, 40, 0.1);
+  border-radius: var(--radius-sm);
+  display: none;
+  animation: shake 0.5s ease;
+}
+
+.password-error.show { 
+  display: block;
+}
+
+.password-box.error {
+  animation: shake 0.5s ease;
+}
+
+@media (max-width: 640px) {
+  .chev-content { padding: 28px 16px 48px; }
+  .chev-essay-body { padding: 22px 20px; font-size: 14.5px; }
+  .chev-essay-header { padding: 16px 20px; }
+  .chev-tabs { padding: 0 12px; }
+  .chev-tab { padding: 10px 10px; font-size: 11px; gap: 5px; }
+  .chev-tab svg { width: 12px; height: 12px; }
+  .chev-tab-sep { font-size: 8px; padding: 0 8px 0 12px; margin-left: 4px; }
+  .arabic-translation { font-size: 13.5px; padding: 12px 16px; }
+  .password-box { 
+    padding: 36px 24px;
+    max-width: 95%;
+  }
+  .password-logo {
+    width: 64px;
+    height: 64px;
+  }
+  .password-box h2 {
+    font-size: 24px;
+  }
+  .password-box p {
+    font-size: 14px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ PASSWORD PROTECTION ═══════════ -->
+<div class="password-overlay" id="passwordOverlay">
+  <div class="password-box" id="passwordBox">
+    <div class="password-logo">
+      <img src="images/logo.png" alt="VocaPath Logo">
+    </div>
+    <div class="password-box-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+    </div>
+    <h2>Private Access Required</h2>
+    <p>This is a protected page. Please enter your password to continue.</p>
+    <div class="password-input-wrap">
+      <input type="password" id="passwordInput" class="password-input" placeholder="••••" autocomplete="off" maxlength="4">
+    </div>
+    <button class="password-submit" onclick="checkPassword()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; margin-right: 8px;">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+        <polyline points="10 17 15 12 10 7"/>
+        <line x1="15" y1="12" x2="3" y2="12"/>
+      </svg>
+      Unlock Access
+    </button>
+    <div class="password-error" id="passwordError">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; margin-right: 6px; vertical-align: middle;">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="15" y1="9" x2="9" y2="15"/>
+        <line x1="9" y1="9" x2="15" y2="15"/>
+      </svg>
+      Incorrect password. Please try again.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <img src="images/logo.png" alt="VocaPath Logo">
+      <div class="logo-text">
+        <div class="logo-name">VocaPath</div>
+        <div class="logo-sub">English Mastery</div>
+      </div>
+    </a>
+
+    <nav id="mainNav">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="tenses.html">Tenses</a>
+      <a class="nav-link" href="modal-verbs.html">Modal Verbs</a>
+      <a class="nav-link" href="goals.html">Goals</a>
+      <a class="nav-link" href="privacy.html">Privacy</a>
+    </nav>
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle dark mode" aria-label="Toggle dark mode">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+
+    <a class="btn-dl" href="BOOK/ENGLISH_CORE (2).pdf" download="VocaPath_English_Grammar_Guide.pdf" data-tooltip="A comprehensive summary of English grammar rules and essential fundamentals, leading to mastery in a focused and concise way">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Book
+    </a>
+
+    <button class="hamburger" id="ham" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+<div class="page-hero">
+  <div class="hero-badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    Chevening Scholarship 2026–2027
+  </div>
+  <h1>My <span>Chevening</span> Application</h1>
+  <p>Award programme: Chevening Scholarship 2026-2027 · Application country: Libya · Name of applicant: Abdelbary Algamel · ID of applicant: 1067867</p>
+  <button class="explore-words-btn" onclick="openCheveningVocabulary()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+    </svg>
+    Explore Your Words
+  </button>
+</div>
+
+<!-- ═══════════ TAB NAVIGATION ═══════════ -->
+<div class="chev-tabs-wrap">
+  <div class="chev-tabs" role="tablist">
+
+    <span class="chev-tab-sep">Essays</span>
+    <button class="chev-tab active" onclick="showTab('leadership')" role="tab" aria-selected="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Leadership
+    </button>
+    <button class="chev-tab" onclick="showTab('networking')" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Networking
+    </button>
+    <button class="chev-tab" onclick="showTab('uk')" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      Studying in the UK
+    </button>
+    <button class="chev-tab" onclick="showTab('career')" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Career Plan
+    </button>
+
+    <span class="chev-tab-sep">Profile</span>
+    <button class="chev-tab" onclick="showTab('personal')" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      Personal Information
+    </button>
+    <button class="chev-tab" onclick="showTab('education')" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      Education History
+    </button>
+    <button class="chev-tab" onclick="showTab('work')" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      Employment History
+    </button>
+    <button class="chev-tab" onclick="showTab('references')" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/><line x1="20" y1="8" x2="20" y2="14"/></svg>
+      Referees
+    </button>
+
+  </div>
+</div>
+
+<!-- ═══════════ TAB PANELS ═══════════ -->
+
+<!-- ── 1. LEADERSHIP ESSAY ── -->
+<div class="chev-panel active" id="panel-leadership">
+  <div class="chev-content">
+    <div class="section-title-wrapper">
+      <h2 class="chev-section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        1. Leadership Experience
+        <button class="translate-toggle" onclick="toggleSectionTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      </h2>
+      <div class="section-arabic">١. الخبرة القيادية</div>
+    </div>
+    <div class="chev-essay">
+      <div class="chev-essay-header">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div>
+          <div class="chev-essay-title">Leadership Experience</div>
+          <span class="chev-essay-badge">Assessed application answer</span>
+        </div>
+      </div>
+      <div class="chev-essay-body">
+        <div class="paragraph-wrapper">
+          <p>During 2021, I coordinated the Livelihood Project for Partnership Community Organization in Bani Walid Municipality, providing vocational training to 225 young people. The city was recovering from the 2018-2020 conflict, and residents were deeply skeptical of development programs after witnessing failed initiatives. Economic difficulties from the war and COVID19 restrictions made people hesitant to participate in group activities.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            خلال عام 2021، نسّقت مشروع سبل العيش لمنظمة الشراكة المجتمعية في بلدية بني وليد، حيث قدمت تدريباً مهنياً لـ 225 شاباً. كانت المدينة تتعافى من صراع 2018-2020، وكان السكان يشككون بشدة في برامج التنمية بعد مشاهدة مبادرات فاشلة. جعلت الصعوبات الاقتصادية الناجمة عن الحرب وقيود كوفيد-19 الناس مترددين في المشاركة في الأنشطة الجماعية.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>My first step was building a coordination team and establishing partnerships with local trainers across five sectors. Understanding that community trust was essential, I spent considerable time meeting municipal leaders and community representatives to ensure our training programs addressed genuine needs. To overcome health concerns, I worked with the team to establish safety protocols allowing interactive sessions. Most importantly, I secured employment agreements with local businesses before the program began, guaranteeing jobs for top graduates. This tangible commitment drove enrollment beyond our expectations.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            كانت خطوتي الأولى بناء فريق تنسيق وإقامة شراكات مع مدربين محليين عبر خمسة قطاعات. وإدراكاً مني أن ثقة المجتمع كانت ضرورية، قضيت وقتاً طويلاً في لقاء قادة البلدية وممثلي المجتمع لضمان أن برامجنا التدريبية تلبي الاحتياجات الحقيقية. للتغلب على المخاوف الصحية، عملت مع الفريق لوضع بروتوكولات سلامة تسمح بجلسات تفاعلية. والأهم من ذلك، حصلت على اتفاقيات توظيف مع الشركات المحلية قبل بدء البرنامج، مما يضمن وظائف لأفضل الخريجين. هذا الالتزام الملموس دفع التسجيل إلى ما يتجاوز توقعاتنا.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>All 225 participants completed the program, with most finding employment afterward. The project restored confidence in development work within the community. The municipality later asked me to lead UNDP project evaluations between 2020 and 2021, then invited me to oversee NAPI peacebuilding assessments in 2023. My responsibilities shifted from implementation to strategic oversight.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            أكمل جميع المشاركين الـ 225 البرنامج، وحصل معظمهم على وظائف بعد ذلك. استعاد المشروع الثقة في العمل التنموي داخل المجتمع. طلبت مني البلدية لاحقاً قيادة تقييمات مشاريع برنامج الأمم المتحدة الإنمائي بين عامي 2020 و2021، ثم دعتني للإشراف على تقييمات بناء السلام لمبادرة سياسات شمال أفريقيا في عام 2023. تحولت مسؤولياتي من التنفيذ إلى الإشراف الاستراتيجي.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>When tasked with organizing IRC's International Youth Day in 2023 with only one month to prepare, I faced similar challenges of community resistance and limited resources. Drawing on previous lessons, I used established connections with municipal officials and designed culturally appropriate activities that turned opposition into support.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            عندما كُلفت بتنظيم اليوم العالمي للشباب للجنة الإنقاذ الدولية في عام 2023 مع شهر واحد فقط للتحضير، واجهت تحديات مماثلة من مقاومة المجتمع والموارد المحدودة. بالاستفادة من الدروس السابقة، استخدمت العلاقات القائمة مع مسؤولي البلدية وصممت أنشطة مناسبة ثقافياً حولت المعارضة إلى دعم.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>These experiences changed my understanding of leadership. I now recognize that listening precedes planning, that building coalitions matters more than individual brilliance, and that success in fragile contexts requires patience and cultural sensitivity. These lessons will guide my contributions to the Chevening community and interactions with scholars facing comparable challenges in their countries.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            غيّرت هذه التجارب فهمي للقيادة. أدرك الآن أن الاستماع يسبق التخطيط، وأن بناء التحالفات أهم من التألق الفردي، وأن النجاح في السياقات الهشة يتطلب الصبر والحساسية الثقافية. ستوجه هذه الدروس مساهماتي في مجتمع تشيفنينغ وتفاعلاتي مع الباحثين الذين يواجهون تحديات مماثلة في بلدانهم.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 2. NETWORKING ESSAY ── -->
+<div class="chev-panel" id="panel-networking">
+  <div class="chev-content">
+    <div class="section-title-wrapper">
+      <h2 class="chev-section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        2. Relationship Building and Influence
+        <button class="translate-toggle" onclick="toggleSectionTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      </h2>
+      <div class="section-arabic">٢. بناء العلاقات والتأثير</div>
+    </div>
+    <div class="chev-essay">
+      <div class="chev-essay-header essay-green">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div>
+          <div class="chev-essay-title">Relationship Building and Influence</div>
+          <span class="chev-essay-badge">Assessed application answer</span>
+        </div>
+      </div>
+      <div class="chev-essay-body">
+        <div class="paragraph-wrapper">
+          <p>One of my most important professional relationships developed with the Municipality of Bani Walid during my collaboration with the United Nations Development Programme. The city struggled with limited resources and needed effective development projects to rebuild trust between institutions and the community. My role was supporting project evaluation and implementation, but I quickly realized success depended on forging strong partnerships with local authorities.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            تطورت إحدى أهم علاقاتي المهنية مع بلدية بني وليد خلال تعاوني مع برنامج الأمم المتحدة الإنمائي. عانت المدينة من موارد محدودة وكانت بحاجة إلى مشاريع تنموية فعالة لإعادة بناء الثقة بين المؤسسات والمجتمع. كان دوري دعم تقييم المشاريع وتنفيذها، لكنني أدركت بسرعة أن النجاح يعتمد على إقامة شراكات قوية مع السلطات المحلية.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>I began by listening to municipal priorities and ensuring our projects reflected community needs rather than top down approaches. I contributed technical expertise in communications and project management while bridging UNDP, local NGOs, and municipal leaders. In return, I gained institutional support and deeper understanding of balancing international standards with local realities.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            بدأت بالاستماع إلى أولويات البلدية والتأكد من أن مشاريعنا تعكس احتياجات المجتمع بدلاً من النهج من أعلى إلى أسفل. ساهمت بخبرتي التقنية في الاتصالات وإدارة المشاريع مع ربط برنامج الأمم المتحدة الإنمائي والمنظمات غير الحكومية المحلية وقادة البلدية. في المقابل، حصلت على الدعم المؤسسي وفهم أعمق لتحقيق التوازن بين المعايير الدولية والواقع المحلي.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>This relationship continued growing beyond that project. I remain in regular contact with municipal leaders, providing advice when needed and engaging in community initiatives strengthening the city's development. These long term ties enhanced my credibility and widened my professional network, making me a trusted figure in local governance and humanitarian work.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            استمرت هذه العلاقة في النمو بعد ذلك المشروع. أبقى على اتصال منتظم مع قادة البلدية، وأقدم المشورة عند الحاجة وأشارك في المبادرات المجتمعية التي تعزز تنمية المدينة. عززت هذه الروابط طويلة الأمد مصداقيتي ووسعت شبكتي المهنية، مما جعلني شخصية موثوقة في الحوكمة المحلية والعمل الإنساني.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>The experience taught me that genuine influence comes from trust and shared goals. By approaching relationships with respect, transparency, and consistency, I turned collaboration into sustainable impact. These skills will enable me to build meaningful connections within the Chevening community and with global leaders, ensuring I can contribute to and benefit from a network thriving on mutual learning and cooperation.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            علمتني التجربة أن التأثير الحقيقي يأتي من الثقة والأهداف المشتركة. من خلال التعامل مع العلاقات بالاحترام والشفافية والاتساق، حولت التعاون إلى تأثير مستدام. ستمكنني هذه المهارات من بناء علاقات ذات مغزى داخل مجتمع تشيفنينغ ومع القادة العالميين، مما يضمن أنني أستطيع المساهمة والاستفادة من شبكة تزدهر بالتعلم والتعاون المتبادل.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>My time studying under the Turkish government scholarship reinforced these lessons. Working with over seventy individuals from more than thirty countries taught me that professional relationships crossing borders succeed when built on mutual respect rather than transactional exchanges. Chevening offers a similar opportunity to deepen these capabilities among future policy shapers worldwide.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            عززت فترة دراستي بموجب منحة الحكومة التركية هذه الدروس. علمني العمل مع أكثر من سبعين فرداً من أكثر من ثلاثين دولة أن العلاقات المهنية التي تعبر الحدود تنجح عندما تُبنى على الاحترام المتبادل بدلاً من التبادلات التجارية. يوفر تشيفنينغ فرصة مماثلة لتعميق هذه القدرات بين صانعي السياسات المستقبليين في جميع أنحاء العالم.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 3. STUDYING IN THE UK ESSAY ── -->
+<div class="chev-panel" id="panel-uk">
+  <div class="chev-content">
+    <div class="section-title-wrapper">
+      <h2 class="chev-section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        3. Course Choice and Global Challenge
+        <button class="translate-toggle" onclick="toggleSectionTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      </h2>
+      <div class="section-arabic">٣. اختيار الدورة والتحدي العالمي</div>
+    </div>
+    <div class="chev-essay">
+      <div class="chev-essay-header essay-purple">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <div>
+          <div class="chev-essay-title">Course Choice and Global Challenge</div>
+          <span class="chev-essay-badge">Assessed application answer</span>
+        </div>
+      </div>
+      <div class="chev-essay-body">
+        <div class="paragraph-wrapper">
+          <p>My academic foundation in telecommunications and microwave engineering provided strong analytical skills, but I recognize technical expertise alone does not fully prepare someone for senior government positions. While engineers bring valuable problem solving approaches to public service, additional training in leadership, governance, and management is essential for effectiveness in such roles.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            وفرت لي خلفيتي الأكاديمية في هندسة الاتصالات والموجات الدقيقة مهارات تحليلية قوية، لكنني أدرك أن الخبرة التقنية وحدها لا تُعد شخصاً بشكل كامل لمناصب حكومية عليا. بينما يجلب المهندسون أساليب قيمة لحل المشكلات في الخدمة العامة، فإن التدريب الإضافي في القيادة والحوكمة والإدارة ضروري للفعالية في مثل هذه الأدوار.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>I plan to run for Mayor of Bani Walid in 2027. My established relationships within the municipality and track record directing community projects position me as a competitive candidate. To prepare properly, I need comprehensive management knowledge addressing current gaps in my abilities to oversee municipal departments. Management programs in the United Kingdom are globally recognized, and studying there for a full year will substantially enhance my capabilities while preparing me for mayoral responsibilities.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            أخطط للترشح لمنصب عمدة بني وليد في عام 2027. تضعني علاقاتي القائمة داخل البلدية وسجلي في توجيه المشاريع المجتمعية كمرشح تنافسي. للتحضير بشكل صحيح، أحتاج إلى معرفة إدارية شاملة تعالج الثغرات الحالية في قدراتي على الإشراف على أقسام البلدية. برامج الإدارة في المملكة المتحدة معترف بها عالمياً، والدراسة هناك لمدة عام كامل ستعزز قدراتي بشكل كبير بينما تعدني لمسؤوليات العمدة.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Bani Walid matters significantly in Libya due to its historical role in recent conflicts and as home to approximately twenty percent of the national population. Since I intend to lead this municipality, I chose to apply to medium sized UK cities rather than major centers like London or Manchester. This approach reflects Bani Walid's demographic reality and will provide more relevant learning experiences.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            تهم بني وليد بشكل كبير في ليبيا بسبب دورها التاريخي في الصراعات الأخيرة وكونها موطناً لحوالي عشرين بالمائة من السكان الوطنيين. بما أنني أعتزم قيادة هذه البلدية، اخترت التقديم إلى مدن بريطانية متوسطة الحجم بدلاً من المراكز الكبرى مثل لندن أو مانشستر. يعكس هذا النهج الواقع الديموغرافي لبني وليد وسيوفر تجارب تعليمية أكثر صلة.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Through careful research, I selected the University of Sussex as my first choice. The university maintains strong reputation in management studies and is located outside major metropolitan areas. After examining faculty members, their publications, and research interests, I concluded Sussex would best support my objectives. My second and third choices follow the same logic, representing solid alternatives with excellent faculty and programs selected after thorough evaluation.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            من خلال البحث الدقيق، اخترت جامعة ساسكس كخياري الأول. تحافظ الجامعة على سمعة قوية في دراسات الإدارة وتقع خارج المناطق الحضرية الكبرى. بعد فحص أعضاء هيئة التدريس ومنشوراتهم واهتماماتهم البحثية، خلصت إلى أن ساسكس ستدعم أهدافي بشكل أفضل. يتبع خياري الثاني والثالث نفس المنطق، ويمثلان بدائل قوية مع أعضاء هيئة تدريس ممتازين وبرامج مختارة بعد تقييم شامل.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>This qualification will directly support governance improvement and institutional capacity building in Libya, aligning with UK priorities for the MENA region. Upon returning, I will immediately apply these management frameworks to strengthen municipal operations and service delivery in Bani Walid.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            ستدعم هذه المؤهلات بشكل مباشر تحسين الحوكمة وبناء القدرات المؤسسية في ليبيا، بما يتماشى مع أولويات المملكة المتحدة لمنطقة الشرق الأوسط وشمال أفريقيا. عند عودتي، سأطبق على الفور هذه الأطر الإدارية لتعزيز العمليات البلدية وتقديم الخدمات في بني وليد.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title-wrapper" style="margin-top: 40px;">
+      <h2 class="chev-section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        UK University / Course Selections
+        <button class="translate-toggle" onclick="toggleSectionTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      </h2>
+      <div class="section-arabic">اختيارات الجامعات / الدورات في المملكة المتحدة</div>
+    </div>
+    <div class="chev-uni-grid">
+      <div class="chev-uni-card first">
+        <div class="chev-uni-choice">First choice</div>
+        <div class="chev-uni-name">University of Sussex</div>
+        <div class="chev-uni-course">Management</div>
+      </div>
+      <div class="chev-uni-card second">
+        <div class="chev-uni-choice">Second choice</div>
+        <div class="chev-uni-name">University of South Wales</div>
+        <div class="chev-uni-course">Leadership and Management (Education)</div>
+      </div>
+      <div class="chev-uni-card third">
+        <div class="chev-uni-choice">Third choice</div>
+        <div class="chev-uni-name">University of Derby</div>
+        <div class="chev-uni-course">Management</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 4. CAREER PLAN ESSAY ── -->
+<div class="chev-panel" id="panel-career">
+  <div class="chev-content">
+    <div class="section-title-wrapper">
+      <h2 class="chev-section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        4. Career Plan and Impact
+        <button class="translate-toggle" onclick="toggleSectionTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      </h2>
+      <div class="section-arabic">٤. خطة المسار المهني والتأثير</div>
+    </div>
+    <div class="chev-essay">
+      <div class="chev-essay-header essay-red">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <div>
+          <div class="chev-essay-title">Career Plan and Impact</div>
+          <span class="chev-essay-badge">Assessed application answer</span>
+        </div>
+      </div>
+      <div class="chev-essay-body">
+        <div class="paragraph-wrapper">
+          <p>With both Bachelor's and Master's degrees in Engineering, I have consulted with mentors and concluded that advanced qualifications in management would help me achieve my goal of becoming Mayor of Bani Walid in the 2027 municipal elections.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            مع حصولي على درجتي البكالوريوس والماجستير في الهندسة، استشرت الموجهين وخلصت إلى أن المؤهلات المتقدمة في الإدارة ستساعدني على تحقيق هدفي في أن أصبح عمدة بني وليد في انتخابات البلدية لعام 2027.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Bani Walid is home to the Werfala tribe, Libya's largest tribe, whose members have held ministerial positions and influenced national decisions before, during, and after the 2011 conflict. The city suffered considerably during the war, as most residents supported the former regime, leading to prolonged marginalization. Yet with roughly one and a half to two million Libyans of Warfallah origin, the city recovered relatively quickly through community resilience.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            بني وليد موطن قبيلة ورفلة، أكبر قبيلة في ليبيا، التي شغل أعضاؤها مناصب وزارية وأثروا على القرارات الوطنية قبل وأثناء وبعد صراع 2011. عانت المدينة بشكل كبير خلال الحرب، حيث دعم معظم السكان النظام السابق، مما أدى إلى تهميش طويل. ومع ذلك، مع وجود حوالي مليون ونصف إلى مليوني ليبي من أصل ورفلي، تعافت المدينة بسرعة نسبياً من خلال مرونة المجتمع.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>I have worked intensively since 2018 to restore the city's standing. My leadership experience and established relationships led to my nomination as mayoral candidate for 2027, which I accepted.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            عملت بكثافة منذ عام 2018 لاستعادة مكانة المدينة. أدت خبرتي القيادية وعلاقاتي القائمة إلى ترشيحي كمرشح لمنصب العمدة لعام 2027، والذي قبلته.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Given my engineering background, I now seek management qualifications to combine with my practical experience while gaining international knowledge I currently lack. My primary aim is developing managerial and governance capabilities needed to effectively direct municipal departments.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            نظراً لخلفيتي الهندسية، أسعى الآن للحصول على مؤهلات إدارية لدمجها مع خبرتي العملية مع اكتساب المعرفة الدولية التي أفتقر إليها حالياً. هدفي الأساسي هو تطوير القدرات الإدارية والحوكمة اللازمة لتوجيه أقسام البلدية بفعالية.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>The challenges ahead are substantial but manageable. Unlike other candidates from outside the city, which residents strongly oppose, I am a native of Bani Walid. Additionally, I am recognized and trusted for leading community projects and possess the practical qualifications governance requires. As a younger candidate, I represent the growing national appetite for youth participation in leadership.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            التحديات المقبلة كبيرة لكنها قابلة للإدارة. على عكس المرشحين الآخرين من خارج المدينة، الذين يعارضهم السكان بشدة، أنا من مواليد بني وليد. بالإضافة إلى ذلك، أنا معروف وموثوق به لقيادة المشاريع المجتمعية وأمتلك المؤهلات العملية التي تتطلبها الحوكمة. كمرشح أصغر سناً، أمثل الشهية الوطنية المتزايدة لمشاركة الشباب في القيادة.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Joining the Chevening network will strengthen my candidacy by establishing my credentials as a UK educated leader while connecting me with peers for future collaboration and guidance from UK mentors.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            سيعزز الانضمام إلى شبكة تشيفنينغ ترشيحي من خلال إثبات أوراق اعتمادي كقائد متعلم في المملكة المتحدة مع ربطي بالأقران للتعاون المستقبلي والتوجيه من الموجهين البريطانيين.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Long term, after serving as Mayor, I intend to pursue broader leadership roles contributing to Libya's national reconstruction. My ultimate goal is transforming Libya into a modern, developed nation through dedicated leadership.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            على المدى الطويل، بعد خدمتي كعمدة، أعتزم متابعة أدوار قيادية أوسع تساهم في إعادة الإعمار الوطني لليبيا. هدفي النهائي هو تحويل ليبيا إلى دولة حديثة ومتطورة من خلال القيادة المخلصة.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 5. PERSONAL INFORMATION ── -->
+<div class="chev-panel" id="panel-personal">
+  <div class="chev-content">
+    <div class="section-title-wrapper">
+      <h2 class="chev-section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+        Personal Details
+        <button class="translate-toggle" onclick="toggleSectionTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      </h2>
+      <div class="section-arabic">التفاصيل الشخصية</div>
+    </div>
+    <div class="chev-info-grid">
+      <div class="chev-info-item">
+        <div class="chev-info-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg></div>
+        <div>
+          <div class="chev-info-item-label">Name of applicant</div>
+          <div class="chev-info-item-value">Abdelbary Algamel</div>
+        </div>
+      </div>
+      <div class="chev-info-item">
+        <div class="chev-info-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div>
+          <div class="chev-info-item-label">ID of applicant</div>
+          <div class="chev-info-item-value">1067867</div>
+        </div>
+      </div>
+      <div class="chev-info-item">
+        <div class="chev-info-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.09 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div>
+          <div class="chev-info-item-label">Phone</div>
+          <div class="chev-info-item-value">+218 911739557</div>
+        </div>
+      </div>
+      <div class="chev-info-item">
+        <div class="chev-info-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div>
+          <div class="chev-info-item-label">Email</div>
+          <div class="chev-info-item-value">aalgamel23@posta.pau.edu.tr</div>
+        </div>
+      </div>
+      <div class="chev-info-item">
+        <div class="chev-info-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div class="chev-info-item-label">Address</div>
+          <div class="chev-info-item-value">Algmal - Alatyat - 2-1</div>
+        </div>
+      </div>
+      <div class="chev-info-item">
+        <div class="chev-info-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div class="chev-info-item-label">Current Address</div>
+          <div class="chev-info-item-value">ASMALIEVLER Neighborhood, 6626 Street, Deniz Apartment No: 11, Interior Door No: 31, Pamukkale / Denizli</div>
+        </div>
+      </div>
+      <div class="chev-info-item">
+        <div class="chev-info-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div>
+          <div class="chev-info-item-label">City</div>
+          <div class="chev-info-item-value">Baniwalid</div>
+        </div>
+      </div>
+      <div class="chev-info-item">
+        <div class="chev-info-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="chev-info-item-label">Tribe</div>
+          <div class="chev-info-item-value">Werfala</div>
+        </div>
+      </div>
+      <div class="chev-info-item">
+        <div class="chev-info-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div>
+          <div class="chev-info-item-label">Country</div>
+          <div class="chev-info-item-value">Libya</div>
+        </div>
+      </div>
+      <div class="chev-info-item">
+        <div class="chev-info-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div>
+          <div class="chev-info-item-label">Submitted at</div>
+          <div class="chev-info-item-value">19:44 UTC on 06 Oct 2025</div>
+        </div>
+      </div>
+      <div class="chev-info-item">
+        <div class="chev-info-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div>
+          <div class="chev-info-item-label">Award programme</div>
+          <div class="chev-info-item-value">Chevening Scholarship 2026-2027</div>
+        </div>
+      </div>
+      <div class="chev-info-item">
+        <div class="chev-info-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+        <div>
+          <div class="chev-info-item-label">Application country</div>
+          <div class="chev-info-item-value">Libya</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 6. EDUCATION HISTORY ── -->
+<div class="chev-panel" id="panel-education">
+  <div class="chev-content">
+    <div class="section-title-wrapper">
+      <h2 class="chev-section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        Education History
+        <button class="translate-toggle" onclick="toggleSectionTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      </h2>
+      <div class="section-arabic">التاريخ التعليمي</div>
+    </div>
+
+    <div class="chev-card">
+      <div class="chev-card-header">
+        <div class="chev-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="chev-card-meta">
+          <div class="chev-card-title">Communications Engineering</div>
+          <div class="chev-card-sub">Other — College of Electronic Technology Bani Walid · MSc · Libya</div>
+        </div>
+      </div>
+      <div class="chev-card-tags">
+        <span class="chev-tag">MSc</span>
+        <span class="chev-tag green">Cumulative GPA: 3.95/4</span>
+        <span class="chev-tag orange">30 Sep 2022 – 13 Feb 2025</span>
+        <span class="chev-tag purple">Libya</span>
+      </div>
+    </div>
+
+    <div class="chev-card">
+      <div class="chev-card-header">
+        <div class="chev-card-icon icon-green">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="chev-card-meta">
+          <div class="chev-card-title">Communications and Microwaves Engineering</div>
+          <div class="chev-card-sub">Other — College of Electronic Technology Bani Walid · BSc · Libya</div>
+        </div>
+      </div>
+      <div class="chev-card-tags">
+        <span class="chev-tag">BSc</span>
+        <span class="chev-tag green">Cumulative GPA: 85.64%</span>
+        <span class="chev-tag orange">24 Sep 2016 – 17 Jul 2021</span>
+        <span class="chev-tag purple">Libya</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 7. EMPLOYMENT HISTORY ── -->
+<div class="chev-panel" id="panel-work">
+  <div class="chev-content">
+    <div class="section-title-wrapper">
+      <h2 class="chev-section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        Employment History
+        <button class="translate-toggle" onclick="toggleSectionTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      </h2>
+      <div class="section-arabic">التاريخ الوظيفي</div>
+    </div>
+    <div class="chev-timeline">
+
+      <div class="chev-timeline-item">
+        <div class="chev-tl-card">
+          <div class="chev-tl-role">Researcher</div>
+          <div class="chev-tl-org">Libyan Engineering Research Center</div>
+          <div class="chev-tl-details">
+            <span class="chev-tag">Part time</span>
+            <span class="chev-tag orange">01 Sep 2024</span>
+            <span class="chev-tag purple">Engineering</span>
+            <span class="chev-tag">25.00 hours per week</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chev-timeline-item">
+        <div class="chev-tl-card">
+          <div class="chev-tl-role">Content Creator &amp; Graphic Designer</div>
+          <div class="chev-tl-org">Why me Organization</div>
+          <div class="chev-tl-details">
+            <span class="chev-tag">Part time</span>
+            <span class="chev-tag orange">15 Sep 2023 – 31 Aug 2024</span>
+            <span class="chev-tag purple">Mass media, publishing, journalism</span>
+            <span class="chev-tag">25.00 hours per week</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chev-timeline-item">
+        <div class="chev-tl-card">
+          <div class="chev-tl-role">Graphic Designer</div>
+          <div class="chev-tl-org">International Rescue Committee (IRC)</div>
+          <div class="chev-tl-details">
+            <span class="chev-tag">Voluntary</span>
+            <span class="chev-tag orange">01 Jul 2023 – 10 Sep 2023</span>
+            <span class="chev-tag purple">Arts, design, creative industries</span>
+            <span class="chev-tag">12.00 hours per week</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chev-timeline-item">
+        <div class="chev-tl-card">
+          <div class="chev-tl-role">Data Entry</div>
+          <div class="chev-tl-org">Municipality of Bani Walid</div>
+          <div class="chev-tl-details">
+            <span class="chev-tag">Part time</span>
+            <span class="chev-tag orange">05 Mar 2023 – 28 May 2023</span>
+            <span class="chev-tag purple">Other</span>
+            <span class="chev-tag">36.00 hours per week</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chev-timeline-item">
+        <div class="chev-tl-card">
+          <div class="chev-tl-role">Project Evaluator</div>
+          <div class="chev-tl-org">North African Policy Initiative ( NAPI )</div>
+          <div class="chev-tl-details">
+            <span class="chev-tag">Part time</span>
+            <span class="chev-tag orange">15 Nov 2022 – 31 Jan 2023</span>
+            <span class="chev-tag purple">Human rights law</span>
+            <span class="chev-tag">25.00 hours per week</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chev-timeline-item">
+        <div class="chev-tl-card">
+          <div class="chev-tl-role">Researcher</div>
+          <div class="chev-tl-org">United Nations Development Programme ( UNDP )</div>
+          <div class="chev-tl-details">
+            <span class="chev-tag">Part time</span>
+            <span class="chev-tag orange">11 Nov 2020 – 15 Jan 2021</span>
+            <span class="chev-tag purple">Development studies</span>
+            <span class="chev-tag">30.00 hours per week</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chev-timeline-item">
+        <div class="chev-tl-card">
+          <div class="chev-tl-role">Technical Engineer</div>
+          <div class="chev-tl-org">Partnership community Organization</div>
+          <div class="chev-tl-details">
+            <span class="chev-tag">Part time</span>
+            <span class="chev-tag orange">30 Aug 2018</span>
+            <span class="chev-tag purple">Human rights law</span>
+            <span class="chev-tag">15.00 hours per week</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── 8. REFEREES ── -->
+<div class="chev-panel" id="panel-references">
+  <div class="chev-content">
+    <div class="section-title-wrapper">
+      <h2 class="chev-section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/><line x1="20" y1="8" x2="20" y2="14"/></svg>
+        Referees
+        <button class="translate-toggle" onclick="toggleSectionTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      </h2>
+      <div class="section-arabic">المُحكّمون</div>
+    </div>
+    <div class="chev-refs-grid">
+      <div class="chev-ref-card">
+        <div class="chev-ref-avatar">ME</div>
+        <div>
+          <div class="chev-ref-name">Masoud Edaghel</div>
+          <div class="chev-ref-role">Assistant Professor</div>
+        </div>
+      </div>
+      <div class="chev-ref-card">
+        <div class="chev-ref-avatar ref-accent">SA</div>
+        <div>
+          <div class="chev-ref-name">Sofyan Aldbeeb</div>
+          <div class="chev-ref-role">General Manager</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="logo" href="index.html">
+        <img src="images/logo.png" alt="VocaPath Logo">
+        <div class="logo-text">
+          <div class="logo-name">VocaPath</div>
+          <div class="logo-sub">English Mastery</div>
+        </div>
+      </a>
+      <p>A free vocabulary learning tool designed for all learners. Master English through structured, level-based learning.</p>
+      <div class="footer-reference">
+        <strong>Main reference:</strong> The Oxford 3000™
+        <a class="btn-oxford-dl" href="BOOK/OXFORD.pdf" download="Oxford_3000_Word_List.pdf" title="Download Oxford 3000™ word list">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </a>
+      </div>
+      <div class="footer-resources">
+        <h5>Useful English Resources</h5>
+        <div class="resource-buttons">
+          <a href="data/The_Oxford_5000.pdf" download="Oxford_5000_C1_Word_List.pdf" class="resource-btn oxford-5000" data-tooltip="Oxford 3000–5000 word list for C1 level – download PDF">
+            <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+            <span class="resource-title">Oxford 5K · C1</span>
+          </a>
+          <a href="https://engnovate.com/" target="_blank" rel="noopener noreferrer" class="resource-btn engnovate" data-tooltip="Innovative English learning platform with modern teaching methods">
+            <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+            <div class="resource-text"><span class="resource-title">EngNovate</span><span class="resource-url">engnovate.com</span></div>
+          </a>
+          <a href="https://www.ielts.org/" target="_blank" rel="noopener noreferrer" class="resource-btn ielts" data-tooltip="Official IELTS website - International English Language Testing System">
+            <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+            <div class="resource-text"><span class="resource-title">IELTS</span><span class="resource-url">ielts.org</span></div>
+          </a>
+          <a href="https://ieltsregistration.britishcouncil.org/" target="_blank" rel="noopener noreferrer" class="resource-btn british-council" data-tooltip="Register for IELTS exam through British Council">
+            <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
+            <div class="resource-text"><span class="resource-title">IELTS Registration</span><span class="resource-url">britishcouncil.org</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="f-nav">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a></li>
+        <li><a href="about.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>About</a></li>
+        <li><a href="tenses.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>Tenses</a></li>
+        <li><a href="modal-verbs.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Modal Verbs</a></li>
+        <li><a href="goals.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>Goals</a></li>
+        <li><a href="privacy.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="f-contact">
+      <h5>Contact Us</h5>
+      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="2aa8c8eb-d824-43bc-a78b-27d08a3e32c0">
+        <input type="hidden" name="subject" value="New Contact from VocaPath">
+        <input type="hidden" name="from_name" value="VocaPath Contact Form">
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+        <input type="email" name="email" value="vocapath@partnership.org.ly" style="display:none;">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="user_email" placeholder="Your email address" required />
+        <textarea name="message" placeholder="Write your message here…" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="copyright">© 2026 All rights reserved — <strong>A. Algamel</strong></div>
+    <div class="social-links">
+      <a class="social-btn fb" href="https://www.facebook.com/vocaapath" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a class="social-btn ig" href="https://www.instagram.com/vocaapath" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a class="social-btn li" href="#" aria-label="LinkedIn" title="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a class="social-btn em" href="mailto:vocapath@partnership.org.ly" aria-label="Email" title="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<div class="scroll-controls">
+  <button class="scroll-btn scroll-up" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Scroll to top" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <button class="scroll-btn scroll-down" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})" title="Scroll to bottom" aria-label="Scroll to bottom">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+</div>
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script src="js/app.js"></script>
+<script>
+function toggleMenu() {
+  document.getElementById('mainNav').classList.toggle('open');
+}
+
+const TAB_MAP = {
+  leadership: 'panel-leadership',
+  networking: 'panel-networking',
+  uk:         'panel-uk',
+  career:     'panel-career',
+  personal:   'panel-personal',
+  education:  'panel-education',
+  work:       'panel-work',
+  references: 'panel-references',
+};
+
+function showTab(key) {
+  document.querySelectorAll('.chev-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.chev-tab').forEach(t => {
+    t.classList.remove('active');
+    t.setAttribute('aria-selected', 'false');
+  });
+  const panel = document.getElementById(TAB_MAP[key]);
+  if (panel) panel.classList.add('active');
+  const btn = document.querySelector(`.chev-tab[onclick="showTab('${key}')"]`);
+  if (btn) {
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = location.hash.replace('#', '');
+  if (hash && TAB_MAP[hash]) showTab(hash);
+});
+
+/* ─── ARABIC TRANSLATION TOGGLE ─── */
+function toggleTranslation(button) {
+  const wrapper = button.closest('.paragraph-wrapper');
+  const translation = wrapper.querySelector('.arabic-translation');
+  
+  if (translation) {
+    translation.classList.toggle('show');
+    
+    // Scroll the translation into view smoothly
+    if (translation.classList.contains('show')) {
+      setTimeout(() => {
+        translation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+  }
+}
+
+function closeTranslation(button) {
+  const translation = button.closest('.arabic-translation');
+  if (translation) {
+    translation.classList.remove('show');
+  }
+}
+
+function toggleSectionTranslation(button) {
+  const wrapper = button.closest('.section-title-wrapper');
+  const translation = wrapper.querySelector('.section-arabic');
+  
+  if (translation) {
+    translation.classList.toggle('show');
+  }
+}
+
+/* ─── OPEN CHEVENING VOCABULARY IN FULL MODE ─── */
+function openCheveningVocabulary() {
+  // Open the dedicated Chevening Full Mode page
+  window.open('fullmodecheveningdata.html', '_blank');
+}
+
+/* ─── PASSWORD PROTECTION & ENCRYPTION ─── */
+// Simple encryption key derived from password
+const ENCRYPTION_KEY = 99;
+
+function simpleEncrypt(text) {
+  return btoa(encodeURIComponent(text));
+}
+
+function simpleDecrypt(encoded) {
+  try {
+    return decodeURIComponent(atob(encoded));
+  } catch (e) {
+    return '';
+  }
+}
+
+function checkPassword() {
+  const input = document.getElementById('passwordInput');
+  const error = document.getElementById('passwordError');
+  const overlay = document.getElementById('passwordOverlay');
+  const passwordBox = document.getElementById('passwordBox');
+  
+  if (input.value === '99') {
+    // Success animation
+    passwordBox.style.animation = 'none';
+    overlay.style.animation = 'fadeOut 0.5s ease';
+    setTimeout(() => {
+      overlay.classList.add('hidden');
+      sessionStorage.setItem('cheveningAuth', 'true');
+    }, 400);
+  } else {
+    // Error animation
+    passwordBox.classList.add('error');
+    error.classList.add('show');
+    input.value = '';
+    input.focus();
+    
+    setTimeout(() => {
+      passwordBox.classList.remove('error');
+      error.classList.remove('show');
+    }, 3000);
+  }
+}
+
+function decryptPageContent() {
+  // Content is already visible, this is for future encryption if needed
+  // The password protection itself provides the security layer
+}
+
+// Check authentication on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const isAuthenticated = sessionStorage.getItem('cheveningAuth');
+  if (isAuthenticated === 'true') {
+    document.getElementById('passwordOverlay').classList.add('hidden');
+  }
+  
+  // Allow Enter key to submit password
+  const passwordInput = document.getElementById('passwordInput');
+  passwordInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') checkPassword();
+  });
+  
+  // Auto-focus password input
+  if (!isAuthenticated) {
+    setTimeout(() => passwordInput.focus(), 500);
+  }
+});
+</script>
+</body>
+</html>

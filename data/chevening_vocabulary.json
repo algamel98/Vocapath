@@ -1,0 +1,2774 @@
+[
+  {
+    "word": "ability",
+    "type": "noun",
+    "level": "A2",
+    "arabic": "قدرة | مقدرة",
+    "def": "the power or skill to do something",
+    "example": "Knowledge addressing gaps in my abilities.",
+    "exampleAr": "معرفة تعالج الثغرات في قدراتي."
+  },
+  {
+    "word": "academic",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "أكاديمي | علمي",
+    "def": "relating to education and scholarship",
+    "example": "My academic foundation is in engineering.",
+    "exampleAr": "أساسي الأكاديمي في الهندسة."
+  },
+  {
+    "word": "accept",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يقبل | يوافق",
+    "def": "to agree to take something that is offered",
+    "example": "I accepted the nomination as mayoral candidate.",
+    "exampleAr": "قبلت الترشيح كمرشح لمنصب العمدة."
+  },
+  {
+    "word": "achieve",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يحقق | ينجز",
+    "def": "to succeed in doing or getting something",
+    "example": "This would help me achieve my goal.",
+    "exampleAr": "سيساعدني هذا على تحقيق هدفي."
+  },
+  {
+    "word": "additional",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "إضافي | زائد",
+    "def": "extra; more than what is usual or expected",
+    "example": "Additional training in leadership is essential.",
+    "exampleAr": "التدريب الإضافي في القيادة ضروري."
+  },
+  {
+    "word": "additionally",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "بالإضافة إلى ذلك | علاوة على ذلك",
+    "def": "as an extra thing; also",
+    "example": "Additionally, I am recognized and trusted.",
+    "exampleAr": "بالإضافة إلى ذلك، أنا معروف وموثوق به."
+  },
+  {
+    "word": "address",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يعالج | يتناول",
+    "def": "to deal with or discuss a problem or issue",
+    "example": "Our programs addressed genuine community needs.",
+    "exampleAr": "عالجت برامجنا الاحتياجات الحقيقية للمجتمع."
+  },
+  {
+    "word": "advanced",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "متقدم | عالي المستوى",
+    "def": "at a high level of difficulty or development",
+    "example": "Advanced qualifications in management would help.",
+    "exampleAr": "المؤهلات المتقدمة في الإدارة ستساعد."
+  },
+  {
+    "word": "advice",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "نصيحة | مشورة",
+    "def": "an opinion about what someone should do",
+    "example": "I provide advice to municipal leaders when needed.",
+    "exampleAr": "أقدم المشورة لقادة البلدية عند الحاجة."
+  },
+  {
+    "word": "ahead",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "قُدماً | في المستقبل",
+    "def": "in or toward the future",
+    "example": "The challenges ahead are substantial.",
+    "exampleAr": "التحديات المقبلة كبيرة."
+  },
+  {
+    "word": "aim",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "هدف | غاية",
+    "def": "a purpose or intention; a desired outcome",
+    "example": "My primary aim is developing governance capabilities.",
+    "exampleAr": "هدفي الأساسي هو تطوير قدرات الحوكمة."
+  },
+  {
+    "word": "align",
+    "type": "verb",
+    "level": "C1",
+    "arabic": "يتماشى | يتوافق",
+    "def": "to arrange things in a straight line or to be in agreement",
+    "example": "This aligns with UK priorities for the MENA region.",
+    "exampleAr": "يتماشى هذا مع أولويات المملكة المتحدة لمنطقة الشرق الأوسط وشمال أفريقيا."
+  },
+  {
+    "word": "alignment",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "توافق | انسجام | تناسق",
+    "def": "the state of being in agreement or having the same direction or purpose",
+    "example": "There is strong alignment between the project's goals and government priorities.",
+    "exampleAr": "هناك توافق قوي بين أهداف المشروع وأولويات الحكومة."
+  },
+  {
+    "word": "alternative",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "بديل | خيار آخر",
+    "def": "one of two or more things that you can choose between",
+    "example": "My other choices represent solid alternatives.",
+    "exampleAr": "تمثل خياراتي الأخرى بدائل قوية."
+  },
+  {
+    "word": "analytical",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "تحليلي | قائم على التحليل",
+    "def": "relating to the ability to examine information in a detailed and logical way",
+    "example": "A strong analytical approach is essential for solving complex engineering problems.",
+    "exampleAr": "النهج التحليلي القوي ضروري لحل المشكلات الهندسية المعقدة."
+  },
+  {
+    "word": "appetite",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "شهيّة | رغبة قوية",
+    "def": "a strong desire or enthusiasm for something",
+    "example": "There is a growing appetite among young people for meaningful participation in politics.",
+    "exampleAr": "تتصاعد الرغبة لدى الشباب في المشاركة الفاعلة في السياسة."
+  },
+  {
+    "word": "apply",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يتقدم | يطبق",
+    "def": "to make a formal request for something, or to use something for a purpose",
+    "example": "I chose to apply to medium-sized UK cities.",
+    "exampleAr": "اخترت التقديم إلى مدن بريطانية متوسطة الحجم."
+  },
+  {
+    "word": "approach",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "نهج | أسلوب",
+    "def": "a way of dealing with a situation or problem",
+    "example": "We avoided top-down approaches.",
+    "exampleAr": "تجنبنا النهج من أعلى إلى أسفل."
+  },
+  {
+    "word": "appropriate",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "مناسب | ملائم",
+    "def": "suitable or right for a particular situation or purpose",
+    "example": "We designed culturally appropriate activities.",
+    "exampleAr": "صممنا أنشطة مناسبة ثقافياً."
+  },
+  {
+    "word": "assessment",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "تقييم | تقدير",
+    "def": "the process of making a judgment about something",
+    "example": "I oversaw peacebuilding assessments in 2023.",
+    "exampleAr": "أشرفت على تقييمات بناء السلام في عام 2023."
+  },
+  {
+    "word": "authority",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "سلطة | جهة رسمية",
+    "def": "the power to give orders or make decisions",
+    "example": "We forged partnerships with local authorities.",
+    "exampleAr": "أقمنا شراكات مع السلطات المحلية."
+  },
+  {
+    "word": "background",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "خلفية | ماضٍ",
+    "def": "the type of education and experience that someone has",
+    "example": "Given my engineering background, I seek management qualifications.",
+    "exampleAr": "نظراً لخلفيتي الهندسية، أسعى للحصول على مؤهلات إدارية."
+  },
+  {
+    "word": "balance",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يوازن | يعادل",
+    "def": "to keep different things in the correct proportions",
+    "example": "I learned to balance international standards with local realities.",
+    "exampleAr": "تعلمت تحقيق التوازن بين المعايير الدولية والواقع المحلي."
+  },
+  {
+    "word": "become",
+    "type": "verb",
+    "level": "A2",
+    "arabic": "يصبح | يغدو",
+    "def": "to start to be something",
+    "example": "My goal is becoming Mayor of Bani Walid.",
+    "exampleAr": "هدفي هو أن أصبح عمدة بني وليد."
+  },
+  {
+    "word": "benefit",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يستفيد | ينتفع",
+    "def": "to receive an advantage from something",
+    "example": "I can contribute to and benefit from the network.",
+    "exampleAr": "أستطيع المساهمة والاستفادة من الشبكة."
+  },
+  {
+    "word": "border",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "حدود | تخوم",
+    "def": "the line that divides two countries or regions",
+    "example": "Professional relationships crossing borders.",
+    "exampleAr": "العلاقات المهنية التي تعبر الحدود."
+  },
+  {
+    "word": "bridging",
+    "type": "verb",
+    "level": "C1",
+    "arabic": "يَصِل | يُجسِّر الفجوة",
+    "def": "connecting two groups or things that are different or separate",
+    "example": "Her role involved bridging the gap between international organisations and local communities.",
+    "exampleAr": "تمثّل دورها في سدّ الفجوة بين المنظمات الدولية والمجتمعات المحلية."
+  },
+  {
+    "word": "brilliance",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "تألق | براعة",
+    "def": "exceptional intelligence, skill, or talent",
+    "example": "Success requires teamwork more than individual brilliance.",
+    "exampleAr": "النجاح يتطلب العمل الجماعي أكثر من التألق الفردي."
+  },
+  {
+    "word": "broader",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "أوسع | أشمل",
+    "def": "covering a larger area or range",
+    "example": "I will pursue broader leadership roles.",
+    "exampleAr": "سأتابع أدوار قيادية أوسع."
+  },
+  {
+    "word": "build",
+    "type": "verb",
+    "level": "A2",
+    "arabic": "يبني | يشيّد",
+    "def": "to construct or create something",
+    "example": "Relationships built on mutual respect succeed.",
+    "exampleAr": "العلاقات المبنية على الاحترام المتبادل تنجح."
+  },
+  {
+    "word": "building",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "بناء | تشييد",
+    "def": "the process of constructing or developing something",
+    "example": "It will support institutional capacity building.",
+    "exampleAr": "ستدعم بناء القدرات المؤسسية."
+  },
+  {
+    "word": "candidacy",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "ترشُّح | حملة انتخابية",
+    "def": "the fact of being a candidate for an election or position",
+    "example": "She announced her candidacy for the mayoral election at a public event.",
+    "exampleAr": "أعلنت ترشّحها في الانتخابات البلدية في تجمّع عام."
+  },
+  {
+    "word": "candidate",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "مرشح | مُتقدِّم",
+    "def": "a person who applies for a job or is nominated for election",
+    "example": "I am positioned as a competitive candidate.",
+    "exampleAr": "أنا في موقع مرشح تنافسي."
+  },
+  {
+    "word": "capability",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "قدرة | كفاءة",
+    "def": "the power or ability to do something",
+    "example": "An opportunity to deepen these capabilities.",
+    "exampleAr": "فرصة لتعميق هذه القدرات."
+  },
+  {
+    "word": "capacity",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "قدرة | طاقة | كفاءة",
+    "def": "the ability to do, experience, or understand something; the amount that can be contained or produced",
+    "example": "The programme was designed to build local capacity for long-term development.",
+    "exampleAr": "صُمِّم البرنامج لبناء القدرات المحلية من أجل التنمية طويلة المدى."
+  },
+  {
+    "word": "center",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "مركز | وسط",
+    "def": "a place where a particular activity happens",
+    "example": "I avoided major centers like London.",
+    "exampleAr": "تجنبت المراكز الكبرى مثل لندن."
+  },
+  {
+    "word": "challenge",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "تحدٍ | صعوبة",
+    "def": "something difficult that requires great effort to deal with",
+    "example": "I faced challenges of community resistance.",
+    "exampleAr": "واجهت تحديات من مقاومة المجتمع."
+  },
+  {
+    "word": "choice",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "خيار | اختيار",
+    "def": "an act of choosing between two or more possibilities",
+    "example": "My second and third choices follow the same logic.",
+    "exampleAr": "يتبع خياري الثاني والثالث نفس المنطق."
+  },
+  {
+    "word": "coalition",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "تحالف | ائتلاف",
+    "def": "a group formed by people or parties with different interests who agree to work together",
+    "example": "A broad coalition of organisations called for urgent climate action.",
+    "exampleAr": "طالب تحالف واسع من المنظمات باتخاذ إجراءات عاجلة بشأن المناخ."
+  },
+  {
+    "word": "collaboration",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "تعاون | عمل مشترك",
+    "def": "the act of working together with others to produce or achieve something",
+    "example": "The report was produced through close collaboration between three research institutes.",
+    "exampleAr": "أُنجز التقرير من خلال تعاون وثيق بين ثلاثة معاهد بحثية."
+  },
+  {
+    "word": "combine",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يدمج | يجمع",
+    "def": "to join or mix two or more things together",
+    "example": "I will combine qualifications with practical experience.",
+    "exampleAr": "سأدمج المؤهلات مع الخبرة العملية."
+  },
+  {
+    "word": "commitment",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "التزام | تعهُّد",
+    "def": "a promise to do something or to behave in a particular way; dedication to something",
+    "example": "Her commitment to education inspired everyone around her.",
+    "exampleAr": "أثار التزامها بالتعليم إلهام كل من حولها."
+  },
+  {
+    "word": "comparable",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "مماثل | قابل للمقارنة",
+    "def": "similar to something else and able to be compared",
+    "example": "Scholars facing comparable challenges in their countries.",
+    "exampleAr": "الباحثون الذين يواجهون تحديات مماثلة في بلدانهم."
+  },
+  {
+    "word": "competitive",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "تنافسي | منافس",
+    "def": "involving competition or able to compete successfully",
+    "example": "My experience positions me as a competitive candidate.",
+    "exampleAr": "تضعني خبرتي كمرشح تنافسي."
+  },
+  {
+    "word": "comprehensive",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "شامل | مستوعِب لكل الجوانب",
+    "def": "including all or nearly all elements or aspects of something",
+    "example": "The report provided a comprehensive analysis of the country's economic situation.",
+    "exampleAr": "قدّم التقرير تحليلاً شاملاً للوضع الاقتصادي للبلاد."
+  },
+  {
+    "word": "conclude",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يخلص إلى | يستنتج",
+    "def": "to decide or judge something after considering the facts",
+    "example": "I concluded Sussex would best support my objectives.",
+    "exampleAr": "خلصت إلى أن ساسكس ستدعم أهدافي بشكل أفضل."
+  },
+  {
+    "word": "confidence",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "ثقة | اطمئنان",
+    "def": "the feeling that you can trust someone or something",
+    "example": "The project restored confidence within the community.",
+    "exampleAr": "استعاد المشروع الثقة داخل المجتمع."
+  },
+  {
+    "word": "conflict",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "نزاع | صراع | خلاف",
+    "def": "a serious disagreement or fight, especially a long-lasting one between armed forces or groups",
+    "example": "The region has been slowly recovering from years of armed conflict.",
+    "exampleAr": "تتعافى المنطقة ببطء من سنوات النزاع المسلح."
+  },
+  {
+    "word": "connect",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يربط | يصل",
+    "def": "to join or link things together",
+    "example": "It will connect me with peers for collaboration.",
+    "exampleAr": "سيربطني بالأقران للتعاون."
+  },
+  {
+    "word": "connection",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "علاقة | صلة | ارتباط",
+    "def": "a relationship between people or organizations",
+    "example": "I used established connections with municipal officials.",
+    "exampleAr": "استخدمت العلاقات القائمة مع مسؤولي البلدية."
+  },
+  {
+    "word": "considerable",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "كبير | معتبر",
+    "def": "large in size, amount, or extent",
+    "example": "I spent considerable time meeting community leaders.",
+    "exampleAr": "قضيت وقتاً كبيراً في لقاء قادة المجتمع."
+  },
+  {
+    "word": "considerably",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "بشكل كبير | إلى حد بعيد",
+    "def": "to a large degree or extent",
+    "example": "The city suffered considerably during the war.",
+    "exampleAr": "عانت المدينة بشكل كبير خلال الحرب."
+  },
+  {
+    "word": "consistency",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "الاتساق | الثبات",
+    "def": "the quality of always behaving or performing in the same way, especially to a good standard",
+    "example": "Consistency in policy-making builds long-term institutional trust.",
+    "exampleAr": "الاتساق في صنع السياسات يبني الثقة المؤسسية على المدى البعيد."
+  },
+  {
+    "word": "consult",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يستشير | يراجع",
+    "def": "to ask someone for their opinion or advice",
+    "example": "I have consulted with mentors.",
+    "exampleAr": "استشرت الموجهين."
+  },
+  {
+    "word": "contact",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "اتصال | تواصل",
+    "def": "communication with someone",
+    "example": "I remain in regular contact with municipal leaders.",
+    "exampleAr": "أبقى على اتصال منتظم مع قادة البلدية."
+  },
+  {
+    "word": "context",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "سياق | ظرف",
+    "def": "the situation in which something happens",
+    "example": "Success in fragile contexts requires patience.",
+    "exampleAr": "النجاح في السياقات الهشة يتطلب الصبر."
+  },
+  {
+    "word": "continue",
+    "type": "verb",
+    "level": "A2",
+    "arabic": "يستمر | يواصل",
+    "def": "to keep happening or doing something without stopping",
+    "example": "This relationship continued growing beyond that project.",
+    "exampleAr": "استمرت هذه العلاقة في النمو بعد ذلك المشروع."
+  },
+  {
+    "word": "contribute",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يساهم | يشارك",
+    "def": "to give something, especially money or help, to achieve something",
+    "example": "I contributed technical expertise to the project.",
+    "exampleAr": "ساهمت بخبرتي التقنية في المشروع."
+  },
+  {
+    "word": "contribution",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "مساهمة | إسهام",
+    "def": "something that you give or do to help achieve something",
+    "example": "I will make contributions to the Chevening community.",
+    "exampleAr": "سأقدم مساهمات لمجتمع تشيفنينغ."
+  },
+  {
+    "word": "cooperation",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "تعاون | تضامن",
+    "def": "the act of working together toward a common goal",
+    "example": "The network thrives on cooperation.",
+    "exampleAr": "تزدهر الشبكة بالتعاون."
+  },
+  {
+    "word": "coordinate",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يُنسِّق | يُدير",
+    "def": "to organize people or groups so that they work together efficiently",
+    "example": "She was asked to coordinate the relief efforts across five regions.",
+    "exampleAr": "طُلب منها تنسيق جهود الإغاثة عبر خمس مناطق."
+  },
+  {
+    "word": "credentials",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "أوراق اعتماد | مؤهلات",
+    "def": "personal qualities or achievements that make you suitable or trusted for something",
+    "example": "His academic credentials and field experience made him the ideal candidate.",
+    "exampleAr": "جعلته مؤهلاته الأكاديمية وخبرته الميدانية المرشح المثالي."
+  },
+  {
+    "word": "credibility",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "مصداقية | موثوقية",
+    "def": "the quality of being trusted and believed in",
+    "example": "The organisation's credibility was damaged after the financial scandal.",
+    "exampleAr": "تضررت مصداقية المنظمة بعد الفضيحة المالية."
+  },
+  {
+    "word": "culturally",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "ثقافياً | من الناحية الثقافية",
+    "def": "in a way that relates to the customs and beliefs of a society",
+    "example": "The activities were culturally appropriate for the community.",
+    "exampleAr": "كانت الأنشطة مناسبة ثقافياً للمجتمع."
+  },
+  {
+    "word": "decision",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "قرار | حكم",
+    "def": "a choice that you make about something after thinking",
+    "example": "They influenced national decisions.",
+    "exampleAr": "أثروا على القرارات الوطنية."
+  },
+  {
+    "word": "dedicated",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "مُتفانٍ | مُكرِّس جهده",
+    "def": "devoting a lot of time and effort to a particular activity or cause; committed",
+    "example": "She is a dedicated public servant who has worked in local government for twenty years.",
+    "exampleAr": "إنها موظفة حكومية متفانية تعمل في الحكومة المحلية منذ عشرين عاماً."
+  },
+  {
+    "word": "deepen",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يُعمِّق | يُرسِّخ",
+    "def": "to make something stronger, more serious, or more thorough",
+    "example": "Study abroad programmes deepen cultural understanding and broaden global perspective.",
+    "exampleAr": "تُعمِّق برامج الدراسة في الخارج الفهم الثقافي وتوسِّع الآفاق العالمية."
+  },
+  {
+    "word": "degree",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "درجة علمية | شهادة",
+    "def": "a qualification given by a university after completing a course",
+    "example": "I have both Bachelor's and Master's degrees in Engineering.",
+    "exampleAr": "لدي درجتي البكالوريوس والماجستير في الهندسة."
+  },
+  {
+    "word": "delivery",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "تقديم | توصيل",
+    "def": "the process of providing or supplying something",
+    "example": "I will improve service delivery in the municipality.",
+    "exampleAr": "سأحسن تقديم الخدمات في البلدية."
+  },
+  {
+    "word": "demographic",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "ديموغرافي | سكاني",
+    "def": "relating to the structure of populations, such as age, income, or size",
+    "example": "The demographic reality of the region must be considered in any development plan.",
+    "exampleAr": "يجب مراعاة الواقع الديموغرافي للمنطقة في أي خطة تنمية."
+  },
+  {
+    "word": "department",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "قسم | إدارة",
+    "def": "a section of a large organization dealing with a specific area",
+    "example": "I will oversee municipal departments.",
+    "exampleAr": "سأشرف على أقسام البلدية."
+  },
+  {
+    "word": "depend",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يعتمد | يتوقف",
+    "def": "to rely on someone or something",
+    "example": "Success depended on forging partnerships.",
+    "exampleAr": "اعتمد النجاح على إقامة شراكات."
+  },
+  {
+    "word": "design",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يصمم | يخطط",
+    "def": "to plan and make something for a specific purpose",
+    "example": "I designed culturally appropriate activities.",
+    "exampleAr": "صممت أنشطة مناسبة ثقافياً."
+  },
+  {
+    "word": "develop",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يطور | ينمي",
+    "def": "to grow or cause to grow and become more advanced",
+    "example": "My relationship developed with the municipality.",
+    "exampleAr": "تطورت علاقتي مع البلدية."
+  },
+  {
+    "word": "developed",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "متطور | متقدم",
+    "def": "having advanced economic and social systems",
+    "example": "My goal is transforming Libya into a developed nation.",
+    "exampleAr": "هدفي هو تحويل ليبيا إلى دولة متطورة."
+  },
+  {
+    "word": "development",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "تنمية | تطوير",
+    "def": "the process of growing or improving",
+    "example": "I engage in initiatives strengthening development.",
+    "exampleAr": "أشارك في مبادرات تعزز التنمية."
+  },
+  {
+    "word": "direct",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يوجه | يدير",
+    "def": "to control or manage an organization or activity",
+    "example": "My track record directing community projects.",
+    "exampleAr": "سجلي في توجيه المشاريع المجتمعية."
+  },
+  {
+    "word": "directly",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "مباشرة | بشكل مباشر",
+    "def": "in a direct manner; without anything coming between",
+    "example": "This qualification will directly support governance improvement.",
+    "exampleAr": "ستدعم هذه المؤهلات بشكل مباشر تحسين الحوكمة."
+  },
+  {
+    "word": "draw",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يستمد | يستخلص",
+    "def": "to get or obtain something from a source",
+    "example": "Drawing on previous lessons, I used established connections.",
+    "exampleAr": "بالاستفادة من الدروس السابقة، استخدمت العلاقات القائمة."
+  },
+  {
+    "word": "effective",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "فعال | مؤثر",
+    "def": "successful in producing a desired result",
+    "example": "The city needed effective development projects.",
+    "exampleAr": "كانت المدينة بحاجة إلى مشاريع تنموية فعالة."
+  },
+  {
+    "word": "effectively",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "بفعالية | بكفاءة",
+    "def": "in a way that produces the intended result",
+    "example": "Capabilities needed to effectively direct departments.",
+    "exampleAr": "القدرات اللازمة لتوجيه الأقسام بفعالية."
+  },
+  {
+    "word": "effectiveness",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "فعالية | كفاءة",
+    "def": "the degree to which something is successful in producing a result",
+    "example": "Training is essential for effectiveness in such roles.",
+    "exampleAr": "التدريب ضروري للفعالية في مثل هذه الأدوار."
+  },
+  {
+    "word": "election",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "انتخابات | اقتراع",
+    "def": "the process of choosing someone for an official position by voting",
+    "example": "I plan to run in the 2027 municipal elections.",
+    "exampleAr": "أخطط للترشح في انتخابات البلدية لعام 2027."
+  },
+  {
+    "word": "enable",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يمكّن | يتيح",
+    "def": "to make someone able to do something",
+    "example": "These skills will enable me to build connections.",
+    "exampleAr": "ستمكنني هذه المهارات من بناء علاقات."
+  },
+  {
+    "word": "engage",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "ينخرط | يشارك",
+    "def": "to become involved in or take part in something",
+    "example": "I engage in community initiatives.",
+    "exampleAr": "أشارك في المبادرات المجتمعية."
+  },
+  {
+    "word": "engineer",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "مهندس",
+    "def": "a person who designs or builds machines, engines, or structures",
+    "example": "Engineers bring valuable problem-solving approaches.",
+    "exampleAr": "يجلب المهندسون أساليب قيمة لحل المشكلات."
+  },
+  {
+    "word": "enhance",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يعزز | يحسّن",
+    "def": "to improve the quality, value, or extent of something",
+    "example": "These ties enhanced my credibility.",
+    "exampleAr": "عززت هذه الروابط مصداقيتي."
+  },
+  {
+    "word": "enrollment",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "التسجيل | الالتحاق",
+    "def": "the act of officially joining a course, school, or programme",
+    "example": "Enrollment in the training programme exceeded expectations in the first week.",
+    "exampleAr": "تجاوز التسجيل في برنامج التدريب التوقعات في الأسبوع الأول."
+  },
+  {
+    "word": "ensure",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يضمن | يتأكد",
+    "def": "to make certain that something happens or is done",
+    "example": "I ensured our projects reflected community needs.",
+    "exampleAr": "تأكدت من أن مشاريعنا تعكس احتياجات المجتمع."
+  },
+  {
+    "word": "essential",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "ضروري | أساسي",
+    "def": "absolutely necessary; extremely important",
+    "example": "Additional training is essential for effectiveness.",
+    "exampleAr": "التدريب الإضافي ضروري للفعالية."
+  },
+  {
+    "word": "establish",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يؤسس | يُنشئ",
+    "def": "to create or set up an organization, system, or set of rules",
+    "example": "We established partnerships with local trainers.",
+    "exampleAr": "أقمنا شراكات مع مدربين محليين."
+  },
+  {
+    "word": "established",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "راسخ | معروف | مُستقَر",
+    "def": "having existed for a long time and therefore recognized and respected",
+    "example": "He relied on his established network of contacts to find funding for the project.",
+    "exampleAr": "اعتمد على شبكة علاقاته الراسخة للعثور على تمويل للمشروع."
+  },
+  {
+    "word": "evaluation",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "تقييم | تقدير",
+    "def": "the process of judging or assessing the quality, importance, or value of something",
+    "example": "The programme underwent a thorough evaluation before receiving further funding.",
+    "exampleAr": "خضع البرنامج لتقييم شامل قبل الحصول على تمويل إضافي."
+  },
+  {
+    "word": "examine",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يفحص | يدرس",
+    "def": "to look at or consider something carefully",
+    "example": "After examining faculty members, I concluded Sussex was best.",
+    "exampleAr": "بعد فحص أعضاء هيئة التدريس، خلصت إلى أن ساسكس الأفضل."
+  },
+  {
+    "word": "excellent",
+    "type": "adjective",
+    "level": "B1",
+    "arabic": "ممتاز | رائع",
+    "def": "extremely good; of very high quality",
+    "example": "Programs selected with excellent faculty.",
+    "exampleAr": "برامج مختارة مع هيئة تدريس ممتازة."
+  },
+  {
+    "word": "exchange",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "تبادل | مقايضة",
+    "def": "the act of giving something and receiving something else in return",
+    "example": "Success requires respect rather than transactional exchanges.",
+    "exampleAr": "النجاح يتطلب الاحترام بدلاً من التبادلات التجارية."
+  },
+  {
+    "word": "expectation",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "توقع | انتظار",
+    "def": "a belief that something will happen or be the case",
+    "example": "Enrollment drove beyond our expectations.",
+    "exampleAr": "دفع التسجيل إلى ما يتجاوز توقعاتنا."
+  },
+  {
+    "word": "experience",
+    "type": "noun",
+    "level": "A2",
+    "arabic": "تجربة | خبرة",
+    "def": "knowledge or skill gained from doing something",
+    "example": "These experiences changed my understanding of leadership.",
+    "exampleAr": "غيّرت هذه التجارب فهمي للقيادة."
+  },
+  {
+    "word": "expertise",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "خبرة متخصصة | كفاءة عالية",
+    "def": "a high level of knowledge or skill in a particular area",
+    "example": "The project required expertise in both engineering and community development.",
+    "exampleAr": "تطلّب المشروع خبرة متخصصة في كل من الهندسة وتنمية المجتمع."
+  },
+  {
+    "word": "faculty",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "هيئة تدريس | كلية",
+    "def": "all the teachers in a university or college",
+    "example": "I examined faculty members and their publications.",
+    "exampleAr": "فحصت أعضاء هيئة التدريس ومنشوراتهم."
+  },
+  {
+    "word": "figure",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "شخصية | رقم",
+    "def": "an important or well-known person",
+    "example": "I became a trusted figure in humanitarian work.",
+    "exampleAr": "أصبحت شخصية موثوقة في العمل الإنساني."
+  },
+  {
+    "word": "follow",
+    "type": "verb",
+    "level": "A2",
+    "arabic": "يتبع | يلتزم",
+    "def": "to go or come after someone or something",
+    "example": "My other choices follow the same logic.",
+    "exampleAr": "تتبع خياراتي الأخرى نفس المنطق."
+  },
+  {
+    "word": "forging",
+    "type": "verb",
+    "level": "C1",
+    "arabic": "يبني | يُرسي | يُكوِّن",
+    "def": "to create or develop something strong over time, such as a relationship or alliance",
+    "example": "The two leaders spent years forging a strong diplomatic relationship.",
+    "exampleAr": "أمضى الزعيمان سنوات في بناء علاقة دبلوماسية قوية."
+  },
+  {
+    "word": "former",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "سابق | أسبق",
+    "def": "of or in an earlier time; previous",
+    "example": "Most residents supported the former regime.",
+    "exampleAr": "دعم معظم السكان النظام السابق."
+  },
+  {
+    "word": "foundation",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "أساس | قاعدة",
+    "def": "the basic facts or principles on which something is based",
+    "example": "My academic foundation provided analytical skills.",
+    "exampleAr": "وفر أساسي الأكاديمي مهارات تحليلية."
+  },
+  {
+    "word": "fragile",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "هشّ | قابل للكسر",
+    "def": "easily damaged, broken, or destroyed; in a weak or unstable state",
+    "example": "The fragile ceasefire collapsed after renewed fighting in the region.",
+    "exampleAr": "انهار وقف إطلاق النار الهش بعد تجدد القتال في المنطقة."
+  },
+  {
+    "word": "framework",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "إطار عمل | منظومة",
+    "def": "a system of rules, ideas, or beliefs that is used to plan or decide something",
+    "example": "The new legal framework provides clear guidelines for managing public contracts.",
+    "exampleAr": "يوفر الإطار القانوني الجديد إرشادات واضحة لإدارة العقود العامة."
+  },
+  {
+    "word": "future",
+    "type": "adjective",
+    "level": "B1",
+    "arabic": "مستقبلي | قادم",
+    "def": "happening or existing at a time after the present",
+    "example": "I will work among future policy shapers.",
+    "exampleAr": "سأعمل بين صانعي السياسات المستقبليين."
+  },
+  {
+    "word": "gain",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يكتسب | يحصل على",
+    "def": "to obtain or achieve something wanted or needed",
+    "example": "I gained institutional support and deeper understanding.",
+    "exampleAr": "حصلت على الدعم المؤسسي وفهم أعمق."
+  },
+  {
+    "word": "gap",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "فجوة | ثغرة",
+    "def": "a space or difference between two things",
+    "example": "I need knowledge addressing current gaps in my abilities.",
+    "exampleAr": "أحتاج إلى معرفة تعالج الثغرات الحالية في قدراتي."
+  },
+  {
+    "word": "genuine",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "حقيقي | صادق | أصيل",
+    "def": "real, not fake; sincere and honest",
+    "example": "She showed genuine concern for the welfare of the local community.",
+    "exampleAr": "أبدت اهتمامًا حقيقيًا برفاهية المجتمع المحلي."
+  },
+  {
+    "word": "globally",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "عالمياً | على مستوى العالم",
+    "def": "throughout the world; in every part of the world",
+    "example": "UK management programs are globally recognized.",
+    "exampleAr": "برامج الإدارة في المملكة المتحدة معترف بها عالمياً."
+  },
+  {
+    "word": "goal",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "هدف | غاية",
+    "def": "something that you hope to achieve",
+    "example": "We worked together toward shared goals.",
+    "exampleAr": "عملنا معاً نحو أهداف مشتركة."
+  },
+  {
+    "word": "governance",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "الحوكمة | إدارة الشؤون العامة",
+    "def": "the activity of governing a country, organisation, or institution; the system of rules and processes",
+    "example": "Good governance requires accountability, transparency, and strong institutions.",
+    "exampleAr": "تتطلب الحوكمة الجيدة المساءلة والشفافية والمؤسسات القوية."
+  },
+  {
+    "word": "graduate",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "خريج | متخرج",
+    "def": "a person who has completed a course of study or training",
+    "example": "Top graduates were guaranteed employment.",
+    "exampleAr": "ضُمنت الوظائف لأفضل الخريجين."
+  },
+  {
+    "word": "grow",
+    "type": "verb",
+    "level": "A2",
+    "arabic": "ينمو | يتطور",
+    "def": "to increase in size, number, or importance",
+    "example": "The relationship continued growing over time.",
+    "exampleAr": "استمرت العلاقة في النمو مع مرور الوقت."
+  },
+  {
+    "word": "guarantee",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يضمن | يكفل",
+    "def": "to promise that something will happen or is true",
+    "example": "We guaranteed jobs for top graduates.",
+    "exampleAr": "ضمنا وظائف لأفضل الخريجين."
+  },
+  {
+    "word": "guidance",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "توجيه | إرشاد",
+    "def": "advice or help about how to do something",
+    "example": "I will receive guidance from UK mentors.",
+    "exampleAr": "سأتلقى التوجيه من الموجهين البريطانيين."
+  },
+  {
+    "word": "guide",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يوجه | يرشد",
+    "def": "to show someone the way or influence their behavior",
+    "example": "These lessons will guide my contributions.",
+    "exampleAr": "ستوجه هذه الدروس مساهماتي."
+  },
+  {
+    "word": "hesitant",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "مُتردِّد | متحسِّس",
+    "def": "slow to speak or act because you feel uncertain or nervous",
+    "example": "He was hesitant to join the new project without fully understanding its goals.",
+    "exampleAr": "كان مترددًا في الانضمام إلى المشروع الجديد دون فهم كامل لأهدافه."
+  },
+  {
+    "word": "historical",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "تاريخي | مُتعلِّق بالتاريخ",
+    "def": "relating to the past or to the study of history",
+    "example": "The city has a historical role in recent conflicts.",
+    "exampleAr": "للمدينة دور تاريخي في الصراعات الأخيرة."
+  },
+  {
+    "word": "humanitarian",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "إنساني | خيري",
+    "def": "concerned with reducing suffering and improving human welfare",
+    "example": "I work in local governance and humanitarian work.",
+    "exampleAr": "أعمل في الحوكمة المحلية والعمل الإنساني."
+  },
+  {
+    "word": "immediately",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "فوراً | على الفور",
+    "def": "at once; without delay",
+    "example": "I will immediately apply these management frameworks.",
+    "exampleAr": "سأطبق على الفور هذه الأطر الإدارية."
+  },
+  {
+    "word": "impact",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "تأثير | أثر",
+    "def": "the effect or influence of something",
+    "example": "I turned collaboration into sustainable impact.",
+    "exampleAr": "حولت التعاون إلى تأثير مستدام."
+  },
+  {
+    "word": "implementation",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "تنفيذ | تطبيق",
+    "def": "the process of putting a plan, decision, or agreement into effect",
+    "example": "The implementation of the new law will begin next year.",
+    "exampleAr": "سيبدأ تنفيذ القانون الجديد العام القادم."
+  },
+  {
+    "word": "improvement",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "تحسين | تطوير",
+    "def": "the act of making something better",
+    "example": "The qualification will support governance improvement.",
+    "exampleAr": "ستدعم المؤهلات تحسين الحوكمة."
+  },
+  {
+    "word": "individual",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "فرد | شخص",
+    "def": "a single person, separate from others",
+    "example": "I worked with over seventy individuals.",
+    "exampleAr": "عملت مع أكثر من سبعين فرداً."
+  },
+  {
+    "word": "influence",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "تأثير | نفوذ",
+    "def": "the power to affect someone's beliefs or actions",
+    "example": "Genuine influence comes from trust.",
+    "exampleAr": "التأثير الحقيقي يأتي من الثقة."
+  },
+  {
+    "word": "initiative",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "مُبادَرة | خطوة أولى",
+    "def": "a new plan or action intended to solve a problem or improve a situation",
+    "example": "The government launched a new initiative to reduce unemployment among young people.",
+    "exampleAr": "أطلقت الحكومة مبادرة جديدة للحد من البطالة في صفوف الشباب."
+  },
+  {
+    "word": "instability",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "عدم الاستقرار | اضطراب",
+    "def": "a situation where things are likely to change suddenly or become worse",
+    "example": "Economic instability has discouraged foreign investment in the country.",
+    "exampleAr": "أثبط عدم الاستقرار الاقتصادي الاستثمار الأجنبي في البلاد."
+  },
+  {
+    "word": "institution",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "مؤسسة | هيئة",
+    "def": "a large and important organization, such as a university or bank",
+    "example": "We rebuilt trust between institutions and the community.",
+    "exampleAr": "أعدنا بناء الثقة بين المؤسسات والمجتمع."
+  },
+  {
+    "word": "institutional",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "مؤسسي | مُتعلِّق بالمؤسسات",
+    "def": "relating to a large and established organisation or set of rules within society",
+    "example": "Institutional support from the government was crucial to the project's success.",
+    "exampleAr": "كان الدعم المؤسسي من الحكومة أمرًا بالغ الأهمية لنجاح المشروع."
+  },
+  {
+    "word": "intend",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يعتزم | ينوي",
+    "def": "to have a plan or purpose to do something",
+    "example": "I intend to lead this municipality.",
+    "exampleAr": "أعتزم قيادة هذه البلدية."
+  },
+  {
+    "word": "intensively",
+    "type": "adverb",
+    "level": "C1",
+    "arabic": "بشكل مكثَّف | بجِدّ وإصرار",
+    "def": "in a way that involves a lot of effort or activity concentrated in a short time",
+    "example": "She trained intensively for six months before the international competition.",
+    "exampleAr": "تدرّبت بشكل مكثّف لستة أشهر قبل البطولة الدولية."
+  },
+  {
+    "word": "interaction",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "تفاعل | تواصل متبادل",
+    "def": "a situation where two or more people or things communicate or have an effect on each other",
+    "example": "Regular interaction between staff and management improves workplace communication.",
+    "exampleAr": "يُحسِّن التفاعل المنتظم بين الموظفين والإدارة التواصل في بيئة العمل."
+  },
+  {
+    "word": "interactive",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "تفاعلي | مُتبادَل",
+    "def": "involving communication between people or things",
+    "example": "Safety protocols allowed interactive training sessions.",
+    "exampleAr": "سمحت بروتوكولات السلامة بجلسات تدريبية تفاعلية."
+  },
+  {
+    "word": "interest",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "اهتمام | ميول",
+    "def": "the feeling of wanting to know about something",
+    "example": "I examined their research interests.",
+    "exampleAr": "فحصت اهتماماتهم البحثية."
+  },
+  {
+    "word": "international",
+    "type": "adjective",
+    "level": "B1",
+    "arabic": "دولي | عالمي",
+    "def": "involving two or more countries",
+    "example": "I will gain international knowledge.",
+    "exampleAr": "سأكتسب المعرفة الدولية."
+  },
+  {
+    "word": "invite",
+    "type": "verb",
+    "level": "A2",
+    "arabic": "يدعو | يستدعي",
+    "def": "to ask someone to come to an event or to do something",
+    "example": "The municipality invited me to oversee assessments.",
+    "exampleAr": "دعتني البلدية للإشراف على التقييمات."
+  },
+  {
+    "word": "join",
+    "type": "verb",
+    "level": "A2",
+    "arabic": "ينضم | يلتحق",
+    "def": "to become a member of a group or organization",
+    "example": "Joining the Chevening network will strengthen my candidacy.",
+    "exampleAr": "الانضمام إلى شبكة تشيفنينغ سيعزز ترشيحي."
+  },
+  {
+    "word": "knowledge",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "معرفة | علم",
+    "def": "information and understanding about a subject",
+    "example": "I need comprehensive management knowledge.",
+    "exampleAr": "أحتاج إلى معرفة إدارية شاملة."
+  },
+  {
+    "word": "lack",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يفتقر إلى | ينقصه",
+    "def": "to not have something or not have enough of it",
+    "example": "I will gain knowledge I currently lack.",
+    "exampleAr": "سأكتسب المعرفة التي أفتقر إليها حالياً."
+  },
+  {
+    "word": "lead",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يؤدي إلى | يقود",
+    "def": "to cause something to happen or exist",
+    "example": "This led to prolonged marginalization.",
+    "exampleAr": "أدى هذا إلى تهميش طويل."
+  },
+  {
+    "word": "leader",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "قائد | زعيم",
+    "def": "a person who leads or commands a group",
+    "example": "I will connect with global leaders.",
+    "exampleAr": "سأتواصل مع القادة العالميين."
+  },
+  {
+    "word": "leadership",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "قيادة | زعامة",
+    "def": "the state or position of being a leader",
+    "example": "Training in leadership and governance is essential.",
+    "exampleAr": "التدريب في القيادة والحوكمة ضروري."
+  },
+  {
+    "word": "learning",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "تعلّم | تعليم",
+    "def": "the process of gaining knowledge or skill",
+    "example": "The approach will provide relevant learning experiences.",
+    "exampleAr": "سيوفر النهج تجارب تعليمية ذات صلة."
+  },
+  {
+    "word": "lesson",
+    "type": "noun",
+    "level": "A2",
+    "arabic": "درس | عبرة",
+    "def": "an experience that teaches you something",
+    "example": "I drew on previous lessons to solve new problems.",
+    "exampleAr": "استفدت من الدروس السابقة لحل مشاكل جديدة."
+  },
+  {
+    "word": "livelihood",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "الرزق | مصدر الدخل",
+    "def": "the way in which people earn the money they need for food and other necessities",
+    "example": "The flood destroyed the livelihood of thousands of farming families.",
+    "exampleAr": "دمر الفيضان مصدر رزق آلاف الأسر الزراعية."
+  },
+  {
+    "word": "locate",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يقع | يتموضع",
+    "def": "to be in a particular place",
+    "example": "The university is located outside major metropolitan areas.",
+    "exampleAr": "تقع الجامعة خارج المناطق الحضرية الكبرى."
+  },
+  {
+    "word": "logic",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "منطق | استدلال",
+    "def": "a way of thinking or reasoning",
+    "example": "My choices follow the same logic.",
+    "exampleAr": "تتبع خياراتي نفس المنطق."
+  },
+  {
+    "word": "maintain",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يحافظ على | يُبقي",
+    "def": "to keep something in good condition or at the same level",
+    "example": "The university maintains a strong reputation.",
+    "exampleAr": "تحافظ الجامعة على سمعة قوية."
+  },
+  {
+    "word": "manageable",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "قابل للإدارة | يمكن التحكم به",
+    "def": "able to be dealt with or controlled",
+    "example": "The challenges are substantial but manageable.",
+    "exampleAr": "التحديات كبيرة لكنها قابلة للإدارة."
+  },
+  {
+    "word": "management",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "إدارة | تنظيم",
+    "def": "the process of controlling or organizing something",
+    "example": "I have expertise in project management.",
+    "exampleAr": "لدي خبرة في إدارة المشاريع."
+  },
+  {
+    "word": "managerial",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "إداري | تنظيمي",
+    "def": "relating to the work or skills of a manager",
+    "example": "The course develops managerial skills such as planning, delegation, and decision-making.",
+    "exampleAr": "يُنمِّي البرنامج المهارات الإدارية كالتخطيط والتفويض واتخاذ القرار."
+  },
+  {
+    "word": "marginalization",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "التهميش | الإقصاء الاجتماعي",
+    "def": "the process of treating a person or group as less important or keeping them in a powerless position",
+    "example": "Political marginalization of minority groups can lead to long-term instability.",
+    "exampleAr": "يمكن أن يؤدي التهميش السياسي للأقليات إلى عدم استقرار على المدى البعيد."
+  },
+  {
+    "word": "matter",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يهم | له أهمية",
+    "def": "to be important or have an effect on something",
+    "example": "Building coalitions matters more than individual brilliance.",
+    "exampleAr": "بناء التحالفات أهم من التألق الفردي."
+  },
+  {
+    "word": "mayoral",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "يتعلق برئاسة البلدية | رئاسي بلدي",
+    "def": "relating to a mayor or the position of mayor",
+    "example": "She launched her mayoral campaign with a focus on housing and public safety.",
+    "exampleAr": "أطلقت حملتها للرئاسة البلدية مع التركيز على الإسكان والسلامة العامة."
+  },
+  {
+    "word": "meaningful",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "ذو مغزى | هادف",
+    "def": "having real value or importance",
+    "example": "I will build meaningful connections within the community.",
+    "exampleAr": "سأبني علاقات ذات مغزى داخل المجتمع."
+  },
+  {
+    "word": "medium",
+    "type": "adjective",
+    "level": "B1",
+    "arabic": "متوسط | وسط",
+    "def": "in the middle between two extremes; average in size",
+    "example": "I applied to medium-sized UK cities.",
+    "exampleAr": "تقدمت إلى مدن بريطانية متوسطة الحجم."
+  },
+  {
+    "word": "member",
+    "type": "noun",
+    "level": "A2",
+    "arabic": "عضو | فرد",
+    "def": "a person belonging to a group or organization",
+    "example": "Tribe members have held ministerial positions.",
+    "exampleAr": "شغل أعضاء القبيلة مناصب وزارية."
+  },
+  {
+    "word": "mentor",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "موجه | مُرشِد",
+    "def": "an experienced person who advises and helps someone less experienced",
+    "example": "I consulted with mentors about my career path.",
+    "exampleAr": "استشرت الموجهين حول مساري المهني."
+  },
+  {
+    "word": "metropolitan",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "حضري كبير | متروبوليتاني",
+    "def": "relating to a large and important city and the area around it",
+    "example": "Rents in metropolitan areas are often much higher than in rural regions.",
+    "exampleAr": "غالبًا ما تكون الإيجارات في المناطق الحضرية الكبيرة أعلى بكثير من المناطق الريفية."
+  },
+  {
+    "word": "microwave",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "موجات دقيقة | ميكروويف",
+    "def": "electromagnetic waves with short wavelengths",
+    "example": "I studied telecommunications and microwave engineering.",
+    "exampleAr": "درست هندسة الاتصالات والموجات الدقيقة."
+  },
+  {
+    "word": "ministerial",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "وزاري | يتعلق بالوزارة",
+    "def": "relating to a government minister or the work of a ministry",
+    "example": "He attended a ministerial conference on regional development policy.",
+    "exampleAr": "حضر مؤتمرًا وزاريًا حول سياسة التنمية الإقليمية."
+  },
+  {
+    "word": "modern",
+    "type": "adjective",
+    "level": "B1",
+    "arabic": "حديث | عصري",
+    "def": "relating to the present time or recent times",
+    "example": "Transforming Libya into a modern, developed nation.",
+    "exampleAr": "تحويل ليبيا إلى دولة حديثة ومتطورة."
+  },
+  {
+    "word": "municipality",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "بلدية | حكومة محلية",
+    "def": "a town, city, or district that has its own local government",
+    "example": "The municipality announced new plans to improve public transport.",
+    "exampleAr": "أعلنت البلدية عن خطط جديدة لتحسين وسائل النقل العام."
+  },
+  {
+    "word": "mutual",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "متبادَل | مشترَك",
+    "def": "felt or done equally by two or more people or groups toward each other",
+    "example": "The agreement was based on mutual respect and shared interests.",
+    "exampleAr": "استند الاتفاق إلى احترام متبادل ومصالح مشتركة."
+  },
+  {
+    "word": "nation",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "أمة | دولة",
+    "def": "a country with its own government and people",
+    "example": "Transforming Libya into a modern, developed nation.",
+    "exampleAr": "تحويل ليبيا إلى دولة حديثة ومتطورة."
+  },
+  {
+    "word": "national",
+    "type": "adjective",
+    "level": "B1",
+    "arabic": "وطني | قومي",
+    "def": "relating to a whole nation or country",
+    "example": "I will contribute to Libya's national reconstruction.",
+    "exampleAr": "سأساهم في إعادة الإعمار الوطني لليبيا."
+  },
+  {
+    "word": "native",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "مواطن أصلي | من المواليد",
+    "def": "a person born in a particular place",
+    "example": "I am a native of Bani Walid.",
+    "exampleAr": "أنا من مواليد بني وليد."
+  },
+  {
+    "word": "need",
+    "type": "noun",
+    "level": "A2",
+    "arabic": "حاجة | احتياج",
+    "def": "something that is necessary or required",
+    "example": "Our projects reflected community needs.",
+    "exampleAr": "عكست مشاريعنا احتياجات المجتمع."
+  },
+  {
+    "word": "network",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "شبكة | شبكة علاقات",
+    "def": "a group of people or organizations that are connected",
+    "example": "These ties widened my professional network.",
+    "exampleAr": "وسعت هذه الروابط شبكتي المهنية."
+  },
+  {
+    "word": "nominate",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يُرشِّح | يُزكّي",
+    "def": "to formally suggest a person for a job, position, or prize",
+    "example": "The board voted to nominate her as their representative at the international conference.",
+    "exampleAr": "صوّت مجلس الإدارة لترشيحها ممثلةً له في المؤتمر الدولي."
+  },
+  {
+    "word": "nomination",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "ترشيح | تزكية",
+    "def": "the act of officially suggesting someone for a position, prize, or duty",
+    "example": "His nomination as candidate was supported by the majority of the council.",
+    "exampleAr": "حظي ترشيحه مرشحًا بدعم من غالبية أعضاء المجلس."
+  },
+  {
+    "word": "objective",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "هدف | غاية",
+    "def": "something that you are trying to achieve",
+    "example": "Sussex would best support my objectives.",
+    "exampleAr": "ساسكس ستدعم أهدافي بشكل أفضل."
+  },
+  {
+    "word": "offer",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يوفر | يقدم",
+    "def": "to provide or make something available",
+    "example": "Chevening offers an opportunity to deepen capabilities.",
+    "exampleAr": "يوفر تشيفنينغ فرصة لتعميق القدرات."
+  },
+  {
+    "word": "official",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "مسؤول | موظف رسمي",
+    "def": "a person who holds a position of authority in an organization",
+    "example": "I worked closely with municipal officials.",
+    "exampleAr": "عملت بشكل وثيق مع مسؤولي البلدية."
+  },
+  {
+    "word": "operation",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "عملية | تشغيل",
+    "def": "the process or way in which something works or functions",
+    "example": "I will strengthen municipal operations.",
+    "exampleAr": "سأعزز العمليات البلدية."
+  },
+  {
+    "word": "opportunity",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "فرصة | إمكانية",
+    "def": "a chance to do something or a situation that makes it possible",
+    "example": "Chevening offers a similar opportunity.",
+    "exampleAr": "يوفر تشيفنينغ فرصة مماثلة."
+  },
+  {
+    "word": "oppose",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يُعارِض | يَقِف ضد",
+    "def": "to disagree with or actively resist a plan, decision, or person",
+    "example": "Several council members strongly opposed the proposed changes to the city plan.",
+    "exampleAr": "عارض عدد من أعضاء المجلس بشدة التغييرات المقترحة على خطة المدينة."
+  },
+  {
+    "word": "opposition",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "معارضة | مقاومة",
+    "def": "strong disagreement with or protest against something",
+    "example": "The activities turned opposition into support.",
+    "exampleAr": "حولت الأنشطة المعارضة إلى دعم."
+  },
+  {
+    "word": "organize",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يُنظِّم | يُرتِّب",
+    "def": "to arrange or plan an event or activity",
+    "example": "I organized IRC's International Youth Day in 2023.",
+    "exampleAr": "نظّمت اليوم العالمي للشباب للجنة الإنقاذ الدولية في 2023."
+  },
+  {
+    "word": "origin",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "أصل | منشأ",
+    "def": "the point where something begins or comes from",
+    "example": "Libyans of Warfallah origin.",
+    "exampleAr": "ليبيون من أصل ورفلي."
+  },
+  {
+    "word": "outside",
+    "type": "preposition",
+    "level": "B1",
+    "arabic": "خارج | من خارج",
+    "def": "not in a particular place; external to",
+    "example": "Candidates from outside the city.",
+    "exampleAr": "مرشحون من خارج المدينة."
+  },
+  {
+    "word": "overcome",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يتغلب على | يتجاوز",
+    "def": "to succeed in dealing with or controlling a problem",
+    "example": "We worked to overcome health concerns.",
+    "exampleAr": "عملنا للتغلب على المخاوف الصحية."
+  },
+  {
+    "word": "oversee",
+    "type": "verb",
+    "level": "C1",
+    "arabic": "يشرف على | يراقب",
+    "def": "to watch and direct a process or activity to ensure it is done correctly",
+    "example": "I need abilities to oversee municipal departments.",
+    "exampleAr": "أحتاج إلى قدرات للإشراف على أقسام البلدية."
+  },
+  {
+    "word": "oversight",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "إشراف | رقابة",
+    "def": "the act of supervising a process or activity to ensure it is done correctly",
+    "example": "The committee was given oversight of the national budget allocation.",
+    "exampleAr": "مُنحت اللجنة صلاحية الإشراف على توزيع الميزانية الوطنية."
+  },
+  {
+    "word": "participant",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "مشارك | مُساهِم",
+    "def": "a person who takes part in an activity or event",
+    "example": "All 225 participants completed the program.",
+    "exampleAr": "أكمل جميع المشاركين الـ 225 البرنامج."
+  },
+  {
+    "word": "participate",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يشارك | يساهم",
+    "def": "to take part in or become involved in an activity",
+    "example": "Many people were hesitant to participate in group activities.",
+    "exampleAr": "كان الكثير من الناس مترددين في المشاركة في الأنشطة الجماعية."
+  },
+  {
+    "word": "participation",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "مشاركة | مساهمة",
+    "def": "the act of taking part in an activity or event",
+    "example": "I represent the appetite for youth participation.",
+    "exampleAr": "أمثل الشهية لمشاركة الشباب."
+  },
+  {
+    "word": "partnership",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "شراكة | تعاون",
+    "def": "a relationship between two or more people or organisations working together",
+    "example": "The two universities formed a partnership to conduct joint research.",
+    "exampleAr": "أبرمت الجامعتان شراكة لإجراء بحث مشترك."
+  },
+  {
+    "word": "patience",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "صبر | تحمّل",
+    "def": "the ability to stay calm and accept delays or problems",
+    "example": "Working in fragile contexts requires patience.",
+    "exampleAr": "العمل في السياقات الهشة يتطلب الصبر."
+  },
+  {
+    "word": "peacebuilding",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "بناء السلام | تعزيز السلام",
+    "def": "the process of developing and strengthening peaceful relations in post-conflict areas",
+    "example": "Effective peacebuilding requires long-term commitment from both local and international actors.",
+    "exampleAr": "يتطلب بناء السلام الفعّال التزامًا طويل الأمد من الجهات المحلية والدولية."
+  },
+  {
+    "word": "peer",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "نظير | زميل في المستوى ذاته",
+    "def": "a person who is the same age or has the same social status or abilities as another",
+    "example": "She shared her research findings with peers from across the academic community.",
+    "exampleAr": "شاركت نتائج أبحاثها مع نظرائها من أنحاء المجتمع الأكاديمي."
+  },
+  {
+    "word": "plan",
+    "type": "verb",
+    "level": "A2",
+    "arabic": "يخطط | ينوي",
+    "def": "to decide what you are going to do in the future",
+    "example": "I plan to run for Mayor in 2027.",
+    "exampleAr": "أخطط للترشح لمنصب عمدة في 2027."
+  },
+  {
+    "word": "policy",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "سياسة | نهج",
+    "def": "a plan of action agreed or chosen by a government or organization",
+    "example": "Future policy shapers from around the world.",
+    "exampleAr": "صانعو السياسات المستقبليون من جميع أنحاء العالم."
+  },
+  {
+    "word": "population",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "سكان | تعداد سكاني",
+    "def": "all the people living in a particular area",
+    "example": "Bani Walid is home to twenty percent of the national population.",
+    "exampleAr": "بني وليد موطن لعشرين بالمائة من السكان الوطنيين."
+  },
+  {
+    "word": "position",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "منصب | موقع",
+    "def": "a job or role in an organization",
+    "example": "I am preparing for senior government positions.",
+    "exampleAr": "أستعد لمناصب حكومية رفيعة."
+  },
+  {
+    "word": "possess",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يمتلك | يحوز",
+    "def": "to have or own something",
+    "example": "I possess the practical qualifications governance requires.",
+    "exampleAr": "أمتلك المؤهلات العملية التي تتطلبها الحوكمة."
+  },
+  {
+    "word": "practical",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "عملي | تطبيقي",
+    "def": "relating to real situations rather than ideas or theories",
+    "example": "I will combine qualifications with practical experience.",
+    "exampleAr": "سأدمج المؤهلات مع الخبرة العملية."
+  },
+  {
+    "word": "precede",
+    "type": "verb",
+    "level": "C1",
+    "arabic": "يسبق | يتقدم",
+    "def": "to come before something in time, order, or position",
+    "example": "Listening precedes planning in effective leadership.",
+    "exampleAr": "الاستماع يسبق التخطيط في القيادة الفعالة."
+  },
+  {
+    "word": "prepare",
+    "type": "verb",
+    "level": "A2",
+    "arabic": "يُحضِّر | يُعِد",
+    "def": "to make something or someone ready for use or an event",
+    "example": "I had only one month to prepare for the event.",
+    "exampleAr": "كان لدي شهر واحد فقط للتحضير للحدث."
+  },
+  {
+    "word": "primary",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "أساسي | رئيسي",
+    "def": "most important; main",
+    "example": "My primary aim is developing managerial capabilities.",
+    "exampleAr": "هدفي الأساسي هو تطوير القدرات الإدارية."
+  },
+  {
+    "word": "priorities",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "أولويات | الأمور الأكثر أهمية",
+    "def": "the things that are considered most important and must be dealt with first",
+    "example": "Setting clear priorities helps teams focus their time and resources effectively.",
+    "exampleAr": "يساعد تحديد الأولويات الواضحة الفرق على توجيه وقتها ومواردها بفعالية."
+  },
+  {
+    "word": "program",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "برنامج | خطة",
+    "def": "a planned series of activities or events",
+    "example": "Management programs in the UK are globally recognized.",
+    "exampleAr": "برامج الإدارة في المملكة المتحدة معترف بها عالمياً."
+  },
+  {
+    "word": "prolonged",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "مطوَّل | ممتد لفترة طويلة",
+    "def": "continuing for a long time; longer than expected or necessary",
+    "example": "The prolonged conflict caused widespread economic damage across the region.",
+    "exampleAr": "تسبّب النزاع المطوَّل في أضرار اقتصادية واسعة النطاق في المنطقة."
+  },
+  {
+    "word": "properly",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "بشكل صحيح | بطريقة سليمة",
+    "def": "in a correct or suitable way",
+    "example": "To prepare properly, I need management knowledge.",
+    "exampleAr": "للتحضير بشكل صحيح، أحتاج إلى معرفة إدارية."
+  },
+  {
+    "word": "protocol",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "بروتوكول | قواعد رسمية",
+    "def": "a set of rules that control the way something is done, especially in formal or official situations",
+    "example": "The hospital introduced new safety protocols to reduce the risk of infection.",
+    "exampleAr": "طرح المستشفى بروتوكولات سلامة جديدة للحد من خطر العدوى."
+  },
+  {
+    "word": "provide",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يقدم | يوفر",
+    "def": "to give or supply something to someone",
+    "example": "I provide advice when needed.",
+    "exampleAr": "أقدم المشورة عند الحاجة."
+  },
+  {
+    "word": "public",
+    "type": "adjective",
+    "level": "B1",
+    "arabic": "عام | حكومي",
+    "def": "relating to or involving people in general",
+    "example": "Engineers contribute to public service.",
+    "exampleAr": "يساهم المهندسون في الخدمة العامة."
+  },
+  {
+    "word": "publication",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "منشور | نشر",
+    "def": "a book, magazine, or other printed material",
+    "example": "I examined their publications and research interests.",
+    "exampleAr": "فحصت منشوراتهم واهتماماتهم البحثية."
+  },
+  {
+    "word": "pursue",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يتابع | يسعى وراء",
+    "def": "to follow or try to achieve something over time",
+    "example": "I intend to pursue broader leadership roles.",
+    "exampleAr": "أعتزم متابعة أدوار قيادية أوسع."
+  },
+  {
+    "word": "qualification",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "مؤهّل | شهادة دراسية",
+    "def": "an official record showing that you have completed a course of training or passed an exam",
+    "example": "She completed a management qualification before applying for the senior position.",
+    "exampleAr": "أتمّت مؤهلاً في الإدارة قبل التقدّم للمنصب الرفيع."
+  },
+  {
+    "word": "quickly",
+    "type": "adverb",
+    "level": "A2",
+    "arabic": "بسرعة | بشكل سريع",
+    "def": "at a fast speed; in a short time",
+    "example": "The city recovered relatively quickly.",
+    "exampleAr": "تعافت المدينة بسرعة نسبياً."
+  },
+  {
+    "word": "reality",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "واقع | حقيقة",
+    "def": "the true situation that exists, not what is imagined",
+    "example": "We balanced standards with local realities.",
+    "exampleAr": "وازنا بين المعايير والواقع المحلي."
+  },
+  {
+    "word": "realize",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يدرك | يفهم",
+    "def": "to become aware of or understand something",
+    "example": "I realized success depended on strong partnerships.",
+    "exampleAr": "أدركت أن النجاح يعتمد على شراكات قوية."
+  },
+  {
+    "word": "rebuild",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يعيد بناء | يُعمّر",
+    "def": "to build something again after it has been damaged",
+    "example": "Projects helped rebuild trust between institutions.",
+    "exampleAr": "ساعدت المشاريع في إعادة بناء الثقة بين المؤسسات."
+  },
+  {
+    "word": "recent",
+    "type": "adjective",
+    "level": "B1",
+    "arabic": "حديث | أخير",
+    "def": "happening or starting only a short time ago",
+    "example": "The city played a role in recent conflicts.",
+    "exampleAr": "لعبت المدينة دوراً في الصراعات الأخيرة."
+  },
+  {
+    "word": "recognition",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "اعتراف | تقدير | إقرار",
+    "def": "the act of accepting that something is true, real, or important; acknowledgment",
+    "example": "Her work received international recognition after the publication of her research.",
+    "exampleAr": "حظي عملها بتقدير دولي بعد نشر أبحاثها."
+  },
+  {
+    "word": "recognize",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يدرك | يعترف",
+    "def": "to accept or be aware that something is true",
+    "example": "I now recognize that listening precedes planning.",
+    "exampleAr": "أدرك الآن أن الاستماع يسبق التخطيط."
+  },
+  {
+    "word": "reconciliation",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "مصالحة | تسوية الخلافات",
+    "def": "the process of restoring friendly relations between people or groups after a disagreement",
+    "example": "National reconciliation was seen as essential before democratic elections could take place.",
+    "exampleAr": "رُئيت المصالحة الوطنية ضرورة حتمية قبل إجراء الانتخابات الديمقراطية."
+  },
+  {
+    "word": "reconstruction",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "إعادة الإعمار | إعادة البناء",
+    "def": "the process of building or creating something again after it has been damaged or destroyed",
+    "example": "International aid was essential to support the reconstruction of the war-damaged city.",
+    "exampleAr": "كانت المساعدات الدولية ضرورية لدعم إعادة إعمار المدينة التي دمرتها الحرب."
+  },
+  {
+    "word": "recover",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يتعافى | يستعيد",
+    "def": "to return to a normal state after a difficult or unpleasant experience",
+    "example": "The city was recovering from the conflict and needed support.",
+    "exampleAr": "كانت المدينة تتعافى من الصراع وتحتاج إلى الدعم."
+  },
+  {
+    "word": "reflect",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يعكس | يُعبِّر عن",
+    "def": "to show or be a sign of something; to express or display a quality or feeling",
+    "example": "The policy must reflect the real needs of the local population.",
+    "exampleAr": "يجب أن تعكس السياسة الاحتياجات الحقيقية للسكان المحليين."
+  },
+  {
+    "word": "regime",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "نظام حكم | سلطة | نظام سياسي",
+    "def": "a government, especially one that controls a country in a strict or oppressive way",
+    "example": "The collapse of the regime led to years of political instability.",
+    "exampleAr": "أفضى انهيار النظام إلى سنوات من عدم الاستقرار السياسي."
+  },
+  {
+    "word": "region",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "منطقة | إقليم",
+    "def": "a large area of land, usually without exact limits",
+    "example": "UK priorities for the MENA region.",
+    "exampleAr": "أولويات المملكة المتحدة لمنطقة الشرق الأوسط وشمال أفريقيا."
+  },
+  {
+    "word": "regular",
+    "type": "adjective",
+    "level": "B1",
+    "arabic": "منتظم | دوري",
+    "def": "happening or doing something often",
+    "example": "I remain in regular contact with leaders.",
+    "exampleAr": "أبقى على اتصال منتظم مع القادة."
+  },
+  {
+    "word": "reinforce",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يُعزِّز | يُقوِّي",
+    "def": "to make a feeling, idea, or habit stronger; to add support to something",
+    "example": "The results reinforced the conclusion that early education has lasting benefits.",
+    "exampleAr": "عزّزت النتائج الاستنتاج بأن التعليم المبكر له فوائد دائمة."
+  },
+  {
+    "word": "relatively",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "نسبياً | بشكل نسبي",
+    "def": "in comparison with something else",
+    "example": "The city recovered relatively quickly.",
+    "exampleAr": "تعافت المدينة بسرعة نسبياً."
+  },
+  {
+    "word": "relevant",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "ذو صلة | مُتعلِّق",
+    "def": "closely connected to what is being discussed or considered",
+    "example": "This will provide more relevant learning experiences.",
+    "exampleAr": "سيوفر هذا تجارب تعليمية أكثر صلة."
+  },
+  {
+    "word": "remain",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يبقى | يظل",
+    "def": "to continue to be in the same state or condition",
+    "example": "I remain in regular contact with municipal leaders.",
+    "exampleAr": "أبقى على اتصال منتظم مع قادة البلدية."
+  },
+  {
+    "word": "represent",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يمثل | يُجسِّد",
+    "def": "to be a sign or symbol of something",
+    "example": "They represent solid alternatives with excellent faculty.",
+    "exampleAr": "يمثلون بدائل قوية مع هيئة تدريس ممتازة."
+  },
+  {
+    "word": "representative",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "ممثل | نائب",
+    "def": "a person chosen to act or speak for others",
+    "example": "I met with community representatives to understand their needs.",
+    "exampleAr": "التقيت بممثلي المجتمع لفهم احتياجاتهم."
+  },
+  {
+    "word": "reputation",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "سمعة | شهرة",
+    "def": "the opinion that people have about someone or something",
+    "example": "Sussex maintains a strong reputation in management studies.",
+    "exampleAr": "تحافظ ساسكس على سمعة قوية في دراسات الإدارة."
+  },
+  {
+    "word": "require",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يتطلب | يحتاج",
+    "def": "to need something or make it necessary",
+    "example": "I possess the qualifications governance requires.",
+    "exampleAr": "أمتلك المؤهلات التي تتطلبها الحوكمة."
+  },
+  {
+    "word": "research",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "بحث | دراسة",
+    "def": "detailed study to discover new information",
+    "example": "Through careful research, I selected Sussex.",
+    "exampleAr": "من خلال البحث الدقيق، اخترت ساسكس."
+  },
+  {
+    "word": "resident",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "مقيم | ساكن",
+    "def": "a person who lives in a particular place",
+    "example": "The residents were skeptical of new development programs.",
+    "exampleAr": "كان السكان متشككين في برامج التنمية الجديدة."
+  },
+  {
+    "word": "resilience",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "صمود | قدرة على التعافي",
+    "def": "the ability to recover quickly from difficulties or hardship",
+    "example": "The community showed great resilience in rebuilding after the earthquake.",
+    "exampleAr": "أظهر المجتمع صموداً كبيراً في إعادة البناء بعد الزلزال."
+  },
+  {
+    "word": "resistance",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "مقاومة | معارضة",
+    "def": "refusal to accept or comply with something",
+    "example": "There was community resistance to new programs.",
+    "exampleAr": "كانت هناك مقاومة مجتمعية للبرامج الجديدة."
+  },
+  {
+    "word": "resource",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "مورد | مصدر",
+    "def": "something that can be used to help achieve an aim, especially money or materials",
+    "example": "We faced challenges with limited resources.",
+    "exampleAr": "واجهنا تحديات مع موارد محدودة."
+  },
+  {
+    "word": "respect",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "احترام | تقدير",
+    "def": "a feeling of admiration for someone because of their qualities",
+    "example": "I approached relationships with respect and transparency.",
+    "exampleAr": "تعاملت مع العلاقات بالاحترام والشفافية."
+  },
+  {
+    "word": "responsibility",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "مسؤولية | واجب",
+    "def": "a duty to deal with or take care of something",
+    "example": "My responsibilities shifted to strategic oversight.",
+    "exampleAr": "تحولت مسؤولياتي إلى الإشراف الاستراتيجي."
+  },
+  {
+    "word": "restore",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يستعيد | يُرجِع",
+    "def": "to bring back a situation or feeling that existed before",
+    "example": "The project restored confidence in development work.",
+    "exampleAr": "استعاد المشروع الثقة في العمل التنموي."
+  },
+  {
+    "word": "restriction",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "قيد | تقييد",
+    "def": "a rule or law that limits what people can do",
+    "example": "COVID-19 restrictions made people hesitant to participate.",
+    "exampleAr": "جعلت قيود كوفيد-19 الناس مترددين في المشاركة."
+  },
+  {
+    "word": "return",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يعود | يرجع",
+    "def": "to go or come back to a place",
+    "example": "Upon returning, I will apply these frameworks.",
+    "exampleAr": "عند عودتي، سأطبق هذه الأطر."
+  },
+  {
+    "word": "role",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "دور | وظيفة",
+    "def": "the position or purpose that someone or something has",
+    "example": "My role was supporting project evaluation.",
+    "exampleAr": "كان دوري دعم تقييم المشاريع."
+  },
+  {
+    "word": "roughly",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "تقريباً | حوالي",
+    "def": "approximately; not exactly",
+    "example": "Roughly one and a half million Libyans.",
+    "exampleAr": "حوالي مليون ونصف ليبي."
+  },
+  {
+    "word": "run",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يترشح | يخوض",
+    "def": "to be a candidate in an election",
+    "example": "I plan to run for Mayor of Bani Walid.",
+    "exampleAr": "أخطط للترشح لمنصب عمدة بني وليد."
+  },
+  {
+    "word": "scholar",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "باحث | عالم",
+    "def": "a person who studies a subject in great detail, especially at a university",
+    "example": "I will interact with scholars facing similar challenges.",
+    "exampleAr": "سأتفاعل مع الباحثين الذين يواجهون تحديات مماثلة."
+  },
+  {
+    "word": "scholarship",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "منحة دراسية | بعثة",
+    "def": "financial support given to a student to help pay for their education",
+    "example": "I studied under the Turkish government scholarship.",
+    "exampleAr": "درست بموجب منحة الحكومة التركية."
+  },
+  {
+    "word": "sector",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "قطاع | مجال",
+    "def": "a part of an area of activity, especially of business or the economy",
+    "example": "We worked with trainers across five sectors.",
+    "exampleAr": "عملنا مع مدربين عبر خمسة قطاعات."
+  },
+  {
+    "word": "secure",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يحصل على | يؤمّن",
+    "def": "to obtain or achieve something, especially after effort",
+    "example": "I secured employment agreements with local businesses.",
+    "exampleAr": "حصلت على اتفاقيات توظيف مع الشركات المحلية."
+  },
+  {
+    "word": "seek",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يسعى | يبحث",
+    "def": "to try to find or obtain something",
+    "example": "I now seek management qualifications.",
+    "exampleAr": "أسعى الآن للحصول على مؤهلات إدارية."
+  },
+  {
+    "word": "select",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يختار | ينتقي",
+    "def": "to choose someone or something from a group",
+    "example": "I selected the University of Sussex as my first choice.",
+    "exampleAr": "اخترت جامعة ساسكس كخياري الأول."
+  },
+  {
+    "word": "senior",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "رفيع | عالي المستوى",
+    "def": "high in rank or status",
+    "example": "Expertise alone doesn't prepare someone for senior positions.",
+    "exampleAr": "الخبرة وحدها لا تُعد شخصاً لمناصب رفيعة."
+  },
+  {
+    "word": "sensitivity",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "حساسية | مراعاة المشاعر",
+    "def": "the ability to understand and respond to the feelings or needs of others, or to a situation",
+    "example": "Working in conflict zones requires cultural sensitivity and deep empathy.",
+    "exampleAr": "يتطلب العمل في مناطق النزاع الحساسية الثقافية والتعاطف العميق."
+  },
+  {
+    "word": "serve",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يخدم | يعمل",
+    "def": "to work for an organization or in a particular role",
+    "example": "After serving as Mayor, I intend to pursue broader roles.",
+    "exampleAr": "بعد خدمتي كعمدة، أعتزم متابعة أدوار أوسع."
+  },
+  {
+    "word": "service",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "خدمة | عمل",
+    "def": "work that you do for someone or an organization",
+    "example": "Additional training is essential for public service.",
+    "exampleAr": "التدريب الإضافي ضروري للخدمة العامة."
+  },
+  {
+    "word": "shapers",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "صانعو القرار | المُشكِّلون",
+    "def": "people who have a strong influence on how something develops or is formed",
+    "example": "The summit brought together young policy shapers from across the region.",
+    "exampleAr": "جمعت القمة صانعي السياسات الشباب من أنحاء المنطقة."
+  },
+  {
+    "word": "shared",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "مشترك | متقاسَم",
+    "def": "used or owned by two or more people together",
+    "example": "Success comes from trust and shared goals.",
+    "exampleAr": "النجاح يأتي من الثقة والأهداف المشتركة."
+  },
+  {
+    "word": "shift",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يتحول | ينتقل",
+    "def": "to change position or direction, or to make something do this",
+    "example": "My responsibilities shifted from implementation to oversight.",
+    "exampleAr": "تحولت مسؤولياتي من التنفيذ إلى الإشراف."
+  },
+  {
+    "word": "significantly",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "بشكل كبير | بصورة ملحوظة",
+    "def": "in a way that is large or important enough to be noticed",
+    "example": "Bani Walid matters significantly in Libya.",
+    "exampleAr": "تهم بني وليد بشكل كبير في ليبيا."
+  },
+  {
+    "word": "skeptical",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "متشكِّك | غير مُقتنع",
+    "def": "having doubts about whether something is true or right",
+    "example": "The public was skeptical about the government's promises after so many failed plans.",
+    "exampleAr": "كان الجمهور متشككاً في وعود الحكومة بعد الكثير من الخطط الفاشلة."
+  },
+  {
+    "word": "skill",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "مهارة | قدرة",
+    "def": "the ability to do something well",
+    "example": "These skills will enable me to build connections.",
+    "exampleAr": "ستمكنني هذه المهارات من بناء علاقات."
+  },
+  {
+    "word": "solid",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "قوي | متين",
+    "def": "of good quality and able to be trusted or depended on",
+    "example": "They represent solid alternatives.",
+    "exampleAr": "يمثلون بدائل قوية."
+  },
+  {
+    "word": "solve",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يحل | يجد حلاً",
+    "def": "to find an answer to a problem",
+    "example": "Engineers bring problem-solving approaches to public service.",
+    "exampleAr": "يجلب المهندسون أساليب حل المشكلات للخدمة العامة."
+  },
+  {
+    "word": "standard",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "معيار | مستوى",
+    "def": "a level of quality or achievement",
+    "example": "We balanced international standards with local needs.",
+    "exampleAr": "وازنا بين المعايير الدولية والاحتياجات المحلية."
+  },
+  {
+    "word": "standing",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "مكانة | وضع",
+    "def": "the reputation or status of someone or something",
+    "example": "I worked to restore the city's standing.",
+    "exampleAr": "عملت لاستعادة مكانة المدينة."
+  },
+  {
+    "word": "strategic",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "استراتيجي | مُحكَم التخطيط",
+    "def": "relating to a plan designed to achieve a long-term or overall aim",
+    "example": "The company made a strategic decision to expand into new markets.",
+    "exampleAr": "اتخذت الشركة قرارًا استراتيجيًا بالتوسع في أسواق جديدة."
+  },
+  {
+    "word": "strengthen",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يعزز | يقوي",
+    "def": "to make something stronger or more powerful",
+    "example": "Initiatives strengthening the city's development.",
+    "exampleAr": "مبادرات تعزز تنمية المدينة."
+  },
+  {
+    "word": "strongly",
+    "type": "adverb",
+    "level": "B2",
+    "arabic": "بشدة | بقوة",
+    "def": "in a strong or powerful way",
+    "example": "Residents strongly oppose outside candidates.",
+    "exampleAr": "يعارض السكان بشدة المرشحين من الخارج."
+  },
+  {
+    "word": "struggle",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يكافح | يعاني",
+    "def": "to have difficulty dealing with something",
+    "example": "The city struggled with limited resources.",
+    "exampleAr": "عانت المدينة من موارد محدودة."
+  },
+  {
+    "word": "study",
+    "type": "verb",
+    "level": "A2",
+    "arabic": "يدرس | يتعلم",
+    "def": "to learn about a subject by reading, going to school, etc.",
+    "example": "Studying there for a full year will enhance my capabilities.",
+    "exampleAr": "الدراسة هناك لمدة عام كامل ستعزز قدراتي."
+  },
+  {
+    "word": "substantial",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "كبير | ذو شأن | جوهري",
+    "def": "large in size, amount, or importance",
+    "example": "The project required a substantial investment of both time and money.",
+    "exampleAr": "استلزم المشروع استثمارًا كبيرًا من الوقت والمال."
+  },
+  {
+    "word": "substantially",
+    "type": "adverb",
+    "level": "C1",
+    "arabic": "بشكل كبير | بصورة جوهرية",
+    "def": "to a great or significant extent",
+    "example": "The new measures substantially reduced the time needed to process applications.",
+    "exampleAr": "أدّت الإجراءات الجديدة إلى تقليص كبير في وقت معالجة الطلبات."
+  },
+  {
+    "word": "succeed",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "ينجح | يفلح",
+    "def": "to achieve something that you have been trying to do",
+    "example": "Relationships succeed when built on mutual respect.",
+    "exampleAr": "تنجح العلاقات عندما تُبنى على الاحترام المتبادل."
+  },
+  {
+    "word": "suffer",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يعاني | يتألم",
+    "def": "to experience something bad or unpleasant",
+    "example": "The city suffered considerably during the war.",
+    "exampleAr": "عانت المدينة بشكل كبير خلال الحرب."
+  },
+  {
+    "word": "support",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يدعم | يساند",
+    "def": "to help or encourage someone or something",
+    "example": "My role was supporting project implementation.",
+    "exampleAr": "كان دوري دعم تنفيذ المشروع."
+  },
+  {
+    "word": "sustainable",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "مستدام | قابل للاستمرار",
+    "def": "able to continue over a long period of time without damaging the environment or resources",
+    "example": "The programme was designed to create sustainable economic opportunities.",
+    "exampleAr": "صُمِّم البرنامج لخلق فرص اقتصادية مستدامة."
+  },
+  {
+    "word": "tangible",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "مَلموس | واضح وحقيقي",
+    "def": "real and able to be seen, felt, or measured; not imaginary",
+    "example": "The new policy produced tangible results within six months.",
+    "exampleAr": "أنتجت السياسة الجديدة نتائج ملموسة في غضون ستة أشهر."
+  },
+  {
+    "word": "task",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يُكلِّف | يُوكِل",
+    "def": "to give someone a piece of work to do",
+    "example": "I was tasked with organizing International Youth Day.",
+    "exampleAr": "كُلفت بتنظيم اليوم العالمي للشباب."
+  },
+  {
+    "word": "technical",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "تقني | فني",
+    "def": "relating to the practical use of knowledge in a particular field",
+    "example": "I contributed technical expertise in communications.",
+    "exampleAr": "ساهمت بخبرتي التقنية في الاتصالات."
+  },
+  {
+    "word": "telecommunications",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "الاتصالات | تقنية الاتصالات",
+    "def": "the technology and industry involved in sending information over long distances by electronic means",
+    "example": "Advances in telecommunications have transformed global communication.",
+    "exampleAr": "أحدثت التطورات في مجال الاتصالات تحولاً في التواصل العالمي."
+  },
+  {
+    "word": "term",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "مدة | فترة",
+    "def": "a fixed period of time",
+    "example": "Long term, I intend to pursue broader roles.",
+    "exampleAr": "على المدى الطويل، أعتزم متابعة أدوار أوسع."
+  },
+  {
+    "word": "thorough",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "شامل | دقيق",
+    "def": "complete and including every possible detail",
+    "example": "Programs selected after thorough evaluation.",
+    "exampleAr": "برامج مختارة بعد تقييم شامل."
+  },
+  {
+    "word": "thrive",
+    "type": "verb",
+    "level": "C1",
+    "arabic": "يزدهر | ينجح",
+    "def": "to grow or develop successfully",
+    "example": "A network thriving on mutual learning.",
+    "exampleAr": "شبكة تزدهر بالتعلم المتبادل."
+  },
+  {
+    "word": "tie",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "رابطة | صلة",
+    "def": "a connection or relationship between people or things",
+    "example": "Long-term ties enhanced my credibility.",
+    "exampleAr": "عززت الروابط طويلة الأمد مصداقيتي."
+  },
+  {
+    "word": "track record",
+    "type": "noun",
+    "level": "C1",
+    "arabic": "سجل إنجازات | تاريخ أداء",
+    "def": "all of someone's past achievements or performance",
+    "example": "My track record directing projects positions me well.",
+    "exampleAr": "سجلي في توجيه المشاريع يضعني في موقع جيد."
+  },
+  {
+    "word": "trainer",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "مدرب | مُدرِّب",
+    "def": "a person who teaches skills to people or animals",
+    "example": "Local trainers helped deliver the vocational program.",
+    "exampleAr": "ساعد المدربون المحليون في تقديم البرنامج المهني."
+  },
+  {
+    "word": "training",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "تدريب | تأهيل",
+    "def": "the process of learning skills for a particular job",
+    "example": "Additional training in management is essential.",
+    "exampleAr": "التدريب الإضافي في الإدارة ضروري."
+  },
+  {
+    "word": "transactional",
+    "type": "adjective",
+    "level": "C1",
+    "arabic": "معاملاتي | قائم على المصلحة المتبادلة",
+    "def": "based on exchange or personal gain rather than deeper values or relationships",
+    "example": "He believed that leadership should be inspirational, not merely transactional.",
+    "exampleAr": "كان يعتقد أن القيادة يجب أن تكون ملهِمة، لا مجرد تبادل مصالح."
+  },
+  {
+    "word": "transform",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يحول | يُغيّر جذرياً",
+    "def": "to change something completely",
+    "example": "My goal is transforming Libya into a modern nation.",
+    "exampleAr": "هدفي هو تحويل ليبيا إلى دولة حديثة."
+  },
+  {
+    "word": "transparency",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "شفافية | وضوح",
+    "def": "the quality of being open, honest, and not hiding information",
+    "example": "Transparency in government spending is essential to maintain public trust.",
+    "exampleAr": "الشفافية في الإنفاق الحكومي ضرورية للحفاظ على ثقة الجمهور."
+  },
+  {
+    "word": "tribe",
+    "type": "noun",
+    "level": "B2",
+    "arabic": "قبيلة | عشيرة",
+    "def": "a social group consisting of families with shared customs and language",
+    "example": "Bani Walid is home to the Werfala tribe.",
+    "exampleAr": "بني وليد موطن قبيلة ورفلة."
+  },
+  {
+    "word": "trust",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "ثقة | أمانة",
+    "def": "the belief that someone is honest and reliable",
+    "example": "Influence comes from trust and shared goals.",
+    "exampleAr": "التأثير يأتي من الثقة والأهداف المشتركة."
+  },
+  {
+    "word": "trusted",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "موثوق | موثوق به",
+    "def": "believed to be honest and reliable",
+    "example": "I became a trusted figure in local governance.",
+    "exampleAr": "أصبحت شخصية موثوقة في الحوكمة المحلية."
+  },
+  {
+    "word": "turn",
+    "type": "verb",
+    "level": "B1",
+    "arabic": "يحول | يُغيّر",
+    "def": "to change something into a different state",
+    "example": "I turned collaboration into sustainable impact.",
+    "exampleAr": "حولت التعاون إلى تأثير مستدام."
+  },
+  {
+    "word": "ultimate",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "نهائي | أقصى",
+    "def": "final; being the best or most extreme example",
+    "example": "My ultimate goal is transforming Libya.",
+    "exampleAr": "هدفي النهائي هو تحويل ليبيا."
+  },
+  {
+    "word": "university",
+    "type": "noun",
+    "level": "A2",
+    "arabic": "جامعة",
+    "def": "an educational institution where students study for degrees",
+    "example": "The University of Sussex maintains a strong reputation.",
+    "exampleAr": "تحافظ جامعة ساسكس على سمعة قوية."
+  },
+  {
+    "word": "unlike",
+    "type": "preposition",
+    "level": "B2",
+    "arabic": "على عكس | بخلاف",
+    "def": "different from; not like",
+    "example": "Unlike other candidates, I am a native.",
+    "exampleAr": "على عكس المرشحين الآخرين، أنا من المواليد."
+  },
+  {
+    "word": "valuable",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "قيّم | ثمين",
+    "def": "very useful or important",
+    "example": "Engineers bring valuable problem-solving approaches.",
+    "exampleAr": "يجلب المهندسون أساليب قيمة لحل المشكلات."
+  },
+  {
+    "word": "vocational",
+    "type": "adjective",
+    "level": "B2",
+    "arabic": "مهني | حِرَفي",
+    "def": "connected with the skills and education needed for a particular job or profession",
+    "example": "Vocational training programmes help young people enter the workforce more quickly.",
+    "exampleAr": "تساعد برامج التدريب المهني الشباب على دخول سوق العمل بسرعة أكبر."
+  },
+  {
+    "word": "war",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "حرب | نزاع مسلح",
+    "def": "armed fighting between countries or groups",
+    "example": "The city suffered during the war.",
+    "exampleAr": "عانت المدينة خلال الحرب."
+  },
+  {
+    "word": "widen",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يوسع | يُرحّب",
+    "def": "to make something broader or more extensive",
+    "example": "Long-term ties widened my professional network.",
+    "exampleAr": "وسعت الروابط طويلة الأمد شبكتي المهنية."
+  },
+  {
+    "word": "witness",
+    "type": "verb",
+    "level": "B2",
+    "arabic": "يشهد | يرى",
+    "def": "to see something happen, especially an accident or crime",
+    "example": "They witnessed failed initiatives in the past.",
+    "exampleAr": "شهدوا مبادرات فاشلة في الماضي."
+  },
+  {
+    "word": "work",
+    "type": "verb",
+    "level": "A1",
+    "arabic": "يعمل | يشتغل",
+    "def": "to do a job or task",
+    "example": "I have worked intensively since 2018.",
+    "exampleAr": "عملت بكثافة منذ عام 2018."
+  },
+  {
+    "word": "younger",
+    "type": "adjective",
+    "level": "A2",
+    "arabic": "أصغر سناً | أحدث",
+    "def": "having lived for less time; not as old",
+    "example": "As a younger candidate, I represent change.",
+    "exampleAr": "كمرشح أصغر سناً، أمثل التغيير."
+  },
+  {
+    "word": "youth",
+    "type": "noun",
+    "level": "B1",
+    "arabic": "شباب | شبيبة",
+    "def": "young people considered as a group",
+    "example": "There is growing appetite for youth participation.",
+    "exampleAr": "هناك شهية متزايدة لمشاركة الشباب."
+  }
+]
