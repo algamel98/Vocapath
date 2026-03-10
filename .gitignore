@@ -45,3 +45,12 @@ yarn-error.log*
 *.spec.js
 __tests__/
 coverage/
+
+# Private / Sensitive files
+mycheveningapplication.html
+data/chevening_vocabulary.json
+fullmodecheveningdata.html
+verify_vocab.py
+verify_vocab_advanced.py
+clean_and_sort_vocab.py
+words_not_in_essays.txt
