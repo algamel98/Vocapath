@@ -20,60 +20,66 @@
   position: sticky;
   top: 68px;
   z-index: 90;
+  overflow-x: auto;
+  scrollbar-width: none;
   box-shadow: var(--shadow-sm);
 }
+.chev-tabs-wrap::-webkit-scrollbar { display: none; }
 
 .chev-tabs {
   display: flex;
-  flex-direction: column;
   gap: 0;
-  padding: 0;
+  min-width: max-content;
+  padding: 0 20px;
 }
 
 .chev-tab {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 16px 24px;
+  gap: 6px;
+  padding: 12px 14px;
   font-family: var(--font-sans);
-  font-size: 13.5px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--text2);
   background: none;
   border: none;
-  border-left: 3px solid transparent;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 3px solid transparent;
   cursor: pointer;
+  white-space: nowrap;
   transition: var(--transition);
   letter-spacing: 0.01em;
-  text-align: left;
-  width: 100%;
+  margin-bottom: -1px;
 }
-.chev-tab:hover { color: var(--text); background: var(--bg2); }
+.chev-tab:hover { color: var(--primary); }
 .chev-tab.active {
   color: var(--primary);
-  background: var(--bg2);
-  border-left-color: var(--primary);
+  border-bottom-color: var(--primary);
 }
-.chev-tab svg { flex-shrink: 0; opacity: .75; }
+.chev-tab svg { 
+  flex-shrink: 0; 
+  opacity: .75;
+  width: 13px;
+  height: 13px;
+}
 .chev-tab.active svg { opacity: 1; }
 
 .chev-tab-sep {
   display: flex;
   align-items: center;
-  padding: 12px 24px 8px;
+  padding: 0 12px 0 18px;
   font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
   color: var(--text3);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  border-top: 1px solid var(--border);
-  margin-top: 4px;
+  letter-spacing: 0.12em;
+  border-left: 1px solid var(--border);
+  margin-left: 6px;
+  white-space: nowrap;
   user-select: none;
-  background: var(--bg);
 }
-.chev-tab-sep:first-child { border-top: none; margin-top: 0; }
+.chev-tab-sep:first-child { border-left: none; margin-left: 0; padding-left: 0; }
 
 .chev-panel { display: none; }
 .chev-panel.active { display: block; }
@@ -644,8 +650,10 @@
   .chev-content { padding: 28px 16px 48px; }
   .chev-essay-body { padding: 22px 20px; font-size: 14.5px; }
   .chev-essay-header { padding: 16px 20px; }
-  .chev-tab { padding: 14px 20px; font-size: 13px; }
-  .chev-tab-sep { padding: 10px 20px 6px; font-size: 9.5px; }
+  .chev-tabs { padding: 0 12px; }
+  .chev-tab { padding: 10px 10px; font-size: 11px; gap: 5px; }
+  .chev-tab svg { width: 12px; height: 12px; }
+  .chev-tab-sep { font-size: 8px; padding: 0 8px 0 12px; margin-left: 4px; }
   .arabic-translation { font-size: 13.5px; padding: 12px 16px; }
   .password-box { padding: 36px 28px; }
 }
