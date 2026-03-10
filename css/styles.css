@@ -7804,3 +7804,13 @@ body.dark-mode {
   .examples-grid { grid-template-columns: 1fr; }
   .ex-grid { grid-template-columns: 1fr; }
 }
+
+/* ─── SECRET LINK ─── */
+.secret-link {
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+.secret-link:hover {
+  color: var(--accent);
+}
