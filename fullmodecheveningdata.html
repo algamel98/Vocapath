@@ -275,15 +275,32 @@ body {
 function checkCheveningAuth() {
   const isAuthenticated = sessionStorage.getItem('cheveningAuth');
   if (isAuthenticated !== 'true') {
-    window.location.href = 'mycheveningapplication.html';
+    showAuthWarning();
     return false;
   }
   return true;
 }
 
+// Show authentication warning without blocking page load
+function showAuthWarning() {
+  const wordList = document.getElementById('wordList');
+  if (wordList) {
+    wordList.innerHTML = `
+      <div class="empty-state">
+        <div class="big">🔒</div>
+        <h3>Authentication Required</h3>
+        <p>Please authenticate via the Chevening Application page first.</p>
+        <a href="mycheveningapplication.html" style="display: inline-block; margin-top: 16px; padding: 12px 24px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 600;">
+          Go to Authentication Page
+        </a>
+      </div>
+    `;
+  }
+}
+
 // Load Chevening vocabulary data directly
 async function loadCheveningData() {
-  // Verify authentication first
+  // Verify authentication first (non-blocking)
   if (!checkCheveningAuth()) return;
   
   try {
