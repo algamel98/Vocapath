@@ -431,6 +431,84 @@
 .iv-back-link:hover { color: var(--primary); }
 .iv-back-link svg { width: 14px; height: 14px; }
 
+/* ── ARABIC TRANSLATION TOGGLE ── */
+.translate-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  background: var(--accent-light);
+  border: 1px solid var(--accent-mid);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.translate-toggle:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.1);
+}
+.translate-toggle svg {
+  width: 10px;
+  height: 10px;
+}
+
+.arabic-translation {
+  display: none;
+  margin-top: 12px;
+  padding: 16px 20px;
+  background: var(--accent-light);
+  border-right: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--text);
+  direction: rtl;
+  text-align: right;
+  position: relative;
+}
+.arabic-translation.show {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+.arabic-translation .close-translation {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 22px;
+  height: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text2);
+}
+.arabic-translation .close-translation:hover {
+  background: var(--c1);
+  color: #fff;
+  border-color: var(--c1);
+  transform: scale(1.1);
+}
+.arabic-translation .close-translation svg {
+  width: 10px;
+  height: 10px;
+}
+
+.paragraph-wrapper {
+  position: relative;
+}
+
 /* ── PASSWORD PROTECTION OVERLAY ── */
 .password-overlay {
   position: fixed;
@@ -690,9 +768,27 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>My name is <span class="key-phrase">Abdelbary Algamel</span>. I am from <span class="key-phrase">Bani Walid, Libya</span>. I have a Bachelor's and a Master's degree in <span class="key-phrase">Communications Engineering</span>. I currently work as an <span class="key-phrase">Assistant Lecturer at the Libyan Center for Engineering Research</span>.</p>
-        <p>Since 2018, I have been working with <span class="key-phrase">Partnership Community Organization</span> on development projects. I coordinated a livelihood project that trained <span class="key-phrase">225 young people</span> in five different skills. I also worked with <span class="key-phrase">UNDP</span> and <span class="key-phrase">NAPI</span> on project evaluation. I helped the municipality of Bani Walid convert paper records into digital systems.</p>
-        <p>Now I want to move from <span class="key-phrase">engineering to management</span>. I plan to run for <span class="key-phrase">Mayor of Bani Walid in 2027</span>. I need management skills to lead my city effectively. That is why I am applying to study <span class="key-phrase">Management in the UK</span>.</p>
+        <div class="paragraph-wrapper">
+          <p>My name is <span class="key-phrase">Abdelbary Algamel</span>. I am from <span class="key-phrase">Bani Walid, Libya</span>. I have a Bachelor's and a Master's degree in <span class="key-phrase">Communications Engineering</span>. I currently work as an <span class="key-phrase">Assistant Lecturer at the Libyan Center for Engineering Research</span>.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            اسمي عبد الباري القمل. أنا من بني وليد، ليبيا. لدي درجة البكالوريوس والماجستير في هندسة الاتصالات. أعمل حالياً كمحاضر مساعد في المركز الليبي للبحوث الهندسية.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Since 2018, I have been working with <span class="key-phrase">Partnership Community Organization</span> on development projects. I coordinated a livelihood project that trained <span class="key-phrase">225 young people</span> in five different skills. I also worked with <span class="key-phrase">UNDP</span> and <span class="key-phrase">NAPI</span> on project evaluation. I helped the municipality of Bani Walid convert paper records into digital systems.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            منذ عام 2018، أعمل مع منظمة الشراكة المجتمعية في مشاريع التنمية. نسقت مشروع سبل العيش الذي درب 225 شاباً في خمس مهارات مختلفة. عملت أيضاً مع برنامج الأمم المتحدة الإنمائي ومبادرة سياسات شمال أفريقيا في تقييم المشاريع. ساعدت بلدية بني وليد في تحويل السجلات الورقية إلى أنظمة رقمية.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Now I want to move from <span class="key-phrase">engineering to management</span>. I plan to run for <span class="key-phrase">Mayor of Bani Walid in 2027</span>. I need management skills to lead my city effectively. That is why I am applying to study <span class="key-phrase">Management in the UK</span>.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            الآن أريد الانتقال من الهندسة إلى الإدارة. أخطط للترشح لمنصب عمدة بني وليد في عام 2027. أحتاج إلى مهارات إدارية لقيادة مدينتي بفعالية. لهذا السبب أتقدم لدراسة الإدارة في المملكة المتحدة.
+          </div>
+        </div>
         <div class="iv-tip">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           Keep it under 90 seconds. Start with your name and country. End with your goal. Do not list every job.
@@ -708,9 +804,31 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>I studied <span class="key-phrase">Communications and Microwaves Engineering</span> for my Bachelor's degree at the College of Electronic Technology in Bani Walid. I graduated with <span class="key-phrase">85.64%</span>.</p>
-        <p>Then I completed my Master's in Communications Engineering with a GPA of <span class="key-phrase">3.95 out of 4</span>. I also studied in Turkey under a <span class="key-phrase">government scholarship</span>, where I worked with students from over 30 countries.</p>
-        <p>Now I work as an <span class="key-phrase">Assistant Lecturer at the Libyan Center for Engineering Research</span>. My technical background gave me strong <span class="key-phrase">analytical and problem-solving skills</span>. But I realized that technical knowledge alone is not enough for public service. That is why I want to <span class="key-phrase">move from engineering to management</span>.</p>
+        <div class="paragraph-wrapper">
+          <p>I studied <span class="key-phrase">Communications and Microwaves Engineering</span> for my Bachelor's degree at the College of Electronic Technology in Bani Walid. I graduated with <span class="key-phrase">85.64%</span>.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            درست هندسة الاتصالات والموجات الدقيقة لدرجة البكالوريوس في كلية التقنية الإلكترونية في بني وليد. تخرجت بنسبة 85.64%.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Then I completed my Master's in Communications Engineering with a GPA of <span class="key-phrase">3.95 out of 4</span>. I also studied in Turkey under a <span class="key-phrase">government scholarship</span>, where I worked with students from over 30 countries.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            ثم أكملت الماجستير في هندسة الاتصالات بمعدل 3.95 من 4. درست أيضاً في تركيا بموجب منحة حكومية، حيث عملت مع طلاب من أكثر من 30 دولة.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Now I work as an <span class="key-phrase">Assistant Lecturer at the Libyan Center for Engineering Research</span>. My technical background gave me strong <span class="key-phrase">analytical and problem-solving skills</span>. But I realized that technical knowledge alone is not enough for public service. That is why I want to <span class="key-phrase">move from engineering to management</span>.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            أعمل الآن كمحاضر مساعد في المركز الليبي للبحوث الهندسية. أعطتني خلفيتي التقنية مهارات تحليلية قوية وحل المشكلات. لكنني أدركت أن المعرفة التقنية وحدها لا تكفي للخدمة العامة. لهذا السبب أريد الانتقال من الهندسة إلى الإدارة.
+          </div>
+        </div>
+        <div class="iv-tip">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          Keep it under 90 seconds. Start with your name and country. End with your goal. Do not list every job.
+        </div>
       </div>
     </div>
 
@@ -722,9 +840,27 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>In 2021, I coordinated the <span class="key-phrase">Livelihood Project</span> in Bani Walid. The city was recovering from conflict. People did not trust development programs because previous initiatives had failed.</p>
-        <p>I built a <span class="key-phrase">coordination team</span> and partnered with local trainers across five sectors. I met with <span class="key-phrase">municipal leaders</span> to understand real community needs. I also secured <span class="key-phrase">employment agreements with local businesses</span> before the program started. This gave people a real reason to join.</p>
-        <p>All <span class="key-phrase">225 participants completed the program</span>. Most found jobs afterward. The project restored trust in development work. After that, the municipality asked me to lead <span class="key-phrase">UNDP project evaluations</span>.</p>
+        <div class="paragraph-wrapper">
+          <p>In 2021, I coordinated the <span class="key-phrase">Livelihood Project</span> in Bani Walid. The city was recovering from conflict. People did not trust development programs because previous initiatives had failed.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            في عام 2021، نسقت مشروع سبل العيش في بني وليد. كانت المدينة تتعافى من الصراع. لم يثق الناس في برامج التنمية لأن المبادرات السابقة فشلت.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>I built a <span class="key-phrase">coordination team</span> and partnered with local trainers across five sectors. I met with <span class="key-phrase">municipal leaders</span> to understand real community needs. I also secured <span class="key-phrase">employment agreements with local businesses</span> before the program started. This gave people a real reason to join.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            بنيت فريق تنسيق وشاركت مع مدربين محليين عبر خمسة قطاعات. التقيت بقادة البلدية لفهم احتياجات المجتمع الحقيقية. حصلت أيضاً على اتفاقيات توظيف مع الشركات المحلية قبل بدء البرنامج. أعطى هذا الناس سبباً حقيقياً للانضمام.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>All <span class="key-phrase">225 participants completed the program</span>. Most found jobs afterward. The project restored trust in development work. After that, the municipality asked me to lead <span class="key-phrase">UNDP project evaluations</span>.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            أكمل جميع المشاركين الـ 225 البرنامج. وجد معظمهم وظائف بعد ذلك. استعاد المشروع الثقة في العمل التنموي. بعد ذلك، طلبت مني البلدية قيادة تقييمات مشاريع برنامج الأمم المتحدة الإنمائي.
+          </div>
+        </div>
         <div class="iv-tip">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           Show the challenge first, then what you did, then the result. Use numbers when possible.
@@ -740,10 +876,38 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>One of my most important relationships is with the <span class="key-phrase">Municipality of Bani Walid</span>. It started during my work with <span class="key-phrase">UNDP</span>.</p>
-        <p>I listened to municipal priorities first. I made sure our projects matched <span class="key-phrase">community needs</span>, not just international plans. I bridged UNDP, local NGOs, and municipal leaders. Over time, I became a <span class="key-phrase">trusted person</span> they asked for advice.</p>
-        <p>This relationship helped me later. When I organized the <span class="key-phrase">IRC Youth Day event</span>, I used these connections. When the municipality needed help with <span class="key-phrase">digital transformation</span>, they came to me. I still stay in regular contact with these leaders today.</p>
-        <p>I also studied in Turkey with <span class="key-phrase">70 people from 30 countries</span>. That taught me that good relationships work when built on <span class="key-phrase">mutual respect</span>, not just transactions.</p>
+        <div class="paragraph-wrapper">
+          <p>One of my most important relationships is with the <span class="key-phrase">Municipality of Bani Walid</span>. It started during my work with <span class="key-phrase">UNDP</span>.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            إحدى أهم علاقاتي هي مع بلدية بني وليد. بدأت خلال عملي مع برنامج الأمم المتحدة الإنمائي.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>I listened to municipal priorities first. I made sure our projects matched <span class="key-phrase">community needs</span>, not just international plans. I bridged UNDP, local NGOs, and municipal leaders. Over time, I became a <span class="key-phrase">trusted person</span> they asked for advice.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            استمعت إلى أولويات البلدية أولاً. تأكدت من أن مشاريعنا تطابق احتياجات المجتمع، وليس فقط الخطط الدولية. ربطت بين برنامج الأمم المتحدة الإنمائي والمنظمات غير الحكومية المحلية وقادة البلدية. بمرور الوقت، أصبحت شخصاً موثوقاً يطلبون منه المشورة.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>This relationship helped me later. When I organized the <span class="key-phrase">IRC Youth Day event</span>, I used these connections. When the municipality needed help with <span class="key-phrase">digital transformation</span>, they came to me. I still stay in regular contact with these leaders today.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            ساعدتني هذه العلاقة لاحقاً. عندما نظمت فعالية اليوم العالمي للشباب للجنة الإنقاذ الدولية، استخدمت هذه العلاقات. عندما احتاجت البلدية المساعدة في التحول الرقمي، جاءوا إلي. ما زلت على اتصال منتظم مع هؤلاء القادة اليوم.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>I also studied in Turkey with <span class="key-phrase">70 people from 30 countries</span>. That taught me that good relationships work when built on <span class="key-phrase">mutual respect</span>, not just transactions.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            درست أيضاً في تركيا مع 70 شخصاً من 30 دولة. علمني ذلك أن العلاقات الجيدة تعمل عندما تُبنى على الاحترام المتبادل، وليس فقط المعاملات.
+          </div>
+        </div>
+        <div class="iv-tip">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          Show the challenge first, then what you did, then the result. Use numbers when possible.
+        </div>
       </div>
     </div>
 
@@ -755,9 +919,27 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>Chevening is the <span class="key-phrase">UK government's scholarship for future leaders</span>. For me, it is not just about the degree. It is about joining a <span class="key-phrase">global network</span> of people who want to make real change.</p>
-        <p>I want to connect with scholars from different countries who face <span class="key-phrase">similar challenges</span> — post-conflict recovery, weak institutions, and rebuilding trust. The Chevening community will support my work <span class="key-phrase">long after I return to Libya</span>.</p>
-        <p>Also, Chevening looks for people with a <span class="key-phrase">clear plan</span> and <span class="key-phrase">commitment to public service</span>. That matches exactly what I am doing. I already started my work in 2018. This scholarship will give me the tools to finish it.</p>
+        <div class="paragraph-wrapper">
+          <p>Chevening is the <span class="key-phrase">UK government's scholarship for future leaders</span>. For me, it is not just about the degree. It is about joining a <span class="key-phrase">global network</span> of people who want to make real change.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            تشيفنينغ هي منحة حكومة المملكة المتحدة للقادة المستقبليين. بالنسبة لي، ليس الأمر يتعلق بالشهادة فقط. يتعلق بالانضمام إلى شبكة عالمية من الأشخاص الذين يريدون إحداث تغيير حقيقي.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>I want to connect with scholars from different countries who face <span class="key-phrase">similar challenges</span> — post-conflict recovery, weak institutions, and rebuilding trust. The Chevening community will support my work <span class="key-phrase">long after I return to Libya</span>.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            أريد التواصل مع باحثين من دول مختلفة يواجهون تحديات مماثلة — التعافي بعد الصراع، المؤسسات الضعيفة، وإعادة بناء الثقة. ستدعم مجتمع تشيفنينغ عملي بعد فترة طويلة من عودتي إلى ليبيا.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Also, Chevening looks for people with a <span class="key-phrase">clear plan</span> and <span class="key-phrase">commitment to public service</span>. That matches exactly what I am doing. I already started my work in 2018. This scholarship will give me the tools to finish it.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            أيضاً، تبحث تشيفنينغ عن أشخاص لديهم خطة واضحة والتزام بالخدمة العامة. هذا يتطابق تماماً مع ما أفعله. لقد بدأت عملي بالفعل في عام 2018. ستمنحني هذه المنحة الأدوات لإنهائه.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -769,9 +951,27 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>UK universities have <span class="key-phrase">globally recognized management programs</span>. The UK also has a strong tradition of <span class="key-phrase">local governance</span> that I can learn from directly.</p>
-        <p>I chose <span class="key-phrase">medium-sized UK cities</span>, not London or Manchester, because they are closer to the size of Bani Walid. I can learn how local government works in a city that is similar to mine.</p>
-        <p>Studying in the UK for a full year will give me both <span class="key-phrase">academic knowledge</span> and <span class="key-phrase">practical experience</span> I can use immediately when I return.</p>
+        <div class="paragraph-wrapper">
+          <p>UK universities have <span class="key-phrase">globally recognized management programs</span>. The UK also has a strong tradition of <span class="key-phrase">local governance</span> that I can learn from directly.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            جامعات المملكة المتحدة لديها برامج إدارة معترف بها عالمياً. المملكة المتحدة لديها أيضاً تقليد قوي في الحوكمة المحلية يمكنني التعلم منه مباشرة.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>I chose <span class="key-phrase">medium-sized UK cities</span>, not London or Manchester, because they are closer to the size of Bani Walid. I can learn how local government works in a city that is similar to mine.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            اخترت مدن المملكة المتحدة متوسطة الحجم، وليس لندن أو مانشستر، لأنها أقرب إلى حجم بني وليد. يمكنني تعلم كيفية عمل الحكومة المحلية في مدينة مشابهة لمدينتي.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Studying in the UK for a full year will give me both <span class="key-phrase">academic knowledge</span> and <span class="key-phrase">practical experience</span> I can use immediately when I return.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            الدراسة في المملكة المتحدة لمدة عام كامل ستمنحني المعرفة الأكاديمية والخبرة العملية التي يمكنني استخدامها فوراً عند عودتي.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -783,9 +983,27 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>I already have strong <span class="key-phrase">technical skills from engineering</span>. I work as an Assistant Lecturer at the Libyan Center for Engineering Research. But to lead a municipality, I need to understand <span class="key-phrase">how to manage departments, budgets, teams, and strategy</span>.</p>
-        <p>A Management degree <span class="key-phrase">fills this gap</span>. It combines leadership theory with practical frameworks. This is a <span class="key-phrase">deliberate transition from engineering to management</span>. I can use these tools directly when I manage municipal operations in Bani Walid.</p>
-        <p>My mentors agree. They told me that combining engineering with management will make me a <span class="key-phrase">stronger candidate for mayor</span> and a more effective leader.</p>
+        <div class="paragraph-wrapper">
+          <p>I already have strong <span class="key-phrase">technical skills from engineering</span>. I work as an Assistant Lecturer at the Libyan Center for Engineering Research. But to lead a municipality, I need to understand <span class="key-phrase">how to manage departments, budgets, teams, and strategy</span>.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            لدي بالفعل مهارات تقنية قوية من الهندسة. أعمل كمحاضر مساعد في المركز الليبي للبحوث الهندسية. لكن لقيادة بلدية، أحتاج إلى فهم كيفية إدارة الأقسام والميزانيات والفرق والاستراتيجية.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>A Management degree <span class="key-phrase">fills this gap</span>. It combines leadership theory with practical frameworks. This is a <span class="key-phrase">deliberate transition from engineering to management</span>. I can use these tools directly when I manage municipal operations in Bani Walid.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            درجة الإدارة تملأ هذه الفجوة. تجمع بين نظرية القيادة والأطر العملية. هذا انتقال مدروس من الهندسة إلى الإدارة. يمكنني استخدام هذه الأدوات مباشرة عندما أدير العمليات البلدية في بني وليد.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>My mentors agree. They told me that combining engineering with management will make me a <span class="key-phrase">stronger candidate for mayor</span> and a more effective leader.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            يوافق موجهوني. أخبروني أن الجمع بين الهندسة والإدارة سيجعلني مرشحاً أقوى لمنصب العمدة وقائداً أكثر فعالية.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -797,9 +1015,27 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>I chose Sussex because it has a <span class="key-phrase">strong reputation in management studies</span>. It is located in Brighton, outside major metropolitan areas. That matches the kind of governance I will practice in Bani Walid.</p>
-        <p>I researched the <span class="key-phrase">faculty members, their publications, and their research</span>. I found that Sussex offers the right combination of academic quality and a learning environment that is relevant to my goals.</p>
-        <p>My second choice is University of South Wales and my third is University of Derby. I followed the same logic — <span class="key-phrase">strong programs in medium-sized cities</span>.</p>
+        <div class="paragraph-wrapper">
+          <p>I chose Sussex because it has a <span class="key-phrase">strong reputation in management studies</span>. It is located in Brighton, outside major metropolitan areas. That matches the kind of governance I will practice in Bani Walid.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            اخترت ساسكس لأنها تتمتع بسمعة قوية في دراسات الإدارة. تقع في برايتون، خارج المناطق الحضرية الكبرى. هذا يتطابق مع نوع الحوكمة التي سأمارسها في بني وليد.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>I researched the <span class="key-phrase">faculty members, their publications, and their research</span>. I found that Sussex offers the right combination of academic quality and a learning environment that is relevant to my goals.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            بحثت عن أعضاء هيئة التدريس ومنشوراتهم وأبحاثهم. وجدت أن ساسكس تقدم المزيج الصحيح من الجودة الأكاديمية وبيئة التعلم ذات الصلة بأهدافي.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>My second choice is University of South Wales and my third is University of Derby. I followed the same logic — <span class="key-phrase">strong programs in medium-sized cities</span>.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            خياري الثاني هو جامعة جنوب ويلز والثالث هو جامعة ديربي. اتبعت نفس المنطق — برامج قوية في مدن متوسطة الحجم.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -811,9 +1047,27 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p><strong>Short term:</strong> Complete my Management degree in the UK. Build <span class="key-phrase">international connections</span> through the Chevening community.</p>
-        <p><strong>Mid term:</strong> Return to Libya and run for <span class="key-phrase">Mayor of Bani Walid in 2027</span>. Apply modern management frameworks to improve municipal services like public lighting, waste management, and building maintenance.</p>
-        <p><strong>Long term:</strong> After serving as Mayor, pursue <span class="key-phrase">broader leadership roles</span> in Libya's national reconstruction. My goal is to help transform Libya into a <span class="key-phrase">modern, developed nation</span>.</p>
+        <div class="paragraph-wrapper">
+          <p><strong>Short term:</strong> Complete my Management degree in the UK. Build <span class="key-phrase">international connections</span> through the Chevening community.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            قصير المدى: إكمال درجة الإدارة في المملكة المتحدة. بناء علاقات دولية من خلال مجتمع تشيفنينغ.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p><strong>Mid term:</strong> Return to Libya and run for <span class="key-phrase">Mayor of Bani Walid in 2027</span>. Apply modern management frameworks to improve municipal services like public lighting, waste management, and building maintenance.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            متوسط المدى: العودة إلى ليبيا والترشح لمنصب عمدة بني وليد في عام 2027. تطبيق أطر إدارية حديثة لتحسين الخدمات البلدية مثل الإضاءة العامة وإدارة النفايات وصيانة المباني.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p><strong>Long term:</strong> After serving as Mayor, pursue <span class="key-phrase">broader leadership roles</span> in Libya's national reconstruction. My goal is to help transform Libya into a <span class="key-phrase">modern, developed nation</span>.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            طويل المدى: بعد الخدمة كعمدة، متابعة أدوار قيادية أوسع في إعادة إعمار ليبيا الوطنية. هدفي هو المساعدة في تحويل ليبيا إلى دولة حديثة ومتطورة.
+          </div>
+        </div>
         <div class="iv-tip">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           Always structure as short / mid / long term. Show that you have a clear timeline.
@@ -829,9 +1083,27 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>Libya has faced <span class="key-phrase">conflict and instability since 2011</span>. Institutions are weak. Public trust in government is low.</p>
-        <p>In Bani Walid specifically, the city was <span class="key-phrase">marginalized after the war</span>. Basic services need improvement. Young people do not have enough job opportunities. There is a gap between international organizations and local communities.</p>
-        <p>Local governance needs <span class="key-phrase">qualified leaders</span> who understand both community needs and modern management. That is exactly the gap I want to fill.</p>
+        <div class="paragraph-wrapper">
+          <p>Libya has faced <span class="key-phrase">conflict and instability since 2011</span>. Institutions are weak. Public trust in government is low.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            واجهت ليبيا صراعاً وعدم استقرار منذ عام 2011. المؤسسات ضعيفة. الثقة العامة في الحكومة منخفضة.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>In Bani Walid specifically, the city was <span class="key-phrase">marginalized after the war</span>. Basic services need improvement. Young people do not have enough job opportunities. There is a gap between international organizations and local communities.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            في بني وليد على وجه التحديد، تم تهميش المدينة بعد الحرب. الخدمات الأساسية تحتاج إلى تحسين. الشباب ليس لديهم فرص عمل كافية. هناك فجوة بين المنظمات الدولية والمجتمعات المحلية.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Local governance needs <span class="key-phrase">qualified leaders</span> who understand both community needs and modern management. That is exactly the gap I want to fill.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            الحوكمة المحلية تحتاج إلى قادة مؤهلين يفهمون احتياجات المجتمع والإدارة الحديثة. هذه بالضبط الفجوة التي أريد ملأها.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -843,10 +1115,38 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>First, I will apply <span class="key-phrase">management frameworks</span> to strengthen municipal operations. I will improve service delivery including public lighting, waste management, and building maintenance.</p>
-        <p>Second, I will use my experience with <span class="key-phrase">UNDP and NAPI</span> to connect local needs with international support. I know how to bridge these worlds because I have done it before.</p>
-        <p>Third, I will create <span class="key-phrase">employment programs</span> based on my successful livelihood project. I trained 225 young people before. I can scale that up as Mayor.</p>
-        <p>Most importantly, I will <span class="key-phrase">rebuild trust</span> between citizens and local government. People need to believe that their leaders are working for them.</p>
+        <div class="paragraph-wrapper">
+          <p>First, I will apply <span class="key-phrase">management frameworks</span> to strengthen municipal operations. I will improve service delivery including public lighting, waste management, and building maintenance.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            أولاً، سأطبق أطر الإدارة لتعزيز العمليات البلدية. سأحسن تقديم الخدمات بما في ذلك الإضاءة العامة وإدارة النفايات وصيانة المباني.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Second, I will use my experience with <span class="key-phrase">UNDP and NAPI</span> to connect local needs with international support. I know how to bridge these worlds because I have done it before.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            ثانياً، سأستخدم خبرتي مع برنامج الأمم المتحدة الإنمائي ومبادرة سياسات شمال أفريقيا لربط الاحتياجات المحلية بالدعم الدولي. أعرف كيفية ربط هذه العوالم لأنني فعلت ذلك من قبل.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Third, I will create <span class="key-phrase">employment programs</span> based on my successful livelihood project. I trained 225 young people before. I can scale that up as Mayor.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            ثالثاً، سأنشئ برامج توظيف بناءً على مشروع سبل العيش الناجح. دربت 225 شاباً من قبل. يمكنني توسيع نطاق ذلك كعمدة.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Most importantly, I will <span class="key-phrase">rebuild trust</span> between citizens and local government. People need to believe that their leaders are working for them.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            الأهم من ذلك، سأعيد بناء الثقة بين المواطنين والحكومة المحلية. يحتاج الناس إلى الإيمان بأن قادتهم يعملون من أجلهم.
+          </div>
+        </div>
+        <div class="iv-tip">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          Always structure as short / mid / long term. Show that you have a clear timeline.
+        </div>
       </div>
     </div>
 
@@ -858,10 +1158,34 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>I have <span class="key-phrase">seven years of community work</span> since 2018. I trained 225 young people in a post-conflict city. I worked with UNDP, NAPI, and IRC. I have strong relationships with local government.</p>
-        <p>I have a <span class="key-phrase">clear and specific plan</span>: become Mayor of Bani Walid in 2027. I know exactly what I need from this degree and exactly how I will use it.</p>
-        <p>I am not looking for a career change. I am looking for the <span class="key-phrase">skills to complete a mission I already started</span>. Chevening is the best way to get those skills and build the network I need.</p>
-        <p>Also, I represent the <span class="key-phrase">growing need for youth in leadership</span> in Libya. As a younger candidate from a major city, I can show that real change is possible.</p>
+        <div class="paragraph-wrapper">
+          <p>I have <span class="key-phrase">seven years of community work</span> since 2018. I trained 225 young people in a post-conflict city. I worked with UNDP, NAPI, and IRC. I have strong relationships with local government.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            لدي سبع سنوات من العمل المجتمعي منذ عام 2018. دربت 225 شاباً في مدينة ما بعد الصراع. عملت مع برنامج الأمم المتحدة الإنمائي ومبادرة سياسات شمال أفريقيا ولجنة الإنقاذ الدولية. لدي علاقات قوية مع الحكومة المحلية.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>I have a <span class="key-phrase">clear and specific plan</span>: become Mayor of Bani Walid in 2027. I know exactly what I need from this degree and exactly how I will use it.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            لدي خطة واضحة ومحددة: أن أصبح عمدة بني وليد في عام 2027. أعرف بالضبط ما أحتاجه من هذه الدرجة وكيف سأستخدمها بالضبط.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>I am not looking for a career change. I am looking for the <span class="key-phrase">skills to complete a mission I already started</span>. Chevening is the best way to get those skills and build the network I need.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            لا أبحث عن تغيير مهني. أبحث عن المهارات لإكمال مهمة بدأتها بالفعل. تشيفنينغ هي أفضل طريقة للحصول على تلك المهارات وبناء الشبكة التي أحتاجها.
+          </div>
+        </div>
+        <div class="paragraph-wrapper">
+          <p>Also, I represent the <span class="key-phrase">growing need for youth in leadership</span> in Libya. As a younger candidate from a major city, I can show that real change is possible.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            أيضاً، أمثل الحاجة المتزايدة للشباب في القيادة في ليبيا. كمرشح أصغر سناً من مدينة رئيسية، يمكنني إظهار أن التغيير الحقيقي ممكن.
+          </div>
+        </div>
         <div class="iv-tip">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           Be confident but not arrogant. Use facts and numbers. Show that the investment in you will have clear returns.
@@ -877,7 +1201,13 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>Yes! Always say yes. Go to the <span class="key-phrase">"Ask the Panel"</span> tab to see prepared questions you can use.</p>
+        <div class="paragraph-wrapper">
+          <p>Yes! Always say yes. Go to the <span class="key-phrase">"Ask the Panel"</span> tab to see prepared questions you can use.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            نعم! قل دائماً نعم. اذهب إلى علامة التبويب "اسأل اللجنة" لرؤية الأسئلة المعدة التي يمكنك استخدامها.
+          </div>
+        </div>
         <div class="iv-tip">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           Never say "No, I have no questions." It shows lack of preparation. Always ask at least one thoughtful question.
@@ -916,7 +1246,13 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>Yes. In 2023, <span class="key-phrase">IRC asked me to organize International Youth Day</span>. I had only one month. The community was resistant to external events. I used my existing connections with municipal officials and designed <span class="key-phrase">culturally appropriate activities</span>. I turned opposition into support. The event was a success and strengthened my local relationships.</p>
+        <div class="paragraph-wrapper">
+          <p>Yes. In 2023, <span class="key-phrase">IRC asked me to organize International Youth Day</span>. I had only one month. The community was resistant to external events. I used my existing connections with municipal officials and designed <span class="key-phrase">culturally appropriate activities</span>. I turned opposition into support. The event was a success and strengthened my local relationships.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            نعم. في عام 2023، طلبت مني لجنة الإنقاذ الدولية تنظيم اليوم العالمي للشباب. كان لدي شهر واحد فقط. كان المجتمع مقاوماً للفعاليات الخارجية. استخدمت علاقاتي الحالية مع مسؤولي البلدية وصممت أنشطة مناسبة ثقافياً. حولت المعارضة إلى دعم. كانت الفعالية ناجحة وعززت علاقاتي المحلية.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -928,7 +1264,13 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>The biggest difficulty was <span class="key-phrase">community skepticism</span>. After the 2018–2020 conflict, people in Bani Walid did not trust development programs. Previous initiatives had failed. COVID restrictions made group activities harder. I overcame this by <span class="key-phrase">meeting people face-to-face</span>, listening to their concerns, and providing tangible outcomes like job agreements before the program even started.</p>
+        <div class="paragraph-wrapper">
+          <p>The biggest difficulty was <span class="key-phrase">community skepticism</span>. After the 2018–2020 conflict, people in Bani Walid did not trust development programs. Previous initiatives had failed. COVID restrictions made group activities harder. I overcame this by <span class="key-phrase">meeting people face-to-face</span>, listening to their concerns, and providing tangible outcomes like job agreements before the program even started.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            كانت الصعوبة الأكبر هي تشكك المجتمع. بعد صراع 2018-2020، لم يثق الناس في بني وليد في برامج التنمية. فشلت المبادرات السابقة. جعلت قيود كوفيد الأنشطة الجماعية أصعب. تغلبت على ذلك من خلال لقاء الناس وجهاً لوجه، والاستماع إلى مخاوفهم، وتقديم نتائج ملموسة مثل اتفاقيات العمل قبل بدء البرنامج.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -940,7 +1282,13 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>I spent considerable time <span class="key-phrase">meeting municipal leaders and community representatives</span> one-on-one. I listened to their priorities first. I showed that our programs addressed <span class="key-phrase">real needs, not top-down agendas</span>. I also secured employment agreements with local businesses to demonstrate concrete outcomes. When people see <span class="key-phrase">real results</span>, they support you.</p>
+        <div class="paragraph-wrapper">
+          <p>I spent considerable time <span class="key-phrase">meeting municipal leaders and community representatives</span> one-on-one. I listened to their priorities first. I showed that our programs addressed <span class="key-phrase">real needs, not top-down agendas</span>. I also secured employment agreements with local businesses to demonstrate concrete outcomes. When people see <span class="key-phrase">real results</span>, they support you.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            قضيت وقتاً طويلاً في لقاء قادة البلدية وممثلي المجتمع واحداً تلو الآخر. استمعت إلى أولوياتهم أولاً. أظهرت أن برامجنا تعالج الاحتياجات الحقيقية، وليس أجندات من أعلى إلى أسفل. حصلت أيضاً على اتفاقيات توظيف مع الشركات المحلية لإثبات النتائج الملموسة. عندما يرى الناس نتائج حقيقية، يدعمونك.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -952,7 +1300,13 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>I stay in <span class="key-phrase">regular contact</span> with municipal leaders and former colleagues. I provide advice when asked. I participate in community initiatives even after projects end. I learned in Turkey that relationships succeed when built on <span class="key-phrase">mutual respect and consistency</span>, not just when you need something.</p>
+        <div class="paragraph-wrapper">
+          <p>I stay in <span class="key-phrase">regular contact</span> with municipal leaders and former colleagues. I provide advice when asked. I participate in community initiatives even after projects end. I learned in Turkey that relationships succeed when built on <span class="key-phrase">mutual respect and consistency</span>, not just when you need something.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            أبقى على اتصال منتظم مع قادة البلدية والزملاء السابقين. أقدم المشورة عند الطلب. أشارك في المبادرات المجتمعية حتى بعد انتهاء المشاريع. تعلمت في تركيا أن العلاقات تنجح عندما تُبنى على الاحترام المتبادل والاتساق، وليس فقط عندما تحتاج شيئاً.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -964,7 +1318,13 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p><span class="key-phrase">225 participants completed the program</span>. Most found employment. The project restored community trust in development work. The municipality asked me to lead UNDP evaluations afterward. I was then invited for <span class="key-phrase">NAPI peacebuilding assessments</span>. My role shifted from implementation to strategic oversight.</p>
+        <div class="paragraph-wrapper">
+          <p><span class="key-phrase">225 participants completed the program</span>. Most found employment. The project restored community trust in development work. The municipality asked me to lead UNDP evaluations afterward. I was then invited for <span class="key-phrase">NAPI peacebuilding assessments</span>. My role shifted from implementation to strategic oversight.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            أكمل 225 مشاركاً البرنامج. وجد معظمهم عملاً. استعاد المشروع ثقة المجتمع في العمل التنموي. طلبت مني البلدية قيادة تقييمات برنامج الأمم المتحدة الإنمائي بعد ذلك. ثم تمت دعوتي لتقييمات بناء السلام لمبادرة سياسات شمال أفريقيا. تحول دوري من التنفيذ إلى الإشراف الاستراتيجي.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -976,7 +1336,13 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>I would start <span class="key-phrase">stakeholder engagement earlier</span>. I would also create a follow-up program for graduates beyond initial employment. I would <span class="key-phrase">document the process better</span> to create a model that other cities in Libya can use. And I would train local people to continue the work independently after the project ends.</p>
+        <div class="paragraph-wrapper">
+          <p>I would start <span class="key-phrase">stakeholder engagement earlier</span>. I would also create a follow-up program for graduates beyond initial employment. I would <span class="key-phrase">document the process better</span> to create a model that other cities in Libya can use. And I would train local people to continue the work independently after the project ends.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            سأبدأ مشاركة أصحاب المصلحة في وقت مبكر. سأنشئ أيضاً برنامج متابعة للخريجين يتجاوز التوظيف الأولي. سأوثق العملية بشكل أفضل لإنشاء نموذج يمكن للمدن الأخرى في ليبيا استخدامه. وسأدرب الأشخاص المحليين لمواصلة العمل بشكل مستقل بعد انتهاء المشروع.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -988,7 +1354,13 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>I will connect with <span class="key-phrase">scholars from post-conflict countries</span> who face similar governance challenges. I will share experiences and learn from their solutions. I will maintain these connections for <span class="key-phrase">future collaboration</span> on development projects. I also plan to join Chevening alumni activities and contribute to the network after returning to Libya.</p>
+        <div class="paragraph-wrapper">
+          <p>I will connect with <span class="key-phrase">scholars from post-conflict countries</span> who face similar governance challenges. I will share experiences and learn from their solutions. I will maintain these connections for <span class="key-phrase">future collaboration</span> on development projects. I also plan to join Chevening alumni activities and contribute to the network after returning to Libya.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            سأتواصل مع باحثين من دول ما بعد الصراع الذين يواجهون تحديات حوكمة مماثلة. سأشارك الخبرات وأتعلم من حلولهم. سأحافظ على هذه العلاقات للتعاون المستقبلي في مشاريع التنمية. أخطط أيضاً للانضمام إلى أنشطة خريجي تشيفنينغ والمساهمة في الشبكة بعد العودة إلى ليبيا.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1000,7 +1372,13 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>Rebuilding <span class="key-phrase">public trust in local institutions</span>. People in Bani Walid have seen failed promises before. I will need to show results quickly. Budget constraints and competing priorities will also be challenges. But my experience running community projects has prepared me. I know how to work with <span class="key-phrase">limited resources and skeptical communities</span>.</p>
+        <div class="paragraph-wrapper">
+          <p>Rebuilding <span class="key-phrase">public trust in local institutions</span>. People in Bani Walid have seen failed promises before. I will need to show results quickly. Budget constraints and competing priorities will also be challenges. But my experience running community projects has prepared me. I know how to work with <span class="key-phrase">limited resources and skeptical communities</span>.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            إعادة بناء الثقة العامة في المؤسسات المحلية. رأى الناس في بني وليد وعوداً فاشلة من قبل. سأحتاج إلى إظهار النتائج بسرعة. قيود الميزانية والأولويات المتنافسة ستكون أيضاً تحديات. لكن تجربتي في إدارة المشاريع المجتمعية أعدتني. أعرف كيفية العمل مع الموارد المحدودة والمجتمعات المتشككة.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1012,7 +1390,13 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>Working with UNDP, I collected surveys from citizens and measured <span class="key-phrase">public satisfaction</span> with projects like street lighting, waste bins, and building maintenance. I learned that <span class="key-phrase">good governance means listening to citizens</span> and measuring results, not just planning from above. This experience taught me to balance <span class="key-phrase">international standards with local realities</span>.</p>
+        <div class="paragraph-wrapper">
+          <p>Working with UNDP, I collected surveys from citizens and measured <span class="key-phrase">public satisfaction</span> with projects like street lighting, waste bins, and building maintenance. I learned that <span class="key-phrase">good governance means listening to citizens</span> and measuring results, not just planning from above. This experience taught me to balance <span class="key-phrase">international standards with local realities</span>.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            عند العمل مع برنامج الأمم المتحدة الإنمائي، جمعت استطلاعات من المواطنين وقست الرضا العام عن مشاريع مثل إضاءة الشوارع وصناديق النفايات وصيانة المباني. تعلمت أن الحوكمة الجيدة تعني الاستماع إلى المواطنين وقياس النتائج، وليس فقط التخطيط من الأعلى. علمتني هذه التجربة كيفية الموازنة بين المعايير الدولية والواقع المحلي.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1024,7 +1408,13 @@
         <svg class="iv-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="iv-card-body">
-        <p>Libya needs <span class="key-phrase">young leadership</span>. The old approach did not work. I have seven years of real community experience. I have the trust of local leaders. Being young is not a weakness — it means I have <span class="key-phrase">more energy, more time, and a long-term commitment</span> to my city. I am not just ambitious. I have already started the work. I just need the right tools to finish it.</p>
+        <div class="paragraph-wrapper">
+          <p>Libya needs <span class="key-phrase">young leadership</span>. The old approach did not work. I have seven years of real community experience. I have the trust of local leaders. Being young is not a weakness — it means I have <span class="key-phrase">more energy, more time, and a long-term commitment</span> to my city. I am not just ambitious. I have already started the work. I just need the right tools to finish it.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></p>
+          <div class="arabic-translation">
+            <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            تحتاج ليبيا إلى قيادة شابة. النهج القديم لم ينجح. لدي سبع سنوات من الخبرة المجتمعية الحقيقية. لدي ثقة القادة المحليين. كوني شاباً ليس ضعفاً — يعني أن لدي المزيد من الطاقة والوقت والالتزام طويل الأمد لمدينتي. أنا لست طموحاً فقط. لقد بدأت العمل بالفعل. أحتاج فقط إلى الأدوات المناسبة لإنهائه.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1049,19 +1439,43 @@
       <div class="star-card-body">
         <div class="star-step">
           <div class="star-label s">Situation</div>
-          <div class="star-text">In 2021, Bani Walid was recovering from the 2018–2020 conflict. People were deeply skeptical of development programs. COVID-19 restrictions made group activities difficult. Previous initiatives had failed and trust was very low.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">In 2021, Bani Walid was recovering from the 2018–2020 conflict. People were deeply skeptical of development programs. COVID-19 restrictions made group activities difficult. Previous initiatives had failed and trust was very low.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              في عام 2021، كانت بني وليد تتعافى من صراع 2018-2020. كان الناس يشككون بشدة في برامج التنمية. جعلت قيود كوفيد-19 الأنشطة الجماعية صعبة. فشلت المبادرات السابقة وكانت الثقة منخفضة جداً.
+            </div>
+          </div>
         </div>
         <div class="star-step">
           <div class="star-label t">Task</div>
-          <div class="star-text">Coordinate vocational training for 225 young people across five sectors through Partnership Community Organization.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">Coordinate vocational training for 225 young people across five sectors through Partnership Community Organization.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              تنسيق التدريب المهني لـ 225 شاباً عبر خمسة قطاعات من خلال منظمة الشراكة المجتمعية.
+            </div>
+          </div>
         </div>
         <div class="star-step">
           <div class="star-label a">Action</div>
-          <div class="star-text">Built a coordination team. Partnered with local trainers in five sectors. Met with municipal leaders and community representatives face-to-face. Established safety protocols for COVID. Secured employment agreements with local businesses before the program started.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">Built a coordination team. Partnered with local trainers in five sectors. Met with municipal leaders and community representatives face-to-face. Established safety protocols for COVID. Secured employment agreements with local businesses before the program started.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              بنيت فريق تنسيق. شاركت مع مدربين محليين في خمسة قطاعات. التقيت بقادة البلدية وممثلي المجتمع وجهاً لوجه. وضعت بروتوكولات سلامة لكوفيد. حصلت على اتفاقيات توظيف مع الشركات المحلية قبل بدء البرنامج.
+            </div>
+          </div>
         </div>
         <div class="star-step">
           <div class="star-label r">Result</div>
-          <div class="star-text">All 225 participants completed the program. Most found jobs afterward. Community trust in development work was restored. The municipality later asked me to lead UNDP project evaluations and NAPI peacebuilding assessments.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">All 225 participants completed the program. Most found jobs afterward. Community trust in development work was restored. The municipality later asked me to lead UNDP project evaluations and NAPI peacebuilding assessments.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              أكمل جميع المشاركين الـ 225 البرنامج. وجد معظمهم وظائف بعد ذلك. استعادت ثقة المجتمع في العمل التنموي. طلبت مني البلدية لاحقاً قيادة تقييمات برنامج الأمم المتحدة الإنمائي وتقييمات بناء السلام لمبادرة سياسات شمال أفريقيا.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1075,19 +1489,43 @@
       <div class="star-card-body">
         <div class="star-step">
           <div class="star-label s">Situation</div>
-          <div class="star-text">In 2023, IRC needed someone to organize International Youth Day in Bani Walid. There was only one month to prepare. The community was resistant to events organized by external groups.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">In 2023, IRC needed someone to organize International Youth Day in Bani Walid. There was only one month to prepare. The community was resistant to events organized by external groups.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              في عام 2023، احتاجت لجنة الإنقاذ الدولية شخصاً لتنظيم اليوم العالمي للشباب في بني وليد. كان هناك شهر واحد فقط للتحضير. كان المجتمع مقاوماً للفعاليات التي تنظمها مجموعات خارجية.
+            </div>
+          </div>
         </div>
         <div class="star-step">
           <div class="star-label t">Task</div>
-          <div class="star-text">Plan and deliver a successful youth event with very limited time and local resistance.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">Plan and deliver a successful youth event with very limited time and local resistance.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              التخطيط وتقديم فعالية شبابية ناجحة مع وقت محدود جداً ومقاومة محلية.
+            </div>
+          </div>
         </div>
         <div class="star-step">
           <div class="star-label a">Action</div>
-          <div class="star-text">Used existing relationships with municipal officials to get institutional support. Designed culturally appropriate activities that respected local values. Met personally with skeptical community members to explain the purpose and gain their trust.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">Used existing relationships with municipal officials to get institutional support. Designed culturally appropriate activities that respected local values. Met personally with skeptical community members to explain the purpose and gain their trust.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              استخدمت العلاقات الحالية مع مسؤولي البلدية للحصول على الدعم المؤسسي. صممت أنشطة مناسبة ثقافياً تحترم القيم المحلية. التقيت شخصياً بأعضاء المجتمع المتشككين لشرح الغرض وكسب ثقتهم.
+            </div>
+          </div>
         </div>
         <div class="star-step">
           <div class="star-label r">Result</div>
-          <div class="star-text">The event succeeded. Community opposition turned into active support. Strengthened relationships with local stakeholders for future projects.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">The event succeeded. Community opposition turned into active support. Strengthened relationships with local stakeholders for future projects.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              نجحت الفعالية. تحولت معارضة المجتمع إلى دعم نشط. عززت العلاقات مع أصحاب المصلحة المحليين للمشاريع المستقبلية.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1101,19 +1539,43 @@
       <div class="star-card-body">
         <div class="star-step">
           <div class="star-label s">Situation</div>
-          <div class="star-text">The Municipality of Bani Walid relied entirely on paper records. Finding and managing information was slow and unreliable. Services to citizens were delayed because of poor organization.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">The Municipality of Bani Walid relied entirely on paper records. Finding and managing information was slow and unreliable. Services to citizens were delayed because of poor organization.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              اعتمدت بلدية بني وليد بالكامل على السجلات الورقية. كان العثور على المعلومات وإدارتها بطيئاً وغير موثوق. تأخرت الخدمات للمواطنين بسبب سوء التنظيم.
+            </div>
+          </div>
         </div>
         <div class="star-step">
           <div class="star-label t">Task</div>
-          <div class="star-text">Help convert municipal paper records into organized digital databases.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">Help convert municipal paper records into organized digital databases.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              المساعدة في تحويل السجلات الورقية البلدية إلى قواعد بيانات رقمية منظمة.
+            </div>
+          </div>
         </div>
         <div class="star-step">
           <div class="star-label a">Action</div>
-          <div class="star-text">Worked directly with municipal staff to understand the record-keeping system. Organized and digitized records systematically. Trained staff on how to use the new digital systems.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">Worked directly with municipal staff to understand the record-keeping system. Organized and digitized records systematically. Trained staff on how to use the new digital systems.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              عملت مباشرة مع موظفي البلدية لفهم نظام حفظ السجلات. نظمت ورقمنت السجلات بشكل منهجي. دربت الموظفين على كيفية استخدام الأنظمة الرقمية الجديدة.
+            </div>
+          </div>
         </div>
         <div class="star-step">
           <div class="star-label r">Result</div>
-          <div class="star-text">Improved organization and access to municipal information. Faster service delivery to citizens. Built strong professional relationships with local government officials that continue today.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">Improved organization and access to municipal information. Faster service delivery to citizens. Built strong professional relationships with local government officials that continue today.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              تحسين التنظيم والوصول إلى المعلومات البلدية. تقديم خدمات أسرع للمواطنين. بنيت علاقات مهنية قوية مع مسؤولي الحكومة المحلية مستمرة حتى اليوم.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1127,19 +1589,43 @@
       <div class="star-card-body">
         <div class="star-step">
           <div class="star-label s">Situation</div>
-          <div class="star-text">UNDP was running development projects in Bani Walid including public lighting, waste bins, and building maintenance. They needed to evaluate citizen satisfaction and identify community needs.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">UNDP was running development projects in Bani Walid including public lighting, waste bins, and building maintenance. They needed to evaluate citizen satisfaction and identify community needs.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              كان برنامج الأمم المتحدة الإنمائي يدير مشاريع تنموية في بني وليد بما في ذلك الإضاءة العامة وصناديق النفايات وصيانة المباني. احتاجوا لتقييم رضا المواطنين وتحديد احتياجات المجتمع.
+            </div>
+          </div>
         </div>
         <div class="star-step">
           <div class="star-label t">Task</div>
-          <div class="star-text">Collect surveys from citizens, measure public satisfaction, and report findings to UNDP.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">Collect surveys from citizens, measure public satisfaction, and report findings to UNDP.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              جمع استطلاعات من المواطنين، وقياس الرضا العام، وإبلاغ النتائج إلى برنامج الأمم المتحدة الإنمائي.
+            </div>
+          </div>
         </div>
         <div class="star-step">
           <div class="star-label a">Action</div>
-          <div class="star-text">Went directly to neighborhoods. Spoke with citizens and local authorities. Identified gaps between what was planned and what communities actually needed. Reported findings with clear recommendations to UNDP.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">Went directly to neighborhoods. Spoke with citizens and local authorities. Identified gaps between what was planned and what communities actually needed. Reported findings with clear recommendations to UNDP.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              ذهبت مباشرة إلى الأحياء. تحدثت مع المواطنين والسلطات المحلية. حددت الفجوات بين ما تم التخطيط له وما تحتاجه المجتمعات فعلياً. أبلغت النتائج بتوصيات واضحة إلى برنامج الأمم المتحدة الإنمائي.
+            </div>
+          </div>
         </div>
         <div class="star-step">
           <div class="star-label r">Result</div>
-          <div class="star-text">Projects were adjusted based on citizen feedback. Trust between international organizations and local communities improved. This work led to my later role with NAPI on peacebuilding assessments.</div>
+          <div class="paragraph-wrapper">
+            <div class="star-text">Projects were adjusted based on citizen feedback. Trust between international organizations and local communities improved. This work led to my later role with NAPI on peacebuilding assessments.<button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button></div>
+            <div class="arabic-translation">
+              <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              تم تعديل المشاريع بناءً على ملاحظات المواطنين. تحسنت الثقة بين المنظمات الدولية والمجتمعات المحلية. أدى هذا العمل إلى دوري اللاحق مع مبادرة سياسات شمال أفريقيا في تقييمات بناء السلام.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1157,118 +1643,215 @@
     <p class="iv-section-desc">Quick bullet points for fast rehearsal. Read the question, then speak the key points out loud without reading the details.</p>
 
     <div class="rapid-card">
-      <div class="rapid-q">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        Tell us about yourself
+      <div class="paragraph-wrapper">
+        <div class="rapid-q">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Tell us about yourself
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <ul class="rapid-points">
+          <li>Abdelbary Algamel, from Bani Walid, Libya</li>
+          <li>Engineering degrees (BSc + MSc), Assistant Lecturer at Libyan Engineering Research Center</li>
+          <li>Partnership Organization since 2018, trained 225 youth, UNDP + NAPI work</li>
+          <li>Moving from engineering to management, goal: Mayor 2027</li>
+        </ul>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>أخبرنا عن نفسك</strong><br>
+          • عبد الباري القمل، من بني وليد، ليبيا<br>
+          • درجات هندسية (بكالوريوس + ماجستير)، محاضر مساعد في المركز الليبي للبحوث الهندسية<br>
+          • منظمة الشراكة منذ 2018، دربت 225 شاباً، عمل مع الأمم المتحدة الإنمائي ومبادرة سياسات شمال أفريقيا<br>
+          • الانتقال من الهندسة إلى الإدارة، الهدف: عمدة 2027
+        </div>
       </div>
-      <ul class="rapid-points">
-        <li>Abdelbary Algamel, from Bani Walid, Libya</li>
-        <li>Engineering degrees (BSc + MSc), Assistant Lecturer at Libyan Engineering Research Center</li>
-        <li>Partnership Organization since 2018, trained 225 youth, UNDP + NAPI work</li>
-        <li>Moving from engineering to management, goal: Mayor 2027</li>
-      </ul>
     </div>
 
     <div class="rapid-card">
-      <div class="rapid-q">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        Leadership example
+      <div class="paragraph-wrapper">
+        <div class="rapid-q">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Leadership example
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <ul class="rapid-points">
+          <li>2021 Livelihood Project, post-conflict city, community skepticism</li>
+          <li>Built team, partnered with trainers in 5 sectors</li>
+          <li>Secured job agreements with businesses before starting</li>
+          <li>225 completed, most employed, trust restored, led to UNDP role</li>
+        </ul>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>مثال على القيادة</strong><br>
+          • مشروع سبل العيش 2021، مدينة ما بعد الصراع، تشكك المجتمع<br>
+          • بنيت فريقاً، شاركت مع مدربين في 5 قطاعات<br>
+          • حصلت على اتفاقيات عمل مع الشركات قبل البدء<br>
+          • 225 أكملوا، معظمهم وظفوا، استعادت الثقة، أدى إلى دور الأمم المتحدة الإنمائي
+        </div>
       </div>
-      <ul class="rapid-points">
-        <li>2021 Livelihood Project, post-conflict city, community skepticism</li>
-        <li>Built team, partnered with trainers in 5 sectors</li>
-        <li>Secured job agreements with businesses before starting</li>
-        <li>225 completed, most employed, trust restored, led to UNDP role</li>
-      </ul>
     </div>
 
     <div class="rapid-card">
-      <div class="rapid-q">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
-        Networking example
+      <div class="paragraph-wrapper">
+        <div class="rapid-q">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          Networking example
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <ul class="rapid-points">
+          <li>Municipality of Bani Walid relationship through UNDP work</li>
+          <li>Listened to their priorities first, bridged international and local</li>
+          <li>Still in regular contact, they trust me for advice</li>
+          <li>Turkey experience: 70 people from 30+ countries, mutual respect</li>
+        </ul>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>مثال على التواصل</strong><br>
+          • علاقة بلدية بني وليد من خلال عمل الأمم المتحدة الإنمائي<br>
+          • استمعت إلى أولوياتهم أولاً، ربطت بين الدولي والمحلي<br>
+          • ما زلت على اتصال منتظم، يثقون بي للمشورة<br>
+          • تجربة تركيا: 70 شخصاً من 30+ دولة، احترام متبادل
+        </div>
       </div>
-      <ul class="rapid-points">
-        <li>Municipality of Bani Walid relationship through UNDP work</li>
-        <li>Listened to their priorities first, bridged international and local</li>
-        <li>Still in regular contact, they trust me for advice</li>
-        <li>Turkey experience: 70 people from 30+ countries, mutual respect</li>
-      </ul>
     </div>
 
     <div class="rapid-card">
-      <div class="rapid-q">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        Why Chevening
+      <div class="paragraph-wrapper">
+        <div class="rapid-q">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Why Chevening
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <ul class="rapid-points">
+          <li>UK government scholarship for future leaders</li>
+          <li>Global network of change-makers from similar contexts</li>
+          <li>Not just a degree — lifelong community and support</li>
+          <li>Matches my public service commitment since 2018</li>
+        </ul>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>لماذا تشيفنينغ</strong><br>
+          • منحة حكومة المملكة المتحدة للقادة المستقبليين<br>
+          • شبكة عالمية من صانعي التغيير من سياقات مماثلة<br>
+          • ليست مجرد درجة — مجتمع ودعم مدى الحياة<br>
+          • يتطابق مع التزامي بالخدمة العامة منذ 2018
+        </div>
       </div>
-      <ul class="rapid-points">
-        <li>UK government scholarship for future leaders</li>
-        <li>Global network of change-makers from similar contexts</li>
-        <li>Not just a degree — lifelong community and support</li>
-        <li>Matches my public service commitment since 2018</li>
-      </ul>
     </div>
 
     <div class="rapid-card">
-      <div class="rapid-q">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        Why UK + Why Management + Why Sussex
+      <div class="paragraph-wrapper">
+        <div class="rapid-q">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Why UK + Why Management + Why Sussex
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <ul class="rapid-points">
+          <li>UK: globally recognized, strong local governance, medium-sized cities</li>
+          <li>Management: fills gap between engineering and public leadership</li>
+          <li>Sussex: strong reputation, outside metro, researched faculty</li>
+        </ul>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>لماذا المملكة المتحدة + لماذا الإدارة + لماذا ساسكس</strong><br>
+          • المملكة المتحدة: معترف بها عالمياً، حوكمة محلية قوية، مدن متوسطة الحجم<br>
+          • الإدارة: تملأ الفجوة بين الهندسة والقيادة العامة<br>
+          • ساسكس: سمعة قوية، خارج المترو، بحثت عن أعضاء هيئة التدريس
+        </div>
       </div>
-      <ul class="rapid-points">
-        <li>UK: globally recognized, strong local governance, medium-sized cities</li>
-        <li>Management: fills gap between engineering and public leadership</li>
-        <li>Sussex: strong reputation, outside metro, researched faculty</li>
-      </ul>
     </div>
 
     <div class="rapid-card">
-      <div class="rapid-q">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        Career plan
+      <div class="paragraph-wrapper">
+        <div class="rapid-q">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Career plan
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <ul class="rapid-points">
+          <li>Short: complete degree, build international network</li>
+          <li>Mid: return, run for Mayor 2027, improve municipal services</li>
+          <li>Long: broader national leadership, transform Libya</li>
+        </ul>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>خطة المسار المهني</strong><br>
+          • قصير: إكمال الدرجة، بناء شبكة دولية<br>
+          • متوسط: العودة، الترشح لمنصب العمدة 2027، تحسين الخدمات البلدية<br>
+          • طويل: قيادة وطنية أوسع، تحويل ليبيا
+        </div>
       </div>
-      <ul class="rapid-points">
-        <li>Short: complete degree, build international network</li>
-        <li>Mid: return, run for Mayor 2027, improve municipal services</li>
-        <li>Long: broader national leadership, transform Libya</li>
-      </ul>
     </div>
 
     <div class="rapid-card">
-      <div class="rapid-q">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        Impact after returning
+      <div class="paragraph-wrapper">
+        <div class="rapid-q">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Impact after returning
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <ul class="rapid-points">
+          <li>Apply management frameworks to municipal operations</li>
+          <li>Improve services: lighting, waste, maintenance</li>
+          <li>Create employment programs (scale livelihood project)</li>
+          <li>Rebuild trust between citizens and government</li>
+        </ul>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>التأثير بعد العودة</strong><br>
+          • تطبيق أطر الإدارة على العمليات البلدية<br>
+          • تحسين الخدمات: الإضاءة، النفايات، الصيانة<br>
+          • إنشاء برامج توظيف (توسيع مشروع سبل العيش)<br>
+          • إعادة بناء الثقة بين المواطنين والحكومة
+        </div>
       </div>
-      <ul class="rapid-points">
-        <li>Apply management frameworks to municipal operations</li>
-        <li>Improve services: lighting, waste, maintenance</li>
-        <li>Create employment programs (scale livelihood project)</li>
-        <li>Rebuild trust between citizens and government</li>
-      </ul>
     </div>
 
     <div class="rapid-card">
-      <div class="rapid-q">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        Why should we select you
+      <div class="paragraph-wrapper">
+        <div class="rapid-q">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Why should we select you
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <ul class="rapid-points">
+          <li>7 years community work, 225 trained, UNDP + NAPI + IRC</li>
+          <li>Clear plan: Mayor 2027, already nominated</li>
+          <li>Not career change — completing a mission already started</li>
+          <li>Youth leadership Libya needs, native of Bani Walid</li>
+        </ul>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>لماذا يجب أن تختارونني</strong><br>
+          • 7 سنوات عمل مجتمعي، 225 مدرباً، الأمم المتحدة الإنمائي + مبادرة سياسات شمال أفريقيا + لجنة الإنقاذ الدولية<br>
+          • خطة واضحة: عمدة 2027، مرشح بالفعل<br>
+          • ليس تغيير مهني — إكمال مهمة بدأت بالفعل<br>
+          • قيادة شبابية تحتاجها ليبيا، من مواليد بني وليد
+        </div>
       </div>
-      <ul class="rapid-points">
-        <li>7 years community work, 225 trained, UNDP + NAPI + IRC</li>
-        <li>Clear plan: Mayor 2027, already nominated</li>
-        <li>Not career change — completing a mission already started</li>
-        <li>Youth leadership Libya needs, native of Bani Walid</li>
-      </ul>
     </div>
 
     <div class="rapid-card">
-      <div class="rapid-q">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        Challenges in your country
+      <div class="paragraph-wrapper">
+        <div class="rapid-q">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Challenges in your country
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <ul class="rapid-points">
+          <li>Conflict since 2011, weak institutions, low trust</li>
+          <li>Bani Walid marginalized post-war, services need improvement</li>
+          <li>Youth unemployment, gap between international orgs and locals</li>
+          <li>Need qualified leaders who understand both local and global</li>
+        </ul>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>التحديات في بلدك</strong><br>
+          • صراع منذ 2011، مؤسسات ضعيفة، ثقة منخفضة<br>
+          • بني وليد مهمشة بعد الحرب، الخدمات تحتاج تحسين<br>
+          • بطالة الشباب، فجوة بين المنظمات الدولية والمحليين<br>
+          • حاجة لقادة مؤهلين يفهمون المحلي والعالمي
+        </div>
       </div>
-      <ul class="rapid-points">
-        <li>Conflict since 2011, weak institutions, low trust</li>
-        <li>Bani Walid marginalized post-war, services need improvement</li>
-        <li>Youth unemployment, gap between international orgs and locals</li>
-        <li>Need qualified leaders who understand both local and global</li>
-      </ul>
     </div>
 
   </div>
@@ -1285,41 +1868,81 @@
 
     <div class="panel-q-card">
       <div class="panel-q-num">1</div>
-      <div class="panel-q-text">
-        <strong>How do Chevening alumni from post-conflict countries stay connected after the scholarship?</strong><br>
-        This shows you are thinking long-term and care about the network — not just the degree.
+      <div class="paragraph-wrapper">
+        <div class="panel-q-text">
+          <strong>How do Chevening alumni from post-conflict countries stay connected after the scholarship?</strong><br>
+          This shows you are thinking long-term and care about the network — not just the degree.
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>كيف يبقى خريجو تشيفنينغ من دول ما بعد الصراع على اتصال بعد المنحة؟</strong><br>
+          هذا يظهر أنك تفكر على المدى الطويل وتهتم بالشبكة — وليس فقط الدرجة.
+        </div>
       </div>
     </div>
 
     <div class="panel-q-card">
       <div class="panel-q-num">2</div>
-      <div class="panel-q-text">
-        <strong>What kind of support does Chevening offer for scholars who plan to enter public service or local governance?</strong><br>
-        This connects directly to your mayoral goal and shows seriousness.
+      <div class="paragraph-wrapper">
+        <div class="panel-q-text">
+          <strong>What kind of support does Chevening offer for scholars who plan to enter public service or local governance?</strong><br>
+          This connects directly to your mayoral goal and shows seriousness.
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>ما نوع الدعم الذي تقدمه تشيفنينغ للباحثين الذين يخططون لدخول الخدمة العامة أو الحوكمة المحلية؟</strong><br>
+          هذا يرتبط مباشرة بهدفك لمنصب العمدة ويظهر الجدية.
+        </div>
       </div>
     </div>
 
     <div class="panel-q-card">
       <div class="panel-q-num">3</div>
-      <div class="panel-q-text">
-        <strong>Are there opportunities during the scholarship year to engage with UK local governance or community organizations?</strong><br>
-        This shows initiative and a desire to learn beyond the classroom.
+      <div class="paragraph-wrapper">
+        <div class="panel-q-text">
+          <strong>Are there opportunities during the scholarship year to engage with UK local governance or community organizations?</strong><br>
+          This shows initiative and a desire to learn beyond the classroom.
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>هل هناك فرص خلال سنة المنحة للتفاعل مع الحوكمة المحلية في المملكة المتحدة أو المنظمات المجتمعية؟</strong><br>
+          هذا يظهر المبادرة والرغبة في التعلم خارج الفصل الدراسي.
+        </div>
       </div>
     </div>
 
     <div class="panel-q-card">
       <div class="panel-q-num">4</div>
-      <div class="panel-q-text">
-        <strong>How can I contribute to the Chevening community while I am still studying?</strong><br>
-        This shows you want to give, not just receive. Panels appreciate this.
+      <div class="paragraph-wrapper">
+        <div class="panel-q-text">
+          <strong>How can I contribute to the Chevening community while I am still studying?</strong><br>
+          This shows you want to give, not just receive. Panels appreciate this.
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>كيف يمكنني المساهمة في مجتمع تشيفنينغ بينما ما زلت أدرس؟</strong><br>
+          هذا يظهر أنك تريد العطاء، وليس فقط الاستلام. تقدر اللجان هذا.
+        </div>
       </div>
     </div>
 
     <div class="panel-q-card">
       <div class="panel-q-num">5</div>
-      <div class="panel-q-text">
-        <strong>What advice would you give to a scholar who wants to make the most of their year in the UK?</strong><br>
-        This is simple, respectful, and makes the panelists feel valued. It also gives you useful information.
+      <div class="paragraph-wrapper">
+        <div class="panel-q-text">
+          <strong>What advice would you give to a scholar who wants to make the most of their year in the UK?</strong><br>
+          This is simple, respectful, and makes the panelists feel valued. It also gives you useful information.
+          <button class="translate-toggle" onclick="toggleTranslation(this)" title="عرض الترجمة العربية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        </div>
+        <div class="arabic-translation">
+          <button class="close-translation" onclick="closeTranslation(this)" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <strong>ما النصيحة التي ستقدمها لباحث يريد الاستفادة القصوى من سنته في المملكة المتحدة؟</strong><br>
+          هذا بسيط ومحترم ويجعل أعضاء اللجنة يشعرون بالتقدير. كما يمنحك معلومات مفيدة.
+        </div>
       </div>
     </div>
 
@@ -1477,6 +2100,29 @@ function collapseAll(panelId) {
   const panel = document.getElementById(panelId);
   panel.querySelectorAll('.iv-card').forEach(c => c.classList.remove('open'));
   panel.querySelectorAll('.star-card').forEach(c => c.classList.remove('open'));
+}
+
+/* ─── ARABIC TRANSLATION TOGGLE ─── */
+function toggleTranslation(button) {
+  const wrapper = button.closest('.paragraph-wrapper');
+  const translation = wrapper.querySelector('.arabic-translation');
+  
+  if (translation) {
+    translation.classList.toggle('show');
+    
+    if (translation.classList.contains('show')) {
+      setTimeout(() => {
+        translation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+  }
+}
+
+function closeTranslation(button) {
+  const translation = button.closest('.arabic-translation');
+  if (translation) {
+    translation.classList.remove('show');
+  }
 }
 
 /* ─── PASSWORD PROTECTION ─── */
