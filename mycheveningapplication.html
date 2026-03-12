@@ -36,10 +36,10 @@
 .chev-tab {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 12px 14px;
+  gap: 5px;
+  padding: 10px 11px;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 600;
   color: var(--text2);
   background: none;
@@ -63,6 +63,19 @@
   height: 13px;
 }
 .chev-tab.active svg { opacity: 1; }
+
+.chev-tab-interview {
+  color: var(--accent) !important;
+  font-weight: 700;
+  text-decoration: none;
+}
+.chev-tab-interview:hover {
+  color: var(--accent-hover) !important;
+  background: var(--accent-light);
+}
+.chev-tab-interview svg {
+  color: var(--accent);
+}
 
 .chev-tab-sep {
   display: flex;
@@ -890,7 +903,7 @@
     </button>
 
     <span class="chev-tab-sep">Judges / Panel</span>
-    <a class="chev-tab" href="chevening-interview.html" style="text-decoration:none;">
+    <a class="chev-tab chev-tab-interview" href="chevening-interview.html">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       Interview
     </a>
